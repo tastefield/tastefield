@@ -1,0 +1,22 @@
+name: example-composition
+id: example-composition
+version: 0.1.0
+description: >
+  Outcome this Composition produces. Used as the exported Skill trigger.
+  A Composition is a reusable creative system — an executable arrangement of
+  Skills, Constants, knowledge, examples, and evals.
+skills:
+  # - name: my-skill
+  #   path: skills/my-skill
+  #   version: "0.1.0"
+  #   role: primary
+precedence:
+  # Higher entries win when instructions conflict.
+  # - my-skill
+constants: constants.md
+sources:
+  - sources/**
+examples:
+  accepted: examples/accepted/**
+  rejected: examples/rejected/**
+evals: evals/evals.json

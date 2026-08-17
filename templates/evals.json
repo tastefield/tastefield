@@ -1,0 +1,14 @@
+{
+  "skill_name": "example-composition",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run the Composition on a representative task.",
+      "expected_output": "Output respects Constants and follows Skill procedures.",
+      "expectations": [
+        "Constants are applied before subordinate Skills",
+        "Claims that require sources include citations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+name: reality-check
+id: reality-check
+version: 0.1.0
+description: >
+  Reality-check creative or product claims against Field sources and Constants. Use when verifying
+  drafts for accuracy before publish.
+skills:
+  - name: reality-check
+    path: skills/reality-check
+    version: 0.1.0
+    origin: local
+    role: primary
+precedence:
+  - reality-check
+constants: constants.md
+sources:
+  - sources/**
+examples:
+  accepted: examples/accepted/**
+  rejected: examples/rejected/**
+evals: evals/evals.json

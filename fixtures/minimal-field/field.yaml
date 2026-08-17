@@ -1,0 +1,13 @@
+name: minimal-field
+id: minimal-field
+version: 0.1.0
+description: Minimal fixture Field for Tastefield CI.
+skills:
+  - name: reality-check
+    path: skills/reality-check
+    version: "0.1.0"
+    origin: local
+    enabled: true
+    role: primary
+sources:
+  - sources/**
