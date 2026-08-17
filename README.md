@@ -33,6 +33,14 @@ npm run tastefield -- --help
 
 ### Install the `tastefield` command
 
+From GitHub (builds on install):
+
+```bash
+npm install -g github:ashergodfrey11/tastefield
+```
+
+Or from a local clone:
+
 ```bash
 npm install -g /path/to/tastefield
 ```
@@ -45,7 +53,7 @@ Point npm at a user-owned prefix instead of using `sudo`:
 npm config set prefix ~/.npm-global
 echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
-npm install -g /path/to/tastefield
+npm install -g github:ashergodfrey11/tastefield
 ```
 
 Node installed via Homebrew, nvm, fnm, volta, or asdf already uses a user-owned
