@@ -72,6 +72,17 @@ a primary visual, and three alternates.
 3. Every rule your agent can ignore is a rule you'll fix in review. — *adversarial*
 4. Compiled brand rules. Served to your agent. Checked before commit. — *technical*
 5. AI writes your components. You still own the brand. — *ownership*
+6. Tired of reviewing AI code for things a regex could catch? — *question, added
+   2026-08-17 from blume.codes ("Tired of steering your coding agents?")*
+
+On option 6: a question qualifies the audience and structurally cannot over-promise, which
+is the exact trap "taste engine" fell into. Still recommend leading with the declarative
+form — question headlines drift toward infomercial unless the pain is very specific — but
+it's the one shape the other options don't cover.
+
+**Add a "Works with" logo strip immediately below the hero.** Cursor, Claude Code,
+Windsurf. Blume places this directly under their fold; the current site buries it as a text
+line down in Install. Compatibility is a first-five-seconds question for this audience.
 
 **Body**
 
@@ -111,34 +122,61 @@ Violation callouts on the ungoverned state are required, per line 172.
 
 ---
 
-### 2. What's compiled today
+### 2. What's compiled today — *and what's coming*
 
-An honesty strip directly under the hero. This is what earns "brand" in the H1 while the
-Copy and Brand domains are unbuilt.
+**Revised 2026-08-17 after blume.codes.** The earlier version of this section was a flat
+honesty strip: a row of badges disclosing which domains don't work yet, positioned as debt
+to admit. Blume does this better. Their roadmap renders in three visible tiers — shipped
+features unbadged, `Soon` inline on the same list, and a separate "On the horizon" section
+carrying `Next` — under a heading that states it plainly: "Today, and the corners of the
+agent setup we're building toward."
+
+Unbuilt work sits prominently and is labelled by distance, so it reads as ambition rather
+than vapour. Adopt that structure. It solves both standing honesty problems at once — the
+domain axis and the unbuilt registry — and it means the `brand` headline no longer needs
+an apology strip underneath it.
 
 **Headlines**
 
-1. **What's compiled today** — *recommended, plain*
-2. Eight domains. One shipped. Here's the map. — *numeric*
-3. Built, scoped, planned — in that order. — *structural*
+1. **Today, and what we're building toward.** — *recommended, borrowed structure*
+2. What's compiled today. — *plain*
+3. Built, soon, and on the horizon. — *structural*
 4. We'll tell you what doesn't work yet. — *disarming*
 5. Status, without the marketing. — *blunt*
 
-**Body**
+**Three tiers**
 
-`Visual ✓ compiled · Motion ✓ scoped · Copy planned · Brand planned · Architecture,
-Content, Conversion, Process named, not built`
+*Shipped, no badge.* Visual tokens (CSS custom properties, Tailwind `@theme`), component
+contracts (cva variants), and nine compiled rules.
 
-Domains from line 48. Build order from line 212: Visual and Motion first, Copy second,
-Brand third, the remaining four deferred.
+*`Soon`, same list.* The remaining Copy and Brand coverage, Motion as a documented
+Foundation, Figma and zeroheight source connections.
 
-**Primary visual:** the `READ-ONLY` / `PLANNED` badge pattern the Sources grid already
-uses, applied per domain.
+*`Next`, separate "On the horizon" section.* The public registry, role recipes, the
+dual-axis leaderboard, the marketplace.
+
+**Correction, verified 2026-08-17 against `src/compile/rules.ts`.** Earlier drafts of this
+plan claimed Copy was entirely unbuilt and that shipping one copy restraint would retire
+the honesty debt. That was wrong. Nine rules already compile, and two are not visual:
+
+- `no-marketing-filler` — a voice rule, confirmed passing in the MCP smoke test
+- `empty-states-need-action` — UX/content, not tokens
+
+The other seven: `no-raw-hex`, `no-arbitrary-values`, `no-arbitrary-color-utility`,
+`no-inline-border-radius`, `no-invented-variants`, `no-restyling-primitives`,
+`prefer-design-system-components`.
+
+So `brand` in the H1 is better supported today than previously assessed, and section 5 can
+show a voice rule beside a token rule using rules that already exist. Copy belongs in
+*shipped* with narrower coverage, not in *planned*.
+
+**Primary visual:** two grouped lists, `Soon` badges inline, then a visually separated
+"On the horizon" block.
 
 **Alternates**
 
 - A horizontal progress rail with filled segments per shipped domain.
-- A dated checklist ("Copy: next") that turns disclosure into a roadmap.
+- A dated checklist ("Copy coverage: next") that turns disclosure into a roadmap.
 - A nav "Status" link instead. More honest, far less visible.
 
 ---
@@ -236,6 +274,25 @@ Reason / Evidence / Trade-off format adopted at line 44, filled with actual valu
 is the strongest single element on tastelab.xyz and it appears nowhere on the current
 site — the largest unforced omission in the existing page.
 
+**Render it as a reviewable card, not a static block (added 2026-08-17, from blume.codes).**
+Their suggestion cards carry a claim, then evidence with a count, then a typed artifact
+badge, then two actions:
+
+> **Verify changes before handing work off** — In 4 conversations, you asked agents to run
+> the relevant package tests and typecheck before saying a change was ready.
+> `~Rule` Add a verification section to the project agent guidance
+> Dismiss · Preview
+
+That is the same information architecture as Trigger/Decision/Reason/Evidence/Trade-off,
+rendered as working product UI rather than documentation. A restraint shown this way reads
+as a live system; the same restraint shown as a prose block reads as a spec.
+
+It also connects two things already decided: the compiled-draft review surface at line 234,
+and the correction-becomes-candidate-restraint mechanic at line 320. Blume is shipping that
+second mechanic now — mining conversations for repeated corrections and proposing a Rule or
+Skill from them, human approval intact — so the interaction pattern is validated, not
+speculative.
+
 **Alternates**
 
 - A transcript: agent asks, server answers, agent writes correct code.
@@ -284,7 +341,8 @@ recipes by role. Mixing them "recreates the exact 'seems random' failure the cat
 taxonomy was originally designed to fix."
 
 **Primary visual:** two-column taxonomy browser with mood-caption variant cards (line 255),
-under an unmistakable `PLANNED` ribbon.
+placed inside the "On the horizon" tier established in section 2 rather than carrying its
+own ad-hoc `PLANNED` ribbon. One roadmap vocabulary across the whole page, not two.
 
 **Alternates**
 
@@ -421,6 +479,18 @@ Observed on the four reference sites, applicable throughout.
 - **Describe the reader's desk,** not the abstraction.
 - **Ship named files, not features.** tasteprofile.io lists DESIGN.md, tokens.json,
   SKILL.md, CHANGELOG.md under "what you actually get."
+- **Evidence with a count.** Blume writes "In 4 conversations, you asked agents to..."
+  rather than "detects repeated patterns." A number makes a claim checkable.
+- **Lean into being narrow.** Blume sells itself as "one narrow sidecar," "a quiet window."
+  Smallness is a positioning, not a limitation — the same asset the `npx`, no-account,
+  no-telemetry story already has and currently undersells. Relevant to the recurring worry
+  that the enforcement wedge sounds too modest next to the marketplace ambition: Blume
+  carries a team-wide Central Domain Model on its roadmap and still says "sidecar" on the
+  H1.
+- **Promote human-in-the-loop review to a headline benefit.** Blume's "See Every Change
+  Before It Lands — review the evidence and exact diff, then apply, dismiss, or save."
+  Tastefield has this capability specified at lines 232–236 and it currently appears
+  nowhere in the messaging.
 
 **Do not copy** their page shape. Clearly Digital, Inc. is a services business — discovery
 call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distribution is
@@ -434,11 +504,13 @@ call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distr
    a `--recipe=` flag that doesn't resolve. The Sources grid is scrupulous about this; the
    recipes section is not. Same fix, same badges.
 
-2. **One copy restraint would retire most of the honesty debt** the "brand" headline takes
-   on. Line 212 calls Copy the cheapest remaining domain — "text/rule-based — voice, tone,
-   banned phrases — not a new token-value UI paradigm." A banned-phrase check compiling
-   beside a hex check lets section 5 show two different *kinds* of rule, which is what the
-   word brand promises. Likely worth more than any single section in this plan.
+2. **Resolved 2026-08-17 — the copy restraint already exists.** This item previously read
+   "one copy restraint would retire most of the honesty debt the brand headline takes on."
+   Verified against `src/compile/rules.ts`: `no-marketing-filler` is already compiled and
+   already passing in the MCP smoke test, alongside `empty-states-need-action`. Section 5
+   can show a voice rule beside a token rule today, using rules that ship.
+   What remains is *breadth* of copy coverage — banned phrases, tone, per-brand voice
+   rules — not the first one. Downgrade from blocking to normal roadmap work.
 
 3. **Live-URL scanning is unresolved** (line 99). The hero's "paste a URL" interaction
    assumes `src/scan/` can extract from an arbitrary rendered site, which is a different
