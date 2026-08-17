@@ -1,46 +1,30 @@
 {
-  "name": "tastefield",
+  "name": "@tastefield/mcp",
   "version": "0.1.0",
-  "description": "Tastefield brings your Skills, knowledge and creative judgment into one portable working environment.",
+  "description": "Compiles your design system into executable context for AI coding agents.",
   "type": "module",
   "bin": {
     "tastefield": "./dist/cli.js"
   },
+  "main": "./dist/index.js",
   "files": [
-    "dist",
-    "templates",
-    "scripts/prepare.mjs"
+    "dist"
   ],
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "dev": "tsx src/cli.ts",
-    "tastefield": "tsx src/cli.ts",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
-    "prepare": "node ./scripts/prepare.mjs"
-  },
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
-  "keywords": [
-    "skills",
-    "agents",
-    "method",
-    "cli",
-    "tastefield"
-  ],
-  "license": "MIT",
+  "scripts": {
+    "build": "tsc && cp src/registry/seed.json dist/registry/seed.json",
+    "dev": "tsc --watch",
+    "test": "node --test \"dist/**/*.test.js\"",
+    "bench": "node dist/bench/run.js"
+  },
   "dependencies": {
-    "@types/node": "^22.13.10",
-    "commander": "^13.1.0",
-    "gray-matter": "^4.0.3",
-    "typescript": "^5.8.2",
-    "yaml": "^2.7.0",
-    "zod": "^3.24.2"
+    "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
-    "tsx": "^4.19.3",
-    "vitest": "^3.0.8"
-  }
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "license": "UNLICENSED"
 }

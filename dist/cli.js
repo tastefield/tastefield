@@ -1,265 +1,327 @@
 #!/usr/bin/env node
-import { existsSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { Command } from "commander";
-import { discoverSkills, formatSkillTable } from "./discover/index.js";
-import { doctorField, formatDoctorReport } from "./doctor/index.js";
-import { defaultExportDir, exportMethod, suggestInstallPath, } from "./export/index.js";
-import { addSkillRef, addSource, initField, readField } from "./field/index.js";
-import { lockMethod, resolveMethodPath } from "./method/index.js";
-import { listSkillResources, loadEvals, loadMethod, loadSkillFrontmatter, resolveFieldRoot, } from "./utils/fs.js";
-const program = new Command();
-program
-    .name("tastefield")
-    .description("Tastefield brings your Skills, knowledge and creative judgment into one portable working environment.")
-    .version("0.1.0");
-program
-    .command("scan")
-    .description("Discover Skills installed for Cursor, Codex, and Claude")
-    .option("--cwd <path>", "Working directory to scan from", process.cwd())
-    .option("--field <path>", "Also include skills/ under a Field")
-    .action((opts) => {
-    const fieldPath = opts.field
-        ? resolve(opts.cwd, opts.field)
-        : existsSync(join(opts.cwd, "field.yaml"))
-            ? opts.cwd
-            : undefined;
-    const skills = discoverSkills({
-        cwd: opts.cwd,
-        fieldPath,
-        includeLocalFieldSkills: true,
-    });
-    console.log(formatSkillTable(skills));
-    console.log(`\n${skills.length} Skill(s) found.`);
-});
-program
-    .command("inspect")
-    .description("Inspect a Skill path, Field, or Method")
-    .argument("<target>", "Path or Method name")
-    .option("--field <path>", "Field root when inspecting a Method by name")
-    .action((target, opts) => {
-    const abs = resolve(process.cwd(), target);
-    const skillMd = abs.endsWith(".md")
-        ? abs
-        : existsSync(join(abs, "SKILL.md"))
-            ? join(abs, "SKILL.md")
-            : existsSync(join(abs, "skill.md"))
-                ? join(abs, "skill.md")
-                : null;
-    if (skillMd && existsSync(skillMd)) {
-        const fm = loadSkillFrontmatter(skillMd);
-        const skillDir = dirname(skillMd);
-        console.log(JSON.stringify({
-            kind: "skill",
-            name: fm.name,
-            description: fm.description,
-            path: skillDir,
-            resources: listSkillResources(skillDir),
-            frontmatter: fm,
-        }, null, 2));
-        return;
-    }
-    if (existsSync(join(abs, "field.yaml")) || abs.endsWith("field.yaml")) {
-        const root = abs.endsWith("field.yaml") ? dirname(abs) : abs;
-        const field = readField(root);
-        console.log(JSON.stringify({ kind: "field", path: root, ...field }, null, 2));
-        return;
-    }
-    try {
-        const fieldRoot = opts.field
-            ? resolveFieldRoot(process.cwd(), opts.field)
-            : existsSync(join(process.cwd(), "field.yaml"))
-                ? process.cwd()
-                : null;
-        if (!fieldRoot) {
-            throw new Error("Provide --field <dir> or run inside a Field to inspect a Method by name");
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import process from "node:process";
+import { scan } from "./scan/index.js";
+import { compile, writeContext, CONTEXT_DIR } from "./compile/index.js";
+import { registerAgents } from "./agents/register.js";
+import { check } from "./check/index.js";
+import { startServer } from "./mcp/server.js";
+import { CURATED, SEED_META, findSkill, formatInstalls, hydrateInstalls, recipes, } from "./registry/curate.js";
+import { importSkill, listImported } from "./registry/import.js";
+import { harvest } from "./registry/discover.js";
+const c = {
+    dim: (s) => `\x1b[2m${s}\x1b[0m`,
+    bold: (s) => `\x1b[1m${s}\x1b[0m`,
+    green: (s) => `\x1b[32m${s}\x1b[0m`,
+    yellow: (s) => `\x1b[33m${s}\x1b[0m`,
+    red: (s) => `\x1b[31m${s}\x1b[0m`,
+    cyan: (s) => `\x1b[36m${s}\x1b[0m`,
+};
+const HELP = `
+${c.bold("tastefield")} — compiles your design system into executable context for AI coding agents
+
+${c.bold("Usage")}
+  npx @tastefield/mcp <command> [options]
+
+${c.bold("Commands")}
+  init            Scan this repo, compile ${CONTEXT_DIR}/, and register with local agents
+  sync            Re-scan and recompile (does not touch agent config)
+  serve           Start the local MCP server over stdio (agents call this)
+  check [files]   Check files against compiled standards; exits 1 on error-severity violations
+  skills          Browse and import the curated skills.sh set (see below)
+  help            Show this message
+
+${c.bold("Skills")}
+  skills list [--category <c>] [--live]   List the curated set
+  skills recipes                          Show recipes and what they bundle
+  skills discover                         Harvest + rank new candidates for review
+  skills import <id|slug> [--github]      Import a skill into ${CONTEXT_DIR}/skills/
+  skills imported                         Show what's already imported
+  skills export [--out <file>] [--live]   Emit the curated set as JSON
+
+${c.bold("Options")}
+  --dir <path>    Repository root (default: cwd)
+  --no-register   For init: compile only, don't write agent config
+  --live          Fetch live install counts (needs VERCEL_OIDC_TOKEN)
+  --github        Import via the public GitHub source instead of the skills.sh API
+
+${c.dim("Telemetry: none. Tastefield sends nothing anywhere; everything runs locally.")}
+`;
+function parseArgs(argv) {
+    const args = argv.slice(2);
+    const command = args[0] && !args[0].startsWith("-") ? args[0] : "help";
+    const flags = {};
+    const positional = [];
+    for (let i = command === "help" ? 0 : 1; i < args.length; i++) {
+        const arg = args[i];
+        if (arg.startsWith("--")) {
+            const key = arg.slice(2);
+            const next = args[i + 1];
+            if (next && !next.startsWith("--")) {
+                flags[key] = next;
+                i++;
+            }
+            else {
+                flags[key] = true;
+            }
         }
-        const methodPath = resolveMethodPath(fieldRoot, target);
-        const method = loadMethod(methodPath);
-        console.log(JSON.stringify({
-            kind: "method",
-            path: methodPath,
-            ...method,
-        }, null, 2));
-        return;
+        else {
+            positional.push(arg);
+        }
     }
-    catch (err) {
-        console.error(`Could not inspect "${target}": ${err instanceof Error ? err.message : String(err)}`);
-        process.exitCode = 1;
+    return { command, flags, positional };
+}
+async function loadRules(repoRoot) {
+    try {
+        const raw = await readFile(path.join(repoRoot, CONTEXT_DIR, "rules.json"), "utf8");
+        return (JSON.parse(raw).rules ?? []);
     }
-});
-program
-    .command("init")
-    .description("Create a new Field skeleton")
-    .argument("[dir]", "Directory for the Field", ".")
-    .option("--name <name>", "Field name")
-    .option("--id <id>", "Field id")
-    .option("--force", "Overwrite existing templates", false)
-    .action((dir, opts) => {
-    const root = resolve(process.cwd(), dir);
-    const field = initField({
-        dir: root,
-        name: opts.name,
-        id: opts.id,
-        force: opts.force,
-    });
-    console.log(`Initialized Field "${field.name}" at ${root}`);
-    console.log("Next: add Skills, edit rules.md, then tastefield lock <method>");
-});
-program
-    .command("add")
-    .description("Add a Skill reference or source path to the Field")
-    .argument("<kind>", "skill | source")
-    .argument("<target>", "Skill directory or source path")
-    .option("--field <path>", "Field root", ".")
-    .option("--name <name>", "Skill name override")
-    .option("--version <version>", "Skill version", "0.0.0")
-    .option("--origin <origin>", "Skill origin label")
-    .action((kind, target, opts) => {
-    const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-    if (kind === "skill") {
-        const skillDir = resolve(process.cwd(), target);
-        const skillMd = existsSync(join(skillDir, "SKILL.md"))
-            ? join(skillDir, "SKILL.md")
-            : join(skillDir, "skill.md");
-        if (!existsSync(skillMd)) {
-            console.error(`No SKILL.md in ${skillDir}`);
-            process.exitCode = 1;
+    catch {
+        return [];
+    }
+}
+async function cmdInit(repoRoot, register) {
+    const started = Date.now();
+    process.stdout.write(`${c.dim("Scanning")} ${repoRoot}\n\n`);
+    const result = await scan(repoRoot);
+    const ctx = compile(result);
+    const written = await writeContext(repoRoot, ctx);
+    const tokenCount = ctx.tokens.length;
+    const componentCount = ctx.components.length;
+    const contractCount = ctx.components.filter((comp) => Object.keys(comp.variants).length > 0).length;
+    const enforced = ctx.rules.filter((r) => r.pattern).length;
+    const stackBits = [
+        ctx.stack.framework !== "unknown" ? ctx.stack.framework : null,
+        ctx.stack.tailwind ? `tailwind ${ctx.stack.tailwind}` : null,
+        ctx.stack.hasShadcn ? "shadcn/ui" : null,
+    ].filter(Boolean);
+    if (stackBits.length) {
+        process.stdout.write(`${c.green("✔")} Detected ${stackBits.join(" · ")}\n`);
+    }
+    process.stdout.write(`${c.green("✔")} ${tokenCount} design tokens\n` +
+        `${c.green("✔")} ${componentCount} components (${contractCount} with variant contracts)\n` +
+        `${c.green("✔")} ${ctx.rules.length} standards compiled (${enforced} machine-enforced)\n` +
+        `${c.green("✔")} Wrote ${written.length} files to ${c.cyan(CONTEXT_DIR)}/\n`);
+    if (register) {
+        const registrations = await registerAgents(repoRoot);
+        for (const r of registrations) {
+            const verb = r.action === "already-present" ? "already registered in" : `${r.action} `;
+            process.stdout.write(`${c.green("✔")} ${r.agent} — ${verb}${c.dim(r.file)}\n`);
+        }
+    }
+    for (const warning of result.warnings) {
+        process.stdout.write(`\n${c.yellow("!")} ${warning}\n`);
+    }
+    process.stdout.write(`\n${c.dim(`Done in ${Date.now() - started}ms.`)}\n` +
+        `${c.bold("Next:")} restart Cursor or Claude Code so it picks up the MCP server, ` +
+        `then ask it to build a UI component.\n`);
+    return 0;
+}
+async function cmdCheck(repoRoot, files) {
+    const rules = await loadRules(repoRoot);
+    if (!rules.length) {
+        process.stderr.write(`${c.red("✖")} No compiled standards found. Run ${c.bold("tastefield init")} first.\n`);
+        return 1;
+    }
+    if (!files.length) {
+        process.stderr.write(`${c.red("✖")} No files given. Usage: tastefield check src/**/*.tsx\n`);
+        return 1;
+    }
+    let errors = 0;
+    let warnings = 0;
+    for (const file of files) {
+        let content;
+        try {
+            content = await readFile(file, "utf8");
+        }
+        catch {
+            process.stderr.write(`${c.yellow("!")} Could not read ${file}\n`);
+            continue;
+        }
+        const violations = check(content, rules);
+        if (!violations.length)
+            continue;
+        process.stdout.write(`\n${c.bold(file)}\n`);
+        for (const v of violations) {
+            const tag = v.severity === "error" ? c.red("error") : c.yellow("warn ");
+            process.stdout.write(`  ${c.dim(String(v.line).padStart(4))}  ${tag}  ${v.ruleId}  ${c.dim(v.excerpt)}\n`);
+            if (v.fix)
+                process.stdout.write(`        ${c.dim(v.fix)}\n`);
+            if (v.severity === "error")
+                errors++;
+            else
+                warnings++;
+        }
+    }
+    process.stdout.write(`\n${errors ? c.red(`${errors} error(s)`) : c.green("0 errors")}, ${warnings} warning(s)\n`);
+    return errors > 0 ? 1 : 0;
+}
+async function cmdSkills(repoRoot, positional, flags) {
+    const sub = positional[0] ?? "list";
+    switch (sub) {
+        case "list": {
+            let skills = CURATED;
+            let note = `${c.dim(`seed verified ${SEED_META.verifiedAt} · install counts not fetched`)}`;
+            if (flags.live) {
+                const res = await hydrateInstalls();
+                skills = res.skills;
+                note = res.error
+                    ? `${c.yellow("!")} ${res.error}`
+                    : c.dim(`${res.hydrated}/${skills.length} install counts refreshed from skills.sh`);
+            }
+            if (typeof flags.category === "string") {
+                skills = skills.filter((s) => s.category === flags.category);
+            }
+            process.stdout.write(`\n${c.bold("Curated skills")} ${c.dim(`(${skills.length} of ${CURATED.length})`)}\n\n`);
+            process.stdout.write(c.dim(`${"SKILL".padEnd(30)}${"SOURCE".padEnd(38)}${"CATEGORY".padEnd(11)}${"INSTALLS".padStart(9)}\n`));
+            for (const s of skills) {
+                process.stdout.write(`${s.slug.padEnd(30)}${c.dim(s.source.padEnd(38))}${s.category.padEnd(11)}${formatInstalls(s.installs).padStart(9)}\n`);
+            }
+            process.stdout.write(`\n${note}\n`);
+            process.stdout.write(c.dim(`Install counts shown as "—" are unknown, not zero.\n`));
+            return 0;
+        }
+        case "recipes": {
+            process.stdout.write(`\n${c.bold("Recipes")}\n\n`);
+            for (const { name, skills } of recipes()) {
+                process.stdout.write(`${c.cyan(name)} ${c.dim(`— ${skills.length} skills`)}\n`);
+                for (const s of skills) {
+                    process.stdout.write(`  ${s.slug.padEnd(30)}${c.dim(s.officialSummary ?? s.rationale)}\n`);
+                }
+                process.stdout.write("\n");
+            }
+            return 0;
+        }
+        case "import": {
+            const target = positional[1];
+            if (!target) {
+                process.stderr.write(`${c.red("✖")} Usage: tastefield skills import <id|slug>\n`);
+                return 1;
+            }
+            const curated = findSkill(target);
+            if (!curated) {
+                process.stderr.write(`${c.red("✖")} "${target}" is not in the curated set.\n` +
+                    `${c.dim("Run `tastefield skills list` to see available skills.")}\n`);
+                return 1;
+            }
+            process.stdout.write(`${c.dim("Importing")} ${curated.id}\n`);
+            const record = await importSkill(repoRoot, target, {
+                preferGitHub: flags.github === true,
+            });
+            process.stdout.write(`${c.green("✔")} ${record.files.length} file(s) → ${c.cyan(record.dir)}\n` +
+                `${c.dim(`  via ${record.via}${record.hash ? ` · hash ${record.hash.slice(0, 12)}` : ""}`)}\n`);
+            return 0;
+        }
+        case "imported": {
+            const imported = await listImported(repoRoot);
+            if (!imported.length) {
+                process.stdout.write(`${c.dim("No skills imported yet. Try `tastefield skills import polish`.")}\n`);
+                return 0;
+            }
+            for (const s of imported) {
+                process.stdout.write(`${c.green("✔")} ${s.slug.padEnd(30)}${c.dim(`${s.files.length} file(s) · via ${s.via} · ${s.importedAt.slice(0, 10)}`)}\n`);
+            }
+            return 0;
+        }
+        case "discover": {
+            process.stdout.write(`${c.dim("Harvesting candidates from search battery + owner allowlist…")}\n`);
+            const result = await harvest();
+            if (result.errors.length && result.candidates.length === 0) {
+                process.stderr.write(`${c.red("✖")} Discovery needs a Vercel OIDC token.\n` +
+                    `${c.dim("  Run `vercel env pull` in a linked project, or set VERCEL_OIDC_TOKEN.")}\n\n` +
+                    `${c.dim("First error: " + result.errors[0])}\n`);
+                return 1;
+            }
+            const { stats } = result;
+            process.stdout.write(`\n${c.green("✔")} ${stats.unique} unique candidates ` +
+                `${c.dim(`(${stats.fromSearch} via search, ${stats.fromOwners} via owners)`)}\n` +
+                `  ${c.green(String(stats.include))} include · ${c.yellow(String(stats.review))} review · ${c.dim(String(stats.excluded) + " excluded")}\n\n`);
+            const shortlist = result.candidates.filter((x) => x.relevance.verdict !== "exclude");
+            process.stdout.write(c.dim(`${"SCORE".padStart(5)}  ${"VERDICT".padEnd(8)}${"SKILL".padEnd(32)}${"SOURCE".padEnd(34)}INSTALLS\n`));
+            for (const x of shortlist.slice(0, 60)) {
+                const tag = x.relevance.verdict === "include" ? c.green("include ") : c.yellow("review  ");
+                process.stdout.write(`${String(x.relevance.score).padStart(5)}  ${tag}${x.slug.slice(0, 31).padEnd(32)}${c.dim(x.source.slice(0, 33).padEnd(34))}${formatInstalls(x.installs).padStart(8)}\n`);
+            }
+            if (result.errors.length) {
+                process.stdout.write(`\n${c.yellow("!")} ${result.errors.length} query/owner lookup(s) failed; partial results shown.\n`);
+            }
+            process.stdout.write(`\n${c.dim("This is a shortlist, not a decision. Category, status, rationale and recipe")}\n` +
+                `${c.dim("membership are assigned by hand — that judgement is the product.")}\n`);
+            return 0;
+        }
+        case "export": {
+            let skills = CURATED;
+            let hydrated = 0;
+            let error;
+            if (flags.live) {
+                const res = await hydrateInstalls();
+                skills = res.skills;
+                hydrated = res.hydrated;
+                error = res.error;
+            }
+            const payload = {
+                generatedAt: new Date().toISOString(),
+                source: SEED_META.generatedFrom,
+                seedVerifiedAt: SEED_META.verifiedAt,
+                installsHydrated: hydrated,
+                installsNote: "null means the count was not verified. Render as an em dash, never as 0.",
+                categories: [...new Set(skills.map((s) => s.category))].sort(),
+                recipes: recipes().map((r) => ({
+                    name: r.name,
+                    skillCount: r.skills.length,
+                    skills: r.skills.map((s) => s.slug),
+                })),
+                skills,
+            };
+            const json = `${JSON.stringify(payload, null, 2)}\n`;
+            const out = typeof flags.out === "string" ? flags.out : null;
+            if (out) {
+                const { writeFile: wf } = await import("node:fs/promises");
+                await wf(path.resolve(out), json, "utf8");
+                process.stdout.write(`${c.green("✔")} Wrote ${skills.length} skills → ${c.cyan(out)}\n`);
+                if (error)
+                    process.stdout.write(`${c.yellow("!")} ${error}\n`);
+            }
+            else {
+                process.stdout.write(json);
+            }
+            return 0;
+        }
+        default:
+            process.stderr.write(`${c.red("✖")} Unknown subcommand: skills ${sub}\n`);
+            return 1;
+    }
+}
+async function main() {
+    const { command, flags, positional } = parseArgs(process.argv);
+    const repoRoot = path.resolve(typeof flags.dir === "string" ? flags.dir : process.cwd());
+    switch (command) {
+        case "init":
+            process.exitCode = await cmdInit(repoRoot, flags.register !== false && !flags["no-register"]);
             return;
-        }
-        const fm = loadSkillFrontmatter(skillMd);
-        const relPath = skillDir.startsWith(fieldRoot)
-            ? skillDir.slice(fieldRoot.length).replace(/^\//, "")
-            : target;
-        const field = addSkillRef(fieldRoot, {
-            name: opts.name ?? fm.name,
-            path: relPath,
-            version: opts.version,
-            origin: opts.origin,
-        });
-        console.log(`Added Skill "${opts.name ?? fm.name}" to Field ${field.id}`);
-        return;
-    }
-    if (kind === "source") {
-        const field = addSource(fieldRoot, target);
-        console.log(`Added source "${target}" to Field ${field.id}`);
-        return;
-    }
-    console.error(`Unknown kind "${kind}". Use skill or source.`);
-    process.exitCode = 1;
-});
-program
-    .command("lock")
-    .description("Validate a Method and lock participating Skill versions")
-    .argument("<name>", "Method name or path")
-    .option("--field <path>", "Field root", ".")
-    .action((name, opts) => {
-    try {
-        const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-        const result = lockMethod(fieldRoot, name);
-        console.log(`Locked Method "${result.method.id}" — ${result.lock.skills.length} Skill(s)`);
-        console.log(`Lockfile: ${result.lockPath}`);
-    }
-    catch (err) {
-        console.error(err instanceof Error ? err.message : String(err));
-        process.exitCode = 1;
-    }
-});
-// Back-compat alias for Composition-era CLI
-program
-    .command("compose", { hidden: true })
-    .description("Alias for lock (deprecated)")
-    .argument("<name>", "Method name or path")
-    .option("--field <path>", "Field root", ".")
-    .action((name, opts) => {
-    console.error("tastefield compose is deprecated; use tastefield lock");
-    const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-    const result = lockMethod(fieldRoot, name);
-    console.log(`Locked Method "${result.method.id}" — ${result.lock.skills.length} Skill(s)`);
-    console.log(`Lockfile: ${result.lockPath}`);
-});
-program
-    .command("doctor")
-    .description("Flag overlapping triggers, duplicates, and broken refs")
-    .argument("[dir]", "Field directory", ".")
-    .action((dir) => {
-    try {
-        const fieldRoot = resolveFieldRoot(process.cwd(), dir);
-        const discovered = discoverSkills({
-            cwd: process.cwd(),
-            fieldPath: fieldRoot,
-            includeLocalFieldSkills: true,
-        });
-        const report = doctorField(fieldRoot, discovered);
-        console.log(formatDoctorReport(report));
-        if (!report.ok)
-            process.exitCode = 1;
-    }
-    catch (err) {
-        console.error(err instanceof Error ? err.message : String(err));
-        process.exitCode = 1;
-    }
-});
-program
-    .command("test")
-    .description("Load and summarize Method evals (runner stub in v0)")
-    .argument("[method]", "Method name", "starter")
-    .option("--field <path>", "Field root", ".")
-    .action((methodName, opts) => {
-    try {
-        const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-        const methodPath = resolveMethodPath(fieldRoot, methodName);
-        const method = loadMethod(methodPath);
-        const evalsPath = join(fieldRoot, method.evals);
-        if (!existsSync(evalsPath)) {
-            console.error(`Evals not found: ${method.evals}`);
-            process.exitCode = 1;
+        case "sync":
+            process.exitCode = await cmdInit(repoRoot, false);
             return;
-        }
-        const evals = loadEvals(evalsPath);
-        console.log(`Loaded ${evals.evals.length} eval case(s) for "${evals.skill_name}"`);
-        for (const ev of evals.evals) {
-            console.log(`  #${ev.id}: ${ev.prompt.slice(0, 80)}${ev.prompt.length > 80 ? "…" : ""}`);
-            console.log(`       expectations: ${ev.expectations.length}`);
-        }
-        console.log("\n(v0 stub) Eval execution against agents is not implemented yet — cases validated only.");
+        case "serve":
+            // stdout is the MCP transport here — anything written to it that isn't a
+            // protocol message will corrupt the stream. Diagnostics go to stderr only.
+            await startServer(repoRoot);
+            return;
+        case "check":
+            process.exitCode = await cmdCheck(repoRoot, positional);
+            return;
+        case "skills":
+            process.exitCode = await cmdSkills(repoRoot, positional, flags);
+            return;
+        case "help":
+        default:
+            process.stdout.write(HELP);
+            return;
     }
-    catch (err) {
-        console.error(err instanceof Error ? err.message : String(err));
-        process.exitCode = 1;
-    }
-});
-program
-    .command("export")
-    .description("Export a Method as a thin orchestrating Skill")
-    .argument("<method>", "Method name or path")
-    .option("--field <path>", "Field root", ".")
-    .option("-o, --out <dir>", "Output directory")
-    .option("--target <target>", "cursor | codex | claude | generic", "generic")
-    .action((methodName, opts) => {
-    try {
-        const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-        const target = opts.target;
-        const methodPath = resolveMethodPath(fieldRoot, methodName);
-        const method = loadMethod(methodPath);
-        const outDir = opts.out ?? defaultExportDir(fieldRoot, method.id, target);
-        const result = exportMethod({
-            fieldRoot,
-            method: methodName,
-            outDir,
-            target,
-        });
-        console.log(`Exported Method Skill → ${result.outDir}`);
-        console.log(`Orchestrator: ${result.skillMdPath}`);
-        console.log(`Suggested install path: ${suggestInstallPath(method.id, target)}`);
-    }
-    catch (err) {
-        console.error(err instanceof Error ? err.message : String(err));
-        process.exitCode = 1;
-    }
-});
-program.parseAsync(process.argv).catch((err) => {
-    console.error(err instanceof Error ? err.message : String(err));
+}
+main().catch((err) => {
+    process.stderr.write(`${c.red("✖")} ${err?.stack ?? err}\n`);
     process.exitCode = 1;
 });
 //# sourceMappingURL=cli.js.map

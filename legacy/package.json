@@ -1,0 +1,46 @@
+{
+  "name": "tastefield",
+  "version": "0.1.0",
+  "description": "Tastefield brings your Skills, knowledge and creative judgment into one portable working environment.",
+  "type": "module",
+  "bin": {
+    "tastefield": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "scripts/prepare.mjs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "tastefield": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prepare": "node ./scripts/prepare.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "skills",
+    "agents",
+    "method",
+    "cli",
+    "tastefield"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^22.13.10",
+    "commander": "^13.1.0",
+    "gray-matter": "^4.0.3",
+    "typescript": "^5.8.2",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3",
+    "vitest": "^3.0.8"
+  }
+}
