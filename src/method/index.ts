@@ -1,21 +1,21 @@
 import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { Composition, CompositionLock } from "../schema/index.js";
+import type { Method, MethodLock } from "../schema/index.js";
 import {
   fileHash,
-  loadComposition,
+  loadMethod,
   loadSkillFrontmatter,
   writeYaml,
 } from "../utils/fs.js";
 
-export interface ComposeResult {
-  composition: Composition;
-  lock: CompositionLock;
+export interface LockMethodResult {
+  method: Method;
+  lock: MethodLock;
   lockPath: string;
-  compositionPath: string;
+  methodPath: string;
 }
 
-export function resolveCompositionPath(
+export function resolveMethodPath(
   fieldRoot: string,
   nameOrPath: string,
 ): string {
@@ -25,30 +25,31 @@ export function resolveCompositionPath(
     if (existsSync(nameOrPath)) return nameOrPath;
   }
   const candidates = [
-    join(fieldRoot, "compositions", `${nameOrPath}.yaml`),
-    join(fieldRoot, "compositions", `${nameOrPath}.yml`),
+    join(fieldRoot, "methods", `${nameOrPath}.yaml`),
+    join(fieldRoot, "methods", `${nameOrPath}.yml`),
     join(fieldRoot, nameOrPath),
   ];
   for (const c of candidates) {
     if (existsSync(c)) return c;
   }
-  throw new Error(`Composition not found: ${nameOrPath}`);
+  throw new Error(`Method not found: ${nameOrPath}`);
 }
 
-export function composeComposition(
+/** Validate a Method and lock participating Skill versions. */
+export function lockMethod(
   fieldRoot: string,
   nameOrPath: string,
-): ComposeResult {
-  const compositionPath = resolveCompositionPath(fieldRoot, nameOrPath);
-  const composition = loadComposition(compositionPath);
+): LockMethodResult {
+  const methodPath = resolveMethodPath(fieldRoot, nameOrPath);
+  const method = loadMethod(methodPath);
 
-  const constantsPath = join(fieldRoot, composition.constants);
-  if (!existsSync(constantsPath)) {
-    throw new Error(`Constants file missing: ${composition.constants}`);
+  const rulesPath = join(fieldRoot, method.rules);
+  if (!existsSync(rulesPath)) {
+    throw new Error(`Rules file missing: ${method.rules}`);
   }
 
-  const lockedSkills: CompositionLock["skills"] = [];
-  for (const skill of composition.skills) {
+  const lockedSkills: MethodLock["skills"] = [];
+  for (const skill of method.skills) {
     const skillDir = join(fieldRoot, skill.path);
     const skillMd = existsSync(join(skillDir, "SKILL.md"))
       ? join(skillDir, "SKILL.md")
@@ -59,7 +60,7 @@ export function composeComposition(
     const frontmatter = loadSkillFrontmatter(skillMd);
     if (frontmatter.name !== skill.name) {
       throw new Error(
-        `Skill name mismatch: composition declares "${skill.name}" but SKILL.md has "${frontmatter.name}"`,
+        `Skill name mismatch: method declares "${skill.name}" but SKILL.md has "${frontmatter.name}"`,
       );
     }
     const versionMeta = frontmatter.metadata?.version;
@@ -79,42 +80,36 @@ export function composeComposition(
     });
   }
 
-  // Ensure precedence lists known skills
-  for (const name of composition.precedence) {
-    if (!composition.skills.some((s) => s.name === name)) {
+  for (const name of method.precedence) {
+    if (!method.skills.some((s) => s.name === name)) {
       throw new Error(`Precedence references unknown skill: ${name}`);
     }
   }
 
-  const lock: CompositionLock = {
-    composition: composition.id,
+  const lock: MethodLock = {
+    method: method.id,
     locked_at: new Date().toISOString(),
     skills: lockedSkills,
-    constants: composition.constants,
-    constants_hash: fileHash(constantsPath),
+    rules: method.rules,
+    rules_hash: fileHash(rulesPath),
   };
 
-  const lockPath = join(
-    fieldRoot,
-    "compositions",
-    `${composition.id}.lock.json`,
-  );
+  const lockPath = join(fieldRoot, "methods", `${method.id}.lock.json`);
   writeFileSync(lockPath, JSON.stringify(lock, null, 2) + "\n", "utf8");
 
-  // Persist any inferred versions back into the composition YAML
   const updated = {
-    ...composition,
-    skills: composition.skills.map((s) => {
+    ...method,
+    skills: method.skills.map((s) => {
       const locked = lockedSkills.find((l) => l.name === s.name);
       return locked ? { ...s, version: locked.version } : s;
     }),
   };
-  writeFileSync(compositionPath, writeYaml(updated), "utf8");
+  writeFileSync(methodPath, writeYaml(updated), "utf8");
 
   return {
-    composition: updated,
+    method: updated,
     lock,
     lockPath,
-    compositionPath,
+    methodPath,
   };
 }

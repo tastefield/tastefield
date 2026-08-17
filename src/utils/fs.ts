@@ -5,11 +5,11 @@ import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
 import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
 import {
-  CompositionSchema,
+  MethodSchema,
   EvalsFileSchema,
   FieldSchema,
   SkillFrontmatterSchema,
-  type Composition,
+  type Method,
   type EvalsFile,
   type Field,
   type SkillFrontmatter,
@@ -40,9 +40,9 @@ export function loadField(fieldPath: string): Field {
   return FieldSchema.parse(raw);
 }
 
-export function loadComposition(compositionPath: string): Composition {
-  const raw = parseYaml(readText(compositionPath));
-  return CompositionSchema.parse(raw);
+export function loadMethod(methodPath: string): Method {
+  const raw = parseYaml(readText(methodPath));
+  return MethodSchema.parse(raw);
 }
 
 export function loadEvals(evalsPath: string): EvalsFile {

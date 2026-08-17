@@ -25,7 +25,7 @@ jobs:
         run: |
           node dist/cli.js scan --field fixtures/minimal-field
           node dist/cli.js inspect fixtures/minimal-field
-          node dist/cli.js compose reality-check --field fixtures/minimal-field
+          node dist/cli.js lock reality-check --field fixtures/minimal-field
           node dist/cli.js doctor fixtures/minimal-field
           node dist/cli.js test reality-check --field fixtures/minimal-field
           node dist/cli.js export reality-check --field fixtures/minimal-field --target generic -o /tmp/tf-export

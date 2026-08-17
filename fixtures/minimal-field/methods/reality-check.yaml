@@ -2,7 +2,7 @@ name: reality-check
 id: reality-check
 version: 0.1.0
 description: >
-  Reality-check creative or product claims against Field sources and Constants. Use when verifying
+  Reality-check creative or product claims against Field sources and Rules. Use when verifying
   drafts for accuracy before publish.
 skills:
   - name: reality-check
@@ -12,7 +12,7 @@ skills:
     role: primary
 precedence:
   - reality-check
-constants: constants.md
+rules: rules.md
 sources:
   - sources/**
 examples:

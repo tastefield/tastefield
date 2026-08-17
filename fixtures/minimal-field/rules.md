@@ -1,4 +1,4 @@
-# Constants
+# Rules
 
 These constraints are inviolable for the minimal fixture.
 

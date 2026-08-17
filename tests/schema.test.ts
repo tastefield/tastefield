@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-  CompositionSchema,
+  MethodSchema,
   EvalsFileSchema,
   FieldSchema,
   SkillFrontmatterSchema,
@@ -28,7 +28,7 @@ describe("schemas", () => {
     ).toThrow();
   });
 
-  it("parses Field and Composition", () => {
+  it("parses Field and Method", () => {
     const field = FieldSchema.parse({
       name: "demo",
       id: "demo",
@@ -37,10 +37,10 @@ describe("schemas", () => {
     });
     expect(field.version).toBe("0.1.0");
 
-    const composition = CompositionSchema.parse({
+    const method = MethodSchema.parse({
       name: "demo",
       id: "demo",
-      description: "A demo composition outcome.",
+      description: "A demo method outcome.",
       skills: [
         {
           name: "reality-check",
@@ -49,8 +49,8 @@ describe("schemas", () => {
         },
       ],
     });
-    expect(composition.constants).toBe("constants.md");
-    expect(composition.skills[0]?.role).toBe("primary");
+    expect(method.rules).toBe("rules.md");
+    expect(method.skills[0]?.role).toBe("primary");
   });
 
   it("parses evals.json", () => {
@@ -60,7 +60,7 @@ describe("schemas", () => {
         {
           id: 1,
           prompt: "Check this",
-          expectations: ["Constants applied"],
+          expectations: ["Rules applied"],
         },
       ],
     });

@@ -1,9 +1,9 @@
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { resolveCompositionPath } from "../compose/index.js";
-import type { Composition, DiscoveredSkill } from "../schema/index.js";
+import { resolveMethodPath } from "../method/index.js";
+import type { Method, DiscoveredSkill } from "../schema/index.js";
 import {
-  loadComposition,
+  loadMethod,
   loadField,
   loadSkillFrontmatter,
 } from "../utils/fs.js";
@@ -58,16 +58,15 @@ export function doctorField(
 
   const field = loadField(fieldRoot);
 
-  if (!existsSync(join(fieldRoot, "constants.md"))) {
+  if (!existsSync(join(fieldRoot, "rules.md"))) {
     findings.push({
       severity: "error",
-      code: "missing-constants",
-      message: "constants.md is required",
-      path: join(fieldRoot, "constants.md"),
+      code: "missing-rules",
+      message: "rules.md is required",
+      path: join(fieldRoot, "rules.md"),
     });
   }
 
-  // Field skill refs
   for (const ref of field.skills) {
     const skillDir = join(fieldRoot, ref.path);
     const skillMd = existsSync(join(skillDir, "SKILL.md"))
@@ -83,7 +82,6 @@ export function doctorField(
     }
   }
 
-  // Duplicate names among discovered skills
   const byName = new Map<string, DiscoveredSkill[]>();
   for (const s of discovered) {
     const list = byName.get(s.name) ?? [];
@@ -100,7 +98,6 @@ export function doctorField(
     }
   }
 
-  // Overlapping triggers (description similarity)
   for (let i = 0; i < discovered.length; i++) {
     for (let j = i + 1; j < discovered.length; j++) {
       const a = discovered[i]!;
@@ -117,21 +114,19 @@ export function doctorField(
     }
   }
 
-  // Compositions
-  const compositionsDir = join(fieldRoot, "compositions");
-  if (existsSync(compositionsDir)) {
-    for (const file of readdirSync(compositionsDir)) {
+  const methodsDir = join(fieldRoot, "methods");
+  if (existsSync(methodsDir)) {
+    for (const file of readdirSync(methodsDir)) {
       if (!file.endsWith(".yaml") && !file.endsWith(".yml")) continue;
-      if (file.endsWith(".lock.json")) continue;
       try {
-        const composition = loadComposition(join(compositionsDir, file));
-        findings.push(...doctorComposition(fieldRoot, composition, file));
+        const method = loadMethod(join(methodsDir, file));
+        findings.push(...doctorMethod(fieldRoot, method, file));
       } catch (err) {
         findings.push({
           severity: "error",
-          code: "invalid-composition",
+          code: "invalid-method",
           message: `Failed to load ${file}: ${err instanceof Error ? err.message : String(err)}`,
-          path: join(compositionsDir, file),
+          path: join(methodsDir, file),
         });
       }
     }
@@ -141,29 +136,29 @@ export function doctorField(
   return { ok, findings };
 }
 
-export function doctorComposition(
+export function doctorMethod(
   fieldRoot: string,
-  composition: Composition,
+  method: Method,
   pathHint?: string,
 ): DoctorFinding[] {
   const findings: DoctorFinding[] = [];
-  const constantsPath = join(fieldRoot, composition.constants);
-  if (!existsSync(constantsPath)) {
+  const rulesPath = join(fieldRoot, method.rules);
+  if (!existsSync(rulesPath)) {
     findings.push({
       severity: "error",
-      code: "missing-constants",
-      message: `Composition "${composition.id}" constants missing: ${composition.constants}`,
+      code: "missing-rules",
+      message: `Method "${method.id}" rules missing: ${method.rules}`,
       path: pathHint,
     });
   }
 
   const names = new Set<string>();
-  for (const skill of composition.skills) {
+  for (const skill of method.skills) {
     if (names.has(skill.name)) {
       findings.push({
         severity: "error",
         code: "duplicate-responsibility",
-        message: `Composition "${composition.id}" lists skill "${skill.name}" more than once`,
+        message: `Method "${method.id}" lists skill "${skill.name}" more than once`,
         path: pathHint,
       });
     }
@@ -177,7 +172,7 @@ export function doctorComposition(
       findings.push({
         severity: "error",
         code: "broken-skill-ref",
-        message: `Composition "${composition.id}" skill "${skill.name}" missing at ${skill.path}`,
+        message: `Method "${method.id}" skill "${skill.name}" missing at ${skill.path}`,
         path: pathHint,
       });
     } else {
@@ -187,7 +182,7 @@ export function doctorComposition(
           findings.push({
             severity: "error",
             code: "name-mismatch",
-            message: `Composition declares "${skill.name}" but SKILL.md has "${fm.name}"`,
+            message: `Method declares "${skill.name}" but SKILL.md has "${fm.name}"`,
             path: skill.path,
           });
         }
@@ -202,7 +197,7 @@ export function doctorComposition(
     }
   }
 
-  for (const name of composition.precedence) {
+  for (const name of method.precedence) {
     if (!names.has(name)) {
       findings.push({
         severity: "error",
@@ -213,23 +208,22 @@ export function doctorComposition(
     }
   }
 
-  // Obvious contradiction heuristic: override role below a lower-precedence skill in list order
-  const overrideSkills = composition.skills.filter((s) => s.role === "override");
+  const overrideSkills = method.skills.filter((s) => s.role === "override");
   if (overrideSkills.length > 1) {
     findings.push({
       severity: "warning",
       code: "multiple-overrides",
-      message: `Composition "${composition.id}" has multiple override-role skills; declare explicit precedence`,
+      message: `Method "${method.id}" has multiple override-role skills; declare explicit precedence`,
       path: pathHint,
     });
   }
 
-  const evalsPath = join(fieldRoot, composition.evals);
+  const evalsPath = join(fieldRoot, method.evals);
   if (!existsSync(evalsPath)) {
     findings.push({
       severity: "warning",
       code: "missing-evals",
-      message: `Evals file missing: ${composition.evals}`,
+      message: `Evals file missing: ${method.evals}`,
       path: pathHint,
     });
   }
@@ -237,13 +231,13 @@ export function doctorComposition(
   return findings;
 }
 
-export function doctorCompositionByName(
+export function doctorMethodByName(
   fieldRoot: string,
   nameOrPath: string,
 ): DoctorReport {
-  const path = resolveCompositionPath(fieldRoot, nameOrPath);
-  const composition = loadComposition(path);
-  const findings = doctorComposition(fieldRoot, composition, path);
+  const path = resolveMethodPath(fieldRoot, nameOrPath);
+  const method = loadMethod(path);
+  const findings = doctorMethod(fieldRoot, method, path);
   return {
     ok: !findings.some((f) => f.severity === "error"),
     findings,

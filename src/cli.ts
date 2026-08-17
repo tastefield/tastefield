@@ -2,23 +2,20 @@
 import { existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { Command } from "commander";
-import { composeComposition, resolveCompositionPath } from "./compose/index.js";
 import { discoverSkills, formatSkillTable } from "./discover/index.js";
-import {
-  doctorField,
-  formatDoctorReport,
-} from "./doctor/index.js";
+import { doctorField, formatDoctorReport } from "./doctor/index.js";
 import {
   defaultExportDir,
-  exportComposition,
+  exportMethod,
   suggestInstallPath,
   type ExportTarget,
 } from "./export/index.js";
 import { addSkillRef, addSource, initField, readField } from "./field/index.js";
+import { lockMethod, resolveMethodPath } from "./method/index.js";
 import {
   listSkillResources,
-  loadComposition,
   loadEvals,
+  loadMethod,
   loadSkillFrontmatter,
   resolveFieldRoot,
 } from "./utils/fs.js";
@@ -54,13 +51,12 @@ program
 
 program
   .command("inspect")
-  .description("Inspect a Skill path, Field, or Composition")
-  .argument("<target>", "Path or Composition name")
-  .option("--field <path>", "Field root when inspecting a Composition name")
+  .description("Inspect a Skill path, Field, or Method")
+  .argument("<target>", "Path or Method name")
+  .option("--field <path>", "Field root when inspecting a Method by name")
   .action((target: string, opts: { field?: string }) => {
     const abs = resolve(process.cwd(), target);
 
-    // Skill directory or SKILL.md
     const skillMd = abs.endsWith(".md")
       ? abs
       : existsSync(join(abs, "SKILL.md"))
@@ -89,7 +85,6 @@ program
       return;
     }
 
-    // Field
     if (existsSync(join(abs, "field.yaml")) || abs.endsWith("field.yaml")) {
       const root = abs.endsWith("field.yaml") ? dirname(abs) : abs;
       const field = readField(root);
@@ -97,7 +92,6 @@ program
       return;
     }
 
-    // Composition by path or name within field
     try {
       const fieldRoot = opts.field
         ? resolveFieldRoot(process.cwd(), opts.field)
@@ -106,17 +100,17 @@ program
           : null;
       if (!fieldRoot) {
         throw new Error(
-          "Provide --field <dir> or run inside a Field to inspect a Composition by name",
+          "Provide --field <dir> or run inside a Field to inspect a Method by name",
         );
       }
-      const compositionPath = resolveCompositionPath(fieldRoot, target);
-      const composition = loadComposition(compositionPath);
+      const methodPath = resolveMethodPath(fieldRoot, target);
+      const method = loadMethod(methodPath);
       console.log(
         JSON.stringify(
           {
-            kind: "composition",
-            path: compositionPath,
-            ...composition,
+            kind: "method",
+            path: methodPath,
+            ...method,
           },
           null,
           2,
@@ -151,7 +145,9 @@ program
         force: opts.force,
       });
       console.log(`Initialized Field "${field.name}" at ${root}`);
-      console.log("Next: add Skills, edit constants.md, then tastefield compose <name>");
+      console.log(
+        "Next: add Skills, edit rules.md, then tastefield lock <method>",
+      );
     },
   );
 
@@ -210,22 +206,38 @@ program
   );
 
 program
-  .command("compose")
-  .description("Validate a Composition and lock participating Skill versions")
-  .argument("<name>", "Composition name or path")
+  .command("lock")
+  .description("Validate a Method and lock participating Skill versions")
+  .argument("<name>", "Method name or path")
   .option("--field <path>", "Field root", ".")
   .action((name: string, opts: { field: string }) => {
     try {
       const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-      const result = composeComposition(fieldRoot, name);
+      const result = lockMethod(fieldRoot, name);
       console.log(
-        `Composed "${result.composition.id}" — locked ${result.lock.skills.length} Skill(s)`,
+        `Locked Method "${result.method.id}" — ${result.lock.skills.length} Skill(s)`,
       );
       console.log(`Lockfile: ${result.lockPath}`);
     } catch (err) {
       console.error(err instanceof Error ? err.message : String(err));
       process.exitCode = 1;
     }
+  });
+
+// Back-compat alias for Composition-era CLI
+program
+  .command("compose", { hidden: true })
+  .description("Alias for lock (deprecated)")
+  .argument("<name>", "Method name or path")
+  .option("--field <path>", "Field root", ".")
+  .action((name: string, opts: { field: string }) => {
+    console.error("tastefield compose is deprecated; use tastefield lock");
+    const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
+    const result = lockMethod(fieldRoot, name);
+    console.log(
+      `Locked Method "${result.method.id}" — ${result.lock.skills.length} Skill(s)`,
+    );
+    console.log(`Lockfile: ${result.lockPath}`);
   });
 
 program
@@ -251,17 +263,17 @@ program
 
 program
   .command("test")
-  .description("Load and summarize Composition evals (runner stub in v0)")
-  .argument("[composition]", "Composition name", "starter")
+  .description("Load and summarize Method evals (runner stub in v0)")
+  .argument("[method]", "Method name", "starter")
   .option("--field <path>", "Field root", ".")
-  .action((compositionName: string, opts: { field: string }) => {
+  .action((methodName: string, opts: { field: string }) => {
     try {
       const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
-      const compositionPath = resolveCompositionPath(fieldRoot, compositionName);
-      const composition = loadComposition(compositionPath);
-      const evalsPath = join(fieldRoot, composition.evals);
+      const methodPath = resolveMethodPath(fieldRoot, methodName);
+      const method = loadMethod(methodPath);
+      const evalsPath = join(fieldRoot, method.evals);
       if (!existsSync(evalsPath)) {
-        console.error(`Evals not found: ${composition.evals}`);
+        console.error(`Evals not found: ${method.evals}`);
         process.exitCode = 1;
         return;
       }
@@ -286,8 +298,8 @@ program
 
 program
   .command("export")
-  .description("Export a Composition as a thin orchestrating Skill")
-  .argument("<composition>", "Composition name or path")
+  .description("Export a Method as a thin orchestrating Skill")
+  .argument("<method>", "Method name or path")
   .option("--field <path>", "Field root", ".")
   .option("-o, --out <dir>", "Output directory")
   .option(
@@ -297,30 +309,26 @@ program
   )
   .action(
     (
-      compositionName: string,
+      methodName: string,
       opts: { field: string; out?: string; target: string },
     ) => {
       try {
         const fieldRoot = resolveFieldRoot(process.cwd(), opts.field);
         const target = opts.target as ExportTarget;
-        const compositionPath = resolveCompositionPath(
-          fieldRoot,
-          compositionName,
-        );
-        const composition = loadComposition(compositionPath);
+        const methodPath = resolveMethodPath(fieldRoot, methodName);
+        const method = loadMethod(methodPath);
         const outDir =
-          opts.out ??
-          defaultExportDir(fieldRoot, composition.id, target);
-        const result = exportComposition({
+          opts.out ?? defaultExportDir(fieldRoot, method.id, target);
+        const result = exportMethod({
           fieldRoot,
-          composition: compositionName,
+          method: methodName,
           outDir,
           target,
         });
-        console.log(`Exported Composition Skill → ${result.outDir}`);
+        console.log(`Exported Method Skill → ${result.outDir}`);
         console.log(`Orchestrator: ${result.skillMdPath}`);
         console.log(
-          `Suggested install path: ${suggestInstallPath(composition.id, target)}`,
+          `Suggested install path: ${suggestInstallPath(method.id, target)}`,
         );
       } catch (err) {
         console.error(err instanceof Error ? err.message : String(err));

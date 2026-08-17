@@ -9,7 +9,7 @@ metadata:
 
 # Reality Check
 
-1. Read Field Constants first.
+1. Read Field Rules first.
 2. Extract factual claims from the draft.
 3. Match each claim to sources under `sources/`.
 4. Flag unsupported or contradicted claims.

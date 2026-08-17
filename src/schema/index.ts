@@ -38,7 +38,7 @@ export const FieldSchema = z.object({
 
 export type Field = z.infer<typeof FieldSchema>;
 
-export const CompositionSkillSchema = z.object({
+export const MethodSkillSchema = z.object({
   name: z.string().min(1),
   path: z.string().min(1),
   version: z.string().default("0.0.0"),
@@ -46,14 +46,16 @@ export const CompositionSkillSchema = z.object({
   role: z.enum(["primary", "supporting", "override"]).default("supporting"),
 });
 
-export const CompositionSchema = z.object({
+/** A Method is structured expertise—Skills, Rules, and knowledge—packaged into an executable workflow. */
+export const MethodSchema = z.object({
   name: z.string().min(1),
   id: z.string().min(1),
   version: z.string().default("0.1.0"),
   description: z.string().min(1),
-  skills: z.array(CompositionSkillSchema).default([]),
+  skills: z.array(MethodSkillSchema).default([]),
   precedence: z.array(z.string()).default([]),
-  constants: z.string().default("constants.md"),
+  /** Path to Rules (inviolable constraints). */
+  rules: z.string().default("rules.md"),
   sources: z.array(z.string()).default(["sources/**"]),
   examples: z
     .object({
@@ -64,10 +66,10 @@ export const CompositionSchema = z.object({
   evals: z.string().default("evals/evals.json"),
 });
 
-export type Composition = z.infer<typeof CompositionSchema>;
+export type Method = z.infer<typeof MethodSchema>;
 
-export const CompositionLockSchema = z.object({
-  composition: z.string(),
+export const MethodLockSchema = z.object({
+  method: z.string(),
   locked_at: z.string(),
   skills: z.array(
     z.object({
@@ -78,11 +80,11 @@ export const CompositionLockSchema = z.object({
       content_hash: z.string().optional(),
     }),
   ),
-  constants: z.string(),
-  constants_hash: z.string().optional(),
+  rules: z.string(),
+  rules_hash: z.string().optional(),
 });
 
-export type CompositionLock = z.infer<typeof CompositionLockSchema>;
+export type MethodLock = z.infer<typeof MethodLockSchema>;
 
 export const EvalCaseSchema = z.object({
   id: z.union([z.number(), z.string()]),

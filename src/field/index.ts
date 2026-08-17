@@ -32,7 +32,7 @@ export function initField(opts: InitFieldOptions): Field {
     "skills",
     "examples/accepted",
     "examples/rejected",
-    "compositions",
+    "methods",
     "evals",
   ];
   for (const d of dirs) {
@@ -44,43 +44,39 @@ export function initField(opts: InitFieldOptions): Field {
     name,
     id,
     version: "0.1.0",
-    description: "A Tastefield Field — creative world for Skills and Compositions.",
+    description: "A Tastefield Field — creative world for Skills and Methods.",
     skills: [],
     sources: [],
   };
 
   writeFileSync(join(root, "field.yaml"), writeYaml(field), "utf8");
 
-  const constantsSrc = join(tpl, "constants.md");
-  if (existsSync(constantsSrc)) {
-    cpSync(constantsSrc, join(root, "constants.md"));
+  const rulesSrc = join(tpl, "rules.md");
+  if (existsSync(rulesSrc)) {
+    cpSync(rulesSrc, join(root, "rules.md"));
   } else {
     writeFileSync(
-      join(root, "constants.md"),
-      "# Constants\n\nThese constraints are inviolable.\n",
+      join(root, "rules.md"),
+      "# Rules\n\nThese constraints are inviolable.\n",
       "utf8",
     );
   }
 
-  const compositionTpl = readFileSync(join(tpl, "composition.yaml"), "utf8")
-    .replaceAll("example-composition", "starter")
+  const methodTpl = readFileSync(join(tpl, "method.yaml"), "utf8")
+    .replaceAll("example-method", "starter")
     .replace(
-      "Outcome this Composition produces.",
-      "Starter Composition — replace with your outcome.",
+      "Outcome this Method produces.",
+      "Starter Method — replace with your outcome.",
     );
-  writeFileSync(join(root, "compositions", "starter.yaml"), compositionTpl, "utf8");
+  writeFileSync(join(root, "methods", "starter.yaml"), methodTpl, "utf8");
 
   const evalsTpl = readFileSync(join(tpl, "evals.json"), "utf8").replaceAll(
-    "example-composition",
+    "example-method",
     "starter",
   );
   writeFileSync(join(root, "evals", "evals.json"), evalsTpl, "utf8");
 
-  writeFileSync(
-    join(root, "sources", ".gitkeep"),
-    "",
-    "utf8",
-  );
+  writeFileSync(join(root, "sources", ".gitkeep"), "", "utf8");
   writeFileSync(join(root, "examples", "accepted", ".gitkeep"), "", "utf8");
   writeFileSync(join(root, "examples", "rejected", ".gitkeep"), "", "utf8");
   writeFileSync(

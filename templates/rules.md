@@ -1,6 +1,6 @@
-# Constants
+# Rules
 
-These constraints are inviolable. Every Skill and Composition in this Field must respect them.
+These constraints are inviolable. Every Skill and Method in this Field must respect them.
 
 ## Never violate
 

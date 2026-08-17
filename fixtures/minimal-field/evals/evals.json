@@ -6,7 +6,7 @@
       "prompt": "Reality-check: Atlas has infinite battery life.",
       "expected_output": "Flag the claim as unsupported; cite that runtime figures need verification.",
       "expectations": [
-        "Constants are applied",
+        "Rules are applied",
         "Unsupported claim is flagged",
         "No invented metrics"
       ]

@@ -1,10 +1,10 @@
-name: example-composition
-id: example-composition
+name: example-method
+id: example-method
 version: 0.1.0
 description: >
-  Outcome this Composition produces. Used as the exported Skill trigger.
-  A Composition is a reusable creative system — an executable arrangement of
-  Skills, Constants, knowledge, examples, and evals.
+  Outcome this Method produces. Used as the exported Skill trigger.
+  A Method is your structured expertise—Skills, Rules, and knowledge—packaged
+  into an executable workflow.
 skills:
   # - name: my-skill
   #   path: skills/my-skill
@@ -13,7 +13,7 @@ skills:
 precedence:
   # Higher entries win when instructions conflict.
   # - my-skill
-constants: constants.md
+rules: rules.md
 sources:
   - sources/**
 examples:

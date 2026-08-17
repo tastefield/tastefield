@@ -1,14 +1,14 @@
 import { cpSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
-import { resolveCompositionPath } from "../compose/index.js";
-import type { Composition } from "../schema/index.js";
-import { loadComposition, readText } from "../utils/fs.js";
+import { resolveMethodPath } from "../method/index.js";
+import type { Method } from "../schema/index.js";
+import { loadMethod, readText } from "../utils/fs.js";
 
 export type ExportTarget = "cursor" | "codex" | "claude" | "generic";
 
 export interface ExportOptions {
   fieldRoot: string;
-  composition: string;
+  method: string;
   outDir: string;
   target?: ExportTarget;
 }
@@ -16,33 +16,31 @@ export interface ExportOptions {
 export interface ExportResult {
   outDir: string;
   skillMdPath: string;
-  composition: Composition;
+  method: Method;
 }
 
-function orderedSkills(composition: Composition): Composition["skills"] {
-  if (composition.precedence.length === 0) {
-    // Overrides first, then primary, then supporting
+function orderedSkills(method: Method): Method["skills"] {
+  if (method.precedence.length === 0) {
     const rank = { override: 0, primary: 1, supporting: 2 } as const;
-    return [...composition.skills].sort(
+    return [...method.skills].sort(
       (a, b) => rank[a.role] - rank[b.role] || a.name.localeCompare(b.name),
     );
   }
-  const byName = new Map(composition.skills.map((s) => [s.name, s]));
-  const ordered: Composition["skills"] = [];
-  for (const name of composition.precedence) {
+  const byName = new Map(method.skills.map((s) => [s.name, s]));
+  const ordered: Method["skills"] = [];
+  for (const name of method.precedence) {
     const skill = byName.get(name);
     if (skill) ordered.push(skill);
   }
-  for (const skill of composition.skills) {
-    if (!composition.precedence.includes(skill.name)) ordered.push(skill);
+  for (const skill of method.skills) {
+    if (!method.precedence.includes(skill.name)) ordered.push(skill);
   }
   return ordered;
 }
 
 function buildOrchestratorMarkdown(
-  composition: Composition,
-  fieldRoot: string,
-  relativeConstants: string,
+  method: Method,
+  relativeRules: string,
   skillEntries: Array<{
     name: string;
     role: string;
@@ -65,29 +63,29 @@ function buildOrchestratorMarkdown(
       : `This Skill was exported by Tastefield for **${target}**.`;
 
   return `---
-name: ${composition.id}
-description: ${composition.description.trim().replace(/\n+/g, " ")}
+name: ${method.id}
+description: ${method.description.trim().replace(/\n+/g, " ")}
 metadata:
   tastefield:
-    kind: composition
-    composition_id: ${composition.id}
-    composition_version: "${composition.version}"
+    kind: method
+    method_id: ${method.id}
+    method_version: "${method.version}"
     target: ${target}
 ---
 
-# ${composition.name}
+# ${method.name}
 
 ${targetNote}
 
-A **Composition** is a reusable creative system: an executable arrangement of Skills, Constants, knowledge, examples, and evals. Do **not** treat this file as a finished artifact — follow the load order below.
+A **Method** is your structured expertise—Skills, Rules, and knowledge—packaged into an executable workflow. Follow the load order below.
 
 ## Progressive load order
 
-1. Read Constants first: \`${relativeConstants}\`
+1. Read Rules first: \`${relativeRules}\`
 2. Load subordinate Skills in precedence order (do not invent merged instructions):
 ${skillList || "   _(no subordinate Skills declared)_"}
 3. When needed, consult Field sources and examples listed under \`references/\`.
-4. Respect Constants over any Skill when instructions conflict. Higher precedence Skills override lower ones only where Constants are silent.
+4. Respect Rules over any Skill when instructions conflict. Higher precedence Skills override lower ones only where Rules are silent.
 
 ## Operating rules
 
@@ -96,9 +94,9 @@ ${skillList || "   _(no subordinate Skills declared)_"}
 - Load \`references/\` material on demand — not all at once.
 - If a claim requires evidence, use Field sources before improvising.
 
-## Constants (summary pointer)
+## Rules (summary pointer)
 
-Full Constants live at \`${relativeConstants}\`. Treat them as inviolable.
+Full Rules live at \`${relativeRules}\`. Treat them as inviolable.
 
 ## Subordinate Skills
 
@@ -119,34 +117,31 @@ See \`references/field-map.md\` for source and example globs from the originatin
 `;
 }
 
-function buildFieldMap(composition: Composition): string {
+function buildFieldMap(method: Method): string {
   return `# Field map
 
-This Composition was exported from a Tastefield Field.
+This Method was exported from a Tastefield Field.
 
 ## Sources
 
-${composition.sources.map((s) => `- \`${s}\``).join("\n") || "- _(none)_"}
+${method.sources.map((s) => `- \`${s}\``).join("\n") || "- _(none)_"}
 
 ## Examples
 
-- Accepted: \`${composition.examples.accepted}\`
-- Rejected: \`${composition.examples.rejected}\`
+- Accepted: \`${method.examples.accepted}\`
+- Rejected: \`${method.examples.rejected}\`
 
 ## Evals
 
-- \`${composition.evals}\`
+- \`${method.evals}\`
 
 Load these paths from the Field root when evaluating or grounding output. Prefer accepted examples as positive style references; treat rejected examples as anti-patterns.
 `;
 }
 
-export function exportComposition(opts: ExportOptions): ExportResult {
-  const compositionPath = resolveCompositionPath(
-    opts.fieldRoot,
-    opts.composition,
-  );
-  const composition = loadComposition(compositionPath);
+export function exportMethod(opts: ExportOptions): ExportResult {
+  const methodPath = resolveMethodPath(opts.fieldRoot, opts.method);
+  const method = loadMethod(methodPath);
   const target = opts.target ?? "generic";
   const outDir = opts.outDir;
 
@@ -154,13 +149,12 @@ export function exportComposition(opts: ExportOptions): ExportResult {
   mkdirSync(join(outDir, "references"), { recursive: true });
   mkdirSync(join(outDir, "skills"), { recursive: true });
 
-  // Copy constants into references
-  const constantsSrc = join(opts.fieldRoot, composition.constants);
-  if (!existsSync(constantsSrc)) {
-    throw new Error(`Constants missing: ${composition.constants}`);
+  const rulesSrc = join(opts.fieldRoot, method.rules);
+  if (!existsSync(rulesSrc)) {
+    throw new Error(`Rules missing: ${method.rules}`);
   }
-  const constantsDest = join(outDir, "references", "constants.md");
-  writeFileSync(constantsDest, readText(constantsSrc), "utf8");
+  const rulesDest = join(outDir, "references", "rules.md");
+  writeFileSync(rulesDest, readText(rulesSrc), "utf8");
 
   const skillEntries: Array<{
     name: string;
@@ -170,7 +164,7 @@ export function exportComposition(opts: ExportOptions): ExportResult {
     relativeDir: string;
   }> = [];
 
-  for (const skill of orderedSkills(composition)) {
+  for (const skill of orderedSkills(method)) {
     const skillDir = join(opts.fieldRoot, skill.path);
     const skillMdName = existsSync(join(skillDir, "SKILL.md"))
       ? "SKILL.md"
@@ -182,7 +176,6 @@ export function exportComposition(opts: ExportOptions): ExportResult {
 
     const destDir = join(outDir, "skills", skill.name);
     mkdirSync(destDir, { recursive: true });
-    // Copy the skill folder shallowly (SKILL.md + optional resource dirs)
     cpSync(skillDir, destDir, { recursive: true });
 
     const relativeDir = join("skills", skill.name);
@@ -197,12 +190,11 @@ export function exportComposition(opts: ExportOptions): ExportResult {
 
   writeFileSync(
     join(outDir, "references", "field-map.md"),
-    buildFieldMap(composition),
+    buildFieldMap(method),
     "utf8",
   );
 
-  // Optionally copy evals for portability
-  const evalsSrc = join(opts.fieldRoot, composition.evals);
+  const evalsSrc = join(opts.fieldRoot, method.evals);
   if (existsSync(evalsSrc)) {
     mkdirSync(join(outDir, "evals"), { recursive: true });
     writeFileSync(
@@ -213,22 +205,20 @@ export function exportComposition(opts: ExportOptions): ExportResult {
   }
 
   const skillMdBody = buildOrchestratorMarkdown(
-    composition,
-    opts.fieldRoot,
-    "references/constants.md",
+    method,
+    "references/rules.md",
     skillEntries,
     target,
   );
   const skillMdPath = join(outDir, "SKILL.md");
   writeFileSync(skillMdPath, skillMdBody, "utf8");
 
-  // Manifest for Tastefield re-import / debugging
   writeFileSync(
     join(outDir, "tastefield.export.json"),
     JSON.stringify(
       {
-        composition_id: composition.id,
-        composition_version: composition.version,
+        method_id: method.id,
+        method_version: method.version,
         target,
         exported_at: new Date().toISOString(),
         field_root: relative(outDir, opts.fieldRoot),
@@ -245,33 +235,33 @@ export function exportComposition(opts: ExportOptions): ExportResult {
     "utf8",
   );
 
-  return { outDir, skillMdPath, composition };
+  return { outDir, skillMdPath, method };
 }
 
 export function defaultExportDir(
   fieldRoot: string,
-  compositionId: string,
+  methodId: string,
   target: ExportTarget,
 ): string {
-  return join(fieldRoot, "exports", `${compositionId}-${target}`);
+  return join(fieldRoot, "exports", `${methodId}-${target}`);
 }
 
 export function suggestInstallPath(
-  compositionId: string,
+  methodId: string,
   target: ExportTarget,
 ): string {
   switch (target) {
     case "cursor":
-      return join(".cursor", "skills", compositionId);
+      return join(".cursor", "skills", methodId);
     case "claude":
-      return join(".claude", "skills", compositionId);
+      return join(".claude", "skills", methodId);
     case "codex":
-      return join(".codex", "skills", compositionId);
+      return join(".codex", "skills", methodId);
     default:
-      return join("skills", compositionId);
+      return join("skills", methodId);
   }
 }
 
 export function exportLabel(outDir: string): string {
-  return `Exported Composition Skill → ${outDir} (${basename(outDir)})`;
+  return `Exported Method Skill → ${outDir} (${basename(outDir)})`;
 }
