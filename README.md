@@ -33,16 +33,20 @@ npm run tastefield -- --help
 
 ### Install the `tastefield` command
 
-From GitHub (builds on install):
+From GitHub (pack, then install — most reliable with current npm):
 
 ```bash
-npm install -g github:ashergodfrey11/tastefield
+npm pack github:ashergodfrey11/tastefield
+npm install -g ./tastefield-0.1.0.tgz
 ```
 
 Or from a local clone:
 
 ```bash
-npm install -g /path/to/tastefield
+git clone https://github.com/ashergodfrey11/tastefield.git
+cd tastefield
+npm install
+npm install -g .
 ```
 
 If that fails with `EACCES`, your Node was installed into a root-owned prefix
