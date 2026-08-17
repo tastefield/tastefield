@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "generatedAt": "2026-08-13T02:02:29.266Z",
+  "stack": {
+    "tailwind": "v4",
+    "hasShadcn": true,
+    "framework": "next",
+    "alias": "@/"
+  },
+  "components": [
+    {
+      "name": "Button",
+      "importPath": "@/components/ui/button",
+      "exportKind": "named",
+      "variants": {
+        "variant": [
+          "default",
+          "secondary",
+          "ghost",
+          "destructive"
+        ],
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "defaults": {
+        "variant": "default",
+        "size": "md"
+      },
+      "source": "src/components/ui/button.tsx"
+    },
+    {
+      "name": "Card",
+      "importPath": "@/components/ui/card",
+      "exportKind": "named",
+      "variants": {
+        "elevation": [
+          "flat",
+          "raised"
+        ]
+      },
+      "defaults": {
+        "elevation": "flat"
+      },
+      "source": "src/components/ui/card.tsx"
+    },
+    {
+      "name": "CardHeader",
+      "importPath": "@/components/ui/card",
+      "exportKind": "named",
+      "variants": {},
+      "defaults": {},
+      "source": "src/components/ui/card.tsx"
+    },
+    {
+      "name": "CardFooter",
+      "importPath": "@/components/ui/card",
+      "exportKind": "named",
+      "variants": {},
+      "defaults": {},
+      "source": "src/components/ui/card.tsx"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+import { createHash } from "node:crypto";
+import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
+import path from "node:path";
+import type { Momentum, RankedSkill } from "./momentum.js";
+import type { RelevanceScore } from "./discover.js";
+
+/**
+ * Versioned snapshots of the design-relevant slice of the registry.
+ *
+ * Design constraints that drove this:
+ *
+ * 1. The registry moves fast. Two leaderboard reads minutes apart reported
+ *    1,176,382 and 1,168,046 total skills — thousands of skills of drift inside
+ *    one session. So a snapshot is a point-in-time observation, never "the truth",
+ *    and every record carries the timestamp it was taken at.
+ *
+ * 2. Install counts are cumulative and monotonic in principle but jitter in
+ *    practice (dedup, recounts). Diffs report movement; they don't assert causes.
+ *
+ * 3. Snapshots are immutable files in git. The diff between two snapshots is the
+ *    reviewable artifact — that's what makes a 3-day cron safe to run.
+ */
+
+export interface SnapshotEntry {
+  id: string;
+  slug: string;
+  name: string;
+  source: string;
+  url: string;
+  installs: number;
+  allTimeRank: number | null;
+  trendingRank: number | null;
+  hotRank: number | null;
+  relevance: RelevanceScore;
+  momentum: Momentum;
+}
+
+export interface Snapshot {
+  /** Date-ordered, collision-safe: 2026-08-13.1 */
+  version: string;
+  takenAt: string;
+  /** Total skills the registry reported at capture time. */
+  registryTotal: number | null;
+  /** How deep the all-time sweep went. */
+  sweepDepth: number;
+  /** SHA-256 over the entry set — identical hash means a no-op run. */
+  contentHash: string;
+  entries: SnapshotEntry[];
+}
+
+export interface SnapshotDiff {
+  from: string | null;
+  to: string;
+  added: SnapshotEntry[];
+  removed: SnapshotEntry[];
+  /** Entries whose momentum state changed, e.g. steady -> rising. */
+  momentumChanged: Array<{ entry: SnapshotEntry; was: string; now: string }>;
+  /** Biggest install gains since the previous snapshot. */
+  topGainers: Array<{ entry: SnapshotEntry; delta: number; growthPct: number | null }>;
+  /** Entries that lost installs — usually a recount, occasionally a delisting. */
+  decliners: Array<{ entry: SnapshotEntry; delta: number }>;
+  /** True when nothing changed and the run can be discarded. */
+  noop: boolean;
+}
+
+/**
+ * Hash the parts of an entry that represent real content, deliberately
+ * excluding rank and momentum. Ranks churn constantly; hashing them would make
+ * every run look like a change and defeat no-op detection.
+ */
+export function hashEntries(entries: SnapshotEntry[]): string {
+  const stable = entries
+    .map((e) => `${e.id}:${e.installs}:${e.relevance.verdict}`)
+    .sort()
+    .join("\n");
+  return createHash("sha256").update(stable).digest("hex");
+}
+
+export function buildSnapshot(
+  skills: Array<RankedSkill & { relevance: RelevanceScore; momentum: Momentum }>,
+  options: { registryTotal?: number | null; sweepDepth: number; existingVersions?: string[] }
+): Snapshot {
+  const entries: SnapshotEntry[] = skills.map((s) => ({
+    id: s.id,
+    slug: s.slug,
+    name: s.name,
+    source: s.source,
+    url: s.url,
+    installs: s.installs,
+    allTimeRank: s.allTimeRank,
+    trendingRank: s.trendingRank,
+    hotRank: s.hotRank,
+    relevance: s.relevance,
+    momentum: s.momentum,
+  }));
+
+  const takenAt = new Date().toISOString();
+  const day = takenAt.slice(0, 10);
+
+  // Multiple runs on one day get .1, .2, … so versions stay unique and sortable.
+  const sameDay = (options.existingVersions ?? []).filter((v) => v.startsWith(day));
+  const version = `${day}.${sameDay.length + 1}`;
+
+  return {
+    version,
+    takenAt,
+    registryTotal: options.registryTotal ?? null,
+    sweepDepth: options.sweepDepth,
+    contentHash: hashEntries(entries),
+    entries,
+  };
+}
+
+export function diffSnapshots(
+  previous: Snapshot | null,
+  current: Snapshot
+): SnapshotDiff {
+  if (!previous) {
+    return {
+      from: null,
+      to: current.version,
+      added: current.entries,
+      removed: [],
+      momentumChanged: [],
+      topGainers: [],
+      decliners: [],
+      noop: false,
+    };
+  }
+
+  const prevById = new Map(previous.entries.map((e) => [e.id, e]));
+  const currById = new Map(current.entries.map((e) => [e.id, e]));
+
+  const added = current.entries.filter((e) => !prevById.has(e.id));
+  const removed = previous.entries.filter((e) => !currById.has(e.id));
+
+  const momentumChanged: SnapshotDiff["momentumChanged"] = [];
+  const gains: SnapshotDiff["topGainers"] = [];
+  const decliners: SnapshotDiff["decliners"] = [];
+
+  for (const entry of current.entries) {
+    const before = prevById.get(entry.id);
+    if (!before) continue;
+
+    if (before.momentum.state !== entry.momentum.state) {
+      momentumChanged.push({
+        entry,
+        was: before.momentum.state,
+        now: entry.momentum.state,
+      });
+    }
+
+    const delta = entry.installs - before.installs;
+    if (delta > 0) {
+      gains.push({
+        entry,
+        delta,
+        growthPct:
+          before.installs > 0
+            ? Number(((delta / before.installs) * 100).toFixed(2))
+            : null,
+      });
+    } else if (delta < 0) {
+      decliners.push({ entry, delta });
+    }
+  }
+
+  gains.sort((a, b) => b.delta - a.delta);
+  decliners.sort((a, b) => a.delta - b.delta);
+
+  return {
+    from: previous.version,
+    to: current.version,
+    added,
+    removed,
+    momentumChanged,
+    topGainers: gains.slice(0, 25),
+    decliners: decliners.slice(0, 25),
+    noop: previous.contentHash === current.contentHash,
+  };
+}
+
+const SNAPSHOT_DIR = "registry/snapshots";
+
+export async function listSnapshotVersions(root: string): Promise<string[]> {
+  try {
+    const files = await readdir(path.join(root, SNAPSHOT_DIR));
+    return files
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(/\.json$/, ""))
+      .sort();
+  } catch {
+    return [];
+  }
+}
+
+export async function loadLatestSnapshot(root: string): Promise<Snapshot | null> {
+  const versions = await listSnapshotVersions(root);
+  const latest = versions.at(-1);
+  if (!latest) return null;
+
+  try {
+    const raw = await readFile(
+      path.join(root, SNAPSHOT_DIR, `${latest}.json`),
+      "utf8"
+    );
+    return JSON.parse(raw) as Snapshot;
+  } catch {
+    return null;
+  }
+}
+
+export async function writeSnapshot(
+  root: string,
+  snapshot: Snapshot
+): Promise<string> {
+  const dir = path.join(root, SNAPSHOT_DIR);
+  await mkdir(dir, { recursive: true });
+
+  const file = path.join(dir, `${snapshot.version}.json`);
+  await writeFile(file, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
+
+  // latest.json is what the web app reads, so it never has to sort filenames.
+  await writeFile(
+    path.join(root, "registry", "latest.json"),
+    `${JSON.stringify(snapshot, null, 2)}\n`,
+    "utf8"
+  );
+
+  return file;
+}
+
+/** Render a diff as the body of a review PR. */
+export function renderChangelog(diff: SnapshotDiff, snapshot: Snapshot): string {
+  const lines: string[] = [];
+
+  lines.push(`# Registry snapshot ${diff.to}`);
+  lines.push("");
+  lines.push(
+    `Taken ${snapshot.takenAt} · swept top ${snapshot.sweepDepth.toLocaleString()} ` +
+      `${snapshot.registryTotal ? `of ${snapshot.registryTotal.toLocaleString()} total` : ""}`
+  );
+  lines.push("");
+
+  if (diff.noop) {
+    lines.push("**No content changes.** Identical hash to the previous snapshot.");
+    return lines.join("\n");
+  }
+
+  lines.push(
+    `${diff.added.length} added · ${diff.removed.length} removed · ` +
+      `${diff.momentumChanged.length} momentum changes`
+  );
+  lines.push("");
+
+  if (diff.added.length) {
+    lines.push("## New candidates");
+    lines.push("");
+    lines.push("| Skill | Source | Installs | Score | Momentum |");
+    lines.push("| --- | --- | ---: | ---: | --- |");
+    for (const e of diff.added.slice(0, 40)) {
+      lines.push(
+        `| [${e.slug}](${e.url}) | \`${e.source}\` | ${e.installs.toLocaleString()} | ${e.relevance.score} | ${e.momentum.state} |`
+      );
+    }
+    if (diff.added.length > 40) {
+      lines.push("");
+      lines.push(`_…and ${diff.added.length - 40} more._`);
+    }
+    lines.push("");
+  }
+
+  if (diff.momentumChanged.length) {
+    lines.push("## Momentum changes");
+    lines.push("");
+    for (const m of diff.momentumChanged.slice(0, 25)) {
+      lines.push(`- **${m.entry.slug}** ${m.was} → ${m.now}`);
+    }
+    lines.push("");
+  }
+
+  if (diff.topGainers.length) {
+    lines.push("## Top gainers");
+    lines.push("");
+    for (const g of diff.topGainers.slice(0, 15)) {
+      lines.push(
+        `- **${g.entry.slug}** +${g.delta.toLocaleString()}${g.growthPct != null ? ` (+${g.growthPct}%)` : ""}`
+      );
+    }
+    lines.push("");
+  }
+
+  if (diff.removed.length) {
+    lines.push("## Dropped out of the window");
+    lines.push("");
+    lines.push(
+      "_Falling out of the top-N sweep is not the same as being delisted._"
+    );
+    lines.push("");
+    for (const e of diff.removed.slice(0, 20)) {
+      lines.push(`- ${e.slug} (\`${e.source}\`)`);
+    }
+    lines.push("");
+  }
+
+  if (diff.decliners.length) {
+    lines.push("## Install count decreases");
+    lines.push("");
+    lines.push("_Usually a dedup or recount upstream, occasionally a delisting._");
+    lines.push("");
+    for (const d of diff.decliners.slice(0, 10)) {
+      lines.push(`- ${d.entry.slug} ${d.delta.toLocaleString()}`);
+    }
+    lines.push("");
+  }
+
+  lines.push("---");
+  lines.push("");
+  lines.push(
+    "Curation is **not** automatic. This PR updates the observed snapshot only. " +
+      "Category, status, rationale and recipe membership are assigned by hand before " +
+      "anything reaches the published index."
+  );
+
+  return lines.join("\n");
+}

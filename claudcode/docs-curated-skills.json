@@ -1,0 +1,770 @@
+{
+  "generatedAt": "2026-08-13T03:04:53.586Z",
+  "source": "https://www.skills.sh/topic/design",
+  "seedVerifiedAt": "2026-08-12",
+  "installsHydrated": 0,
+  "installsNote": "null means the count was not verified. Render as an em dash, never as 0.",
+  "categories": [
+    "boundary",
+    "motion",
+    "process",
+    "structure"
+  ],
+  "recipes": [
+    {
+      "name": "tastefield/bold-marketing",
+      "skillCount": 2,
+      "skills": [
+        "bolder",
+        "delight"
+      ]
+    },
+    {
+      "name": "tastefield/editorial-minimal",
+      "skillCount": 3,
+      "skills": [
+        "high-end-visual-design",
+        "distill",
+        "quieter"
+      ]
+    },
+    {
+      "name": "tastefield/enterprise-saas",
+      "skillCount": 2,
+      "skills": [
+        "web-design-guidelines",
+        "vercel-composition-patterns"
+      ]
+    },
+    {
+      "name": "tastefield/frontend-baseline",
+      "skillCount": 3,
+      "skills": [
+        "frontend-design",
+        "web-design-guidelines",
+        "polish"
+      ]
+    },
+    {
+      "name": "tastefield/review-pass",
+      "skillCount": 1,
+      "skills": [
+        "critique"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "anthropics/skills/frontend-design",
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/frontend-design",
+      "installUrl": "https://github.com/anthropics/skills",
+      "githubUrl": "https://github.com/anthropics/skills",
+      "installs": 770700,
+      "githubStars": 168500,
+      "firstSeen": "2026-01-19",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
+      "officialSummary": "Distinctive, production-grade frontend interfaces that reject generic AI aesthetics through intentional design choices.",
+      "summaryBullets": [
+        "Guides aesthetic direction selection (brutalist, maximalist, retro-futuristic, luxury, organic, etc.) before implementation to ensure cohesive, memorable designs",
+        "Emphasizes typography, color theming with CSS variables, motion design, spatial composition, and textural details as core design pillars",
+        "Generates working code (HTML/CSS/JS, React, Vue) that matches implementation complexity to the aesthetic vision, from refined minimalism to elaborate maximalism",
+        "Explicitly avoids overused fonts, clichéd color schemes, and predictable layouts that characterize generic AI-generated interfaces"
+      ],
+      "skillMdExcerpt": "Approach this as the design lead at a small studio known for giving every client a visual identity that could not be mistaken for anyone else's. This client has already rejected proposals that felt templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take one real aesthetic risk you can justify.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "structure",
+      "status": "recommended",
+      "rationale": "Highest-install design skill in the registry and a clean audit sweep. Its explicit goal — reject generic AI aesthetics — is the same problem Tastefield solves, but stated as guidance rather than enforced. Bundle it as the floor, then enforce on top.",
+      "recipes": [
+        "tastefield/frontend-baseline"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "vercel-labs/agent-skills/web-design-guidelines",
+      "slug": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines",
+      "installUrl": "https://github.com/vercel-labs/agent-skills",
+      "githubUrl": "https://github.com/vercel-labs/agent-skills",
+      "installs": 535200,
+      "githubStars": 29900,
+      "firstSeen": "2026-01-19",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines",
+      "officialSummary": "Audit UI code against Vercel's Web Interface Guidelines for design and accessibility compliance.",
+      "summaryBullets": [
+        "Fetches the latest guidelines from a remote source before each review, ensuring rules stay current",
+        "Accepts file paths or patterns as arguments; prompts for files if none provided",
+        "Outputs findings in a terse `file:line` format for quick scanning and remediation",
+        "Covers design, accessibility, and UX best practices as defined in the guidelines repository"
+      ],
+      "skillMdExcerpt": "Review files for compliance with Web Interface Guidelines.\n\n1. Fetch the latest guidelines from the source URL below\n2. Read the specified files (or prompt user for files/pattern)\n3. Check against all rules in the fetched guidelines\n4. Output findings in the terse `file:line` format",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "warn"
+        },
+        {
+          "provider": "Snyk",
+          "status": "warn"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "The closest external analogue to Tastefield's own check command — it emits file:line findings. Difference worth stating plainly: it fetches guidelines over the network on every run, where Tastefield compiles rules from your repo and serves them locally. The two Socket/Snyk warnings likely trace to that remote fetch.",
+      "recipes": [
+        "tastefield/frontend-baseline",
+        "tastefield/enterprise-saas"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "leonxlnx/taste-skill/design-taste-frontend",
+      "slug": "design-taste-frontend",
+      "name": "design-taste-frontend",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend",
+      "installUrl": "https://github.com/leonxlnx/taste-skill",
+      "githubUrl": "https://github.com/leonxlnx/taste-skill",
+      "installs": 350400,
+      "githubStars": 75400,
+      "firstSeen": "2026-02-21",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/leonxlnx/taste-skill --skill design-taste-frontend",
+      "officialSummary": "Concise, distinctive landing pages and portfolios that avoid templated AI aesthetics.",
+      "summaryBullets": [
+        "Reads the design brief first to infer the right aesthetic direction (SaaS minimalist, agency experimental, premium consumer, etc.) before touching code, preventing default AI patterns",
+        "Configures three core dials—design variance, motion intensity, and visual density—that drive layout, animation, and spacing decisions throughout the page",
+        "Enforces strict anti-patterns: bans em-dashes, generic serif fonts, beige+brass premium palettes, three-equal-feature-cards, and other LLM tells; audits every visible string for AI hallucination",
+        "Implements real design systems (Material, Carbon, Fluent, Polaris, Primer, GOV.UK) when applicable; otherwise builds with Tailwind, Motion, and GSAP for custom aesthetics",
+        "Requires a mandatory pre-flight checklist covering contrast, button wrapping, hero fit, color consistency, motion justification, and 50+ other production-readiness gates before shipping"
+      ],
+      "skillMdExcerpt": "# tasteskill: Anti-Slop Frontend Skill\n> Landing pages, portfolios, and redesigns. Not dashboards, not data tables, not multi-step product UI.\n> Every rule below is **contextual**. None of it fires automatically. First read the brief, then pull only what fits.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "watch",
+      "rationale": "The most direct competitor in the set: same anti-slop thesis, same 'taste' naming, 350K installs. Critically, it already ships three named dials — design variance, motion intensity, visual density — as prose settings the model reads. That validates the parametric tweaker concept and shows the gap: their dials are text an LLM interprets, ours would be numbers that compile. Not bundled; carried so the comparison is deliberate.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+      "slug": "ui-ux-pro-max",
+      "name": "ui-ux-pro-max",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+      "installUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "githubUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "installs": 312200,
+      "githubStars": 115700,
+      "firstSeen": "2026-01-19",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max",
+      "officialSummary": "Comprehensive design intelligence for web and mobile UI/UX across 10 technology stacks.",
+      "summaryBullets": [
+        "Includes 50+ design styles, 161 color palettes, 57 font pairings, and 99 UX guidelines with priority-ranked rules for accessibility, touch interaction, performance, and responsive layout",
+        "Searchable database with design-system generation that recommends patterns, colors, typography, and effects based on product type and keywords; supports light/dark mode and platform-specific guidance (iOS HIG, Material Design, React Native)",
+        "Covers 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS) with implementation-specific best practices and performance optimization rules",
+        "Provides 25 chart types, 161 product type patterns, and pre-built templates for websites, landing pages, dashboards, admin panels, e-commerce, SaaS, portfolios, blogs, and mobile apps with component libraries"
+      ],
+      "skillMdExcerpt": "Searchable database of UI/UX design rules with priority-based recommendations: 84 styles, 192 color palettes, 74 font pairings, 192 product types with reasoning rules, 98 UX guidelines, 104 icon entries, 16 GSAP motion presets, and 25 chart types across 22 technology stacks.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "fail"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "structure",
+      "status": "flagged",
+      "rationale": "FAILS the Gen Agent Trust Hub audit — the only outright fail in the design topic. Pulled from tastefield/enterprise-saas until the cause is understood. Also note its own SKILL.md contradicts its listing (84 styles / 192 palettes / 22 stacks vs 50+ / 161 / 10), which is a maintenance signal regardless of the audit.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-composition-patterns",
+      "slug": "vercel-composition-patterns",
+      "name": "vercel-composition-patterns",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-composition-patterns",
+      "installUrl": "https://github.com/vercel-labs/agent-skills",
+      "githubUrl": "https://github.com/vercel-labs/agent-skills",
+      "installs": 286200,
+      "githubStars": 29900,
+      "firstSeen": "2026-01-26",
+      "topics": [
+        "React",
+        "Next.js",
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns",
+      "officialSummary": "React composition patterns for scaling components and avoiding boolean prop proliferation.",
+      "summaryBullets": [
+        "Covers four priority categories: component architecture, state management, implementation patterns, and React 19 APIs, each with specific rules and code examples",
+        "Includes 10+ named patterns addressing compound components, context providers, state lifting, and explicit variants",
+        "Designed for refactoring bloated components, building reusable libraries, and reviewing component architecture decisions",
+        "React 19 specific guidance on removing `forwardRef` and using `use()` instead of `useContext()`"
+      ],
+      "skillMdExcerpt": "Composition patterns for building flexible, maintainable React components. Avoid boolean prop proliferation by using compound components, lifting state, and composing internals. These patterns make codebases easier for both humans and AI agents to work with as they scale.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "structure",
+      "status": "recommended",
+      "rationale": "Explicitly favours explicit variants over boolean props — which is exactly the shape our cva scanner reads. A codebase following this skill produces cleaner component contracts, so the two compound rather than overlap.",
+      "recipes": [
+        "tastefield/enterprise-saas"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "leonxlnx/taste-skill/high-end-visual-design",
+      "slug": "high-end-visual-design",
+      "name": "high-end-visual-design",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/high-end-visual-design",
+      "installUrl": "https://github.com/leonxlnx/taste-skill",
+      "githubUrl": "https://github.com/leonxlnx/taste-skill",
+      "installs": 266700,
+      "githubStars": 75400,
+      "firstSeen": "2026-03-15",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/leonxlnx/taste-skill --skill high-end-visual-design",
+      "officialSummary": "Premium design system enforcing high-end agency aesthetics with strict anti-patterns and motion choreography.",
+      "summaryBullets": [
+        "Bans generic fonts (Inter, Roboto, Helvetica) and default icons in favor of premium typefaces (Geist, Clash Display) and ultra-light icon sets (Phosphor Light)",
+        "Enforces nested \"Double-Bezel\" card architecture, massive whitespace (`py-24`–`py-40`), and custom cubic-bezier motion curves instead of linear transitions",
+        "Includes three vibe archetypes (Ethereal Glass, Editorial Luxury, Soft Structuralism) and three layout patterns (Asymmetrical Bento, Z-Axis Cascade, Editorial Split) to ensure design variance across outputs",
+        "Mandates mobile-first responsive collapse below `768px`, GPU-safe animations (transform/opacity only), and staggered scroll-reveal entry animations via IntersectionObserver"
+      ],
+      "skillMdExcerpt": "**Persona:** `Vanguard_UI_Architect`\n**Objective:** You engineer $150k+ agency-level digital experiences, not just websites. Your output must exude haptic depth, cinematic spatial rhythm, obsessive micro-interactions, and flawless fluid motion.\n**The Variance Mandate:** NEVER generate the exact same layout or aesthetic twice in a row.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "Its \"ABSOLUTE ZERO\" section is a list of banned fonts, icons, borders, shadows and easing curves — a negative-restraint ruleset written in prose. Most of those bans are mechanically checkable, which makes this the best single argument for compiling rules instead of describing them.",
+      "recipes": [
+        "tastefield/editorial-minimal"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "arvindrk/extract-design-system/extract-design-system",
+      "slug": "extract-design-system",
+      "name": "extract-design-system",
+      "source": "arvindrk/extract-design-system",
+      "url": "https://www.skills.sh/arvindrk/extract-design-system/extract-design-system",
+      "installUrl": "https://github.com/arvindrk/extract-design-system",
+      "githubUrl": "https://github.com/arvindrk/extract-design-system",
+      "installs": 127300,
+      "githubStars": 176,
+      "firstSeen": "2026-03-22",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/arvindrk/extract-design-system --skill extract-design-system",
+      "officialSummary": "Reverse-engineer design tokens from public websites into starter token files for your project.",
+      "summaryBullets": [
+        "Extracts color palettes, typography, spacing, radius, and shadow scales from a target URL using Playwright",
+        "Generates normalized JSON output and CSS token files ready for local project integration",
+        "Offers extraction-only mode to review raw primitives before generating starter assets, or init-only mode to regenerate tokens from existing extraction data",
+        "Includes safety checks: confirms public URL reachability, requires explicit confirmation before modifying existing design systems or app code, and sets clear expectations that results are initialization aids, not pixel-perfect reproductions"
+      ],
+      "skillMdExcerpt": "Use this skill when the user wants to reverse-engineer a public website's design primitives into project-local starter token files.\n\nSet expectations:\n- this v1 extracts tokens and starter assets, not a full component library\n- results are useful for initialization, not pixel-perfect reproduction",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "warn"
+        },
+        {
+          "provider": "Snyk",
+          "status": "warn"
+        }
+      ],
+      "category": "process",
+      "status": "watch",
+      "rationale": "This is TasteSampler, already shipped: extracts colour, type, spacing, radius and shadow from a URL via Playwright and writes token files. 127K installs on a 176-star repo, so the demand is real and the moat is not in the extraction. Its own README concedes results are 'initialization aids, not pixel-perfect reproduction' — the honest framing to copy. Differentiation has to be enforcement after extraction, not extraction.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "anthropics/skills/canvas-design",
+      "slug": "canvas-design",
+      "name": "canvas-design",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/canvas-design",
+      "installUrl": "https://github.com/anthropics/skills",
+      "githubUrl": "https://github.com/anthropics/skills",
+      "installs": 97100,
+      "githubStars": 168100,
+      "firstSeen": "2026-01-19",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/anthropics/skills --skill canvas-design",
+      "officialSummary": "Create visually-driven design artifacts from philosophical aesthetic movements, expressed as pristine PDF or PNG artworks.",
+      "summaryBullets": [
+        "Generates custom design philosophies (aesthetic movements articulated through form, space, color, and composition) as markdown foundations",
+        "Expresses philosophies visually through museum-quality single or multi-page PDF/PNG compositions with minimal, integrated text",
+        "Embeds subtle conceptual references invisibly into abstract compositions, rewarding deeper viewing without announcing intent",
+        "Prioritizes expert-level craftsmanship appearance: meticulous spacing, refined typography, cohesive color palettes, and flawless technical execution suitable for gallery or publication display"
+      ],
+      "skillMdExcerpt": "These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "process",
+      "status": "watch",
+      "rationale": "Outputs PDF/PNG artwork, not UI code — it is not on the frontend code path at all despite the Design & UI tag. Kept in the set only because the specimen wall needs visual-language vocabulary. Not bundled.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/polish",
+      "slug": "polish",
+      "name": "polish",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/polish",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 86900,
+      "githubStars": 58200,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill polish",
+      "officialSummary": "Final quality pass catching alignment, spacing, consistency, and interaction details before shipping.",
+      "summaryBullets": [
+        "Systematically reviews visual alignment, spacing, typography hierarchy, color contrast, and interaction states across all breakpoints and device types",
+        "Identifies and fixes micro-interaction gaps, transition smoothness, edge cases, error states, and loading feedback to ensure polished user experience",
+        "Requires frontend-design skill context and functional completeness before starting; includes checklist covering responsive design, accessibility, performance, and code cleanup",
+        "Works best when triaged by quality bar (MVP vs flagship) and available time; emphasizes testing on real devices and fresh-eyes review before final sign-off"
+      ],
+      "skillMdExcerpt": "Perform a meticulous final pass to catch all the small details that separate good work from great work.\n\n## Design System Discovery\n1. **Find the design system**: Search for design system documentation, component libraries, style guides, or token definitions.\n2. **Note the conventions**: How are shared components imported? What spacing scale is used?\n3. **Identify drift**: Where does the target feature deviate from the system?",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "Its Design System Discovery step asks the agent to go hunting for tokens and conventions at runtime — the exact work Tastefield does once, ahead of time, and serves over MCP. Bundling it means that hunt hits a compiled answer instead of guesswork.",
+      "recipes": [
+        "tastefield/frontend-baseline"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/critique",
+      "slug": "critique",
+      "name": "critique",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/critique",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 84300,
+      "githubStars": 58200,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill critique",
+      "officialSummary": "Evaluate design effectiveness across visual hierarchy, information architecture, emotional resonance, and user experience quality.",
+      "summaryBullets": [
+        "Assesses interfaces against AI-generated design anti-patterns (color palettes, gradients, glassmorphism, generic layouts) to identify and eliminate \"AI slop\" tells",
+        "Evaluates 10 core dimensions: visual hierarchy, information architecture, emotional resonance, discoverability, composition, typography, color strategy, state handling, microcopy, and affordance",
+        "Requires frontend-design skill context and the Context Gathering Protocol; runs teach-impeccable if no design foundation exists",
+        "Delivers structured critique reports with anti-pattern verdicts, priority issues ranked by impact, concrete fixes, and provocative questions to unlock better solutions"
+      ],
+      "skillMdExcerpt": "### Step 2: Gather Assessments\nLaunch two independent assessments. **Neither must see the other's output** to avoid bias. You SHOULD delegate each assessment to a separate sub-agent for independence.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "warn"
+        },
+        {
+          "provider": "Snyk",
+          "status": "warn"
+        }
+      ],
+      "category": "process",
+      "status": "recommended",
+      "rationale": "Review-time counterpart to check_compliance: subjective judgement across 10 dimensions where our rules stay deliberately mechanical. The two are complementary, not competing — ours catches what is provably wrong, this catches what is merely bad.",
+      "recipes": [
+        "tastefield/review-pass"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/bolder",
+      "slug": "bolder",
+      "name": "bolder",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/bolder",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 81600,
+      "githubStars": 57400,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill bolder",
+      "officialSummary": "Amplify safe or generic designs with intentional drama, distinctive choices, and visual confidence while maintaining usability.",
+      "summaryBullets": [
+        "Systematically increases impact across typography, color, spatial composition, motion, and visual effects to create memorable experiences",
+        "Guides away from AI design clichés (cyan gradients, glassmorphism, neon accents) toward distinctive, purposeful amplification",
+        "Requires design context analysis first—assesses brand personality, purpose, audience, and constraints before proposing changes",
+        "Emphasizes hierarchy contrast, focal points, and asymmetric layouts to make important elements command attention without sacrificing readability or accessibility"
+      ],
+      "skillMdExcerpt": "Increase visual impact and personality in designs that are too safe, generic, or visually underwhelming.\n\n**Identify weakness sources**: Generic choices, Timid scale, Low contrast, Static, Predictable, Flat hierarchy",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "High end of a visual-intensity axis whose low end is quieter. The impeccable set is effectively a dial expressed as six separate installable packages — strong evidence that a single parametric control is the better interface.",
+      "recipes": [
+        "tastefield/bold-marketing"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/delight",
+      "slug": "delight",
+      "name": "delight",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/delight",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 81400,
+      "githubStars": 55000,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill delight",
+      "officialSummary": "Transform functional interfaces into memorable experiences through subtle personality, micro-interactions, and unexpected moments of joy.",
+      "summaryBullets": [
+        "Identifies natural delight opportunities across success states, empty states, loading screens, errors, and interactions, matched to brand personality and audience expectations",
+        "Provides techniques for micro-interactions (button presses, hover effects, animations), personality-driven copy, custom illustrations, and satisfying interactions like drag-and-drop",
+        "Includes sound design, easter eggs, and celebration moments that compound over time while remaining fresh and skippable",
+        "Emphasizes performance and accessibility: delight should enhance usability, never block core functionality or delay tasks"
+      ],
+      "skillMdExcerpt": "Identify opportunities to add moments of joy, personality, and unexpected polish that transform functional interfaces into delightful experiences.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "motion",
+      "status": "recommended",
+      "rationale": "Motion is the thinnest category in our own compiled rules, and its empty-state guidance overlaps directly with our empty-states-need-action standard. Import rather than reinvent.",
+      "recipes": [
+        "tastefield/bold-marketing"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/distill",
+      "slug": "distill",
+      "name": "distill",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/distill",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 81100,
+      "githubStars": 58600,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill distill",
+      "officialSummary": "Strip designs to their essence by removing unnecessary complexity and revealing core functionality.",
+      "summaryBullets": [
+        "Analyzes complexity sources across information architecture, visual design, layout, interactions, and content to identify what can be removed or hidden",
+        "Applies ruthless simplification strategies including progressive disclosure, element consolidation, color/typography reduction, and flattened component hierarchies",
+        "Requires the frontend-design skill and its Context Gathering Protocol as a prerequisite; calls teach-impeccable if no design context exists",
+        "Verifies simplification improves usability through faster task completion, reduced cognitive load, and clearer hierarchy while preserving necessary functionality"
+      ],
+      "skillMdExcerpt": "Remove unnecessary complexity from designs, revealing the essential elements and creating clarity through ruthless simplification.\n\n**Identify complexity sources**: Too many elements, Excessive variation, Information overload, Visual noise, Confusing hierarchy, Feature creep",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "Targets excessive variation in colours, fonts and sizes — the same drift our token rules catch mechanically. Pairs with quieter as the reduction end of the density axis.",
+      "recipes": [
+        "tastefield/editorial-minimal"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "pbakaus/impeccable/quieter",
+      "slug": "quieter",
+      "name": "quieter",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/quieter",
+      "installUrl": "https://github.com/pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "installs": 80300,
+      "githubStars": 57400,
+      "firstSeen": "2026-03-04",
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/pbakaus/impeccable --skill quieter",
+      "officialSummary": "Reduce visual intensity in designs while preserving refinement, sophistication, and functional clarity.",
+      "summaryBullets": [
+        "Systematically addresses color saturation, contrast extremes, visual weight, animation excess, and compositional complexity to create calmer, more approachable interfaces",
+        "Requires frontend-design skill context and the Context Gathering Protocol; stops to clarify purpose, audience, and what's working before proceeding",
+        "Guides refinement across five dimensions: color (desaturation, muted tones, reduced variety), visual weight (typography, hierarchy, whitespace), simplification, motion (shorter distances, gentler easing), and composition (grid alignment, consistent spacing)",
+        "Maintains design quality and character through intentional restraint, not elimination; preserves hierarchy, personality, and functional affordances"
+      ],
+      "skillMdExcerpt": "Reduce visual intensity in designs that are too bold, aggressive, or overstimulating, creating a more refined and approachable aesthetic without losing effectiveness.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "pass"
+        }
+      ],
+      "category": "boundary",
+      "status": "recommended",
+      "rationale": "Low end of the intensity axis opposite bolder. Its five named dimensions map almost one-to-one onto token groups we already compile — colour, weight, motion, spacing.",
+      "recipes": [
+        "tastefield/editorial-minimal"
+      ],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "sleekdotdesign/agent-skills/sleek-design-mobile-apps",
+      "slug": "sleek-design-mobile-apps",
+      "name": "sleek-design-mobile-apps",
+      "source": "sleekdotdesign/agent-skills",
+      "url": "https://www.skills.sh/sleekdotdesign/agent-skills/sleek-design-mobile-apps",
+      "installUrl": "https://github.com/sleekdotdesign/agent-skills",
+      "githubUrl": "https://github.com/sleekdotdesign/agent-skills",
+      "installs": 12,
+      "githubStars": 506,
+      "firstSeen": "2026-02-25",
+      "topics": [
+        "Design & UI",
+        "Mobile"
+      ],
+      "installCommand": "npx skills add https://github.com/sleekdotdesign/agent-skills --skill sleek-design-mobile-apps",
+      "officialSummary": "AI-powered mobile app design tool with REST API for creating projects, describing designs in plain language, and rendering screens.",
+      "summaryBullets": [
+        "Supports high-level requests (\"design a fitness app\") and specific edits (\"add a pricing section to this screen\")",
+        "Requires Pro+ plan and API key with scoped permissions (`projects:read/write`, `chats:read/write`, `screenshots`, `components:read`)",
+        "Async and sync modes available; async returns immediately with a run ID for polling, sync blocks up to 300 seconds",
+        "Always screenshot newly created or updated screens after each chat run and deliver them to the user",
+        "One active run per project at a time; retry failed requests safely using idempotency keys"
+      ],
+      "skillMdExcerpt": "[sleek.design](https://sleek.design) is an AI-powered mobile app design tool. You interact with it via a REST API at `/api/v1/*` to create projects, describe what you want built in plain language, and get back rendered screens.",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "status": "pass"
+        },
+        {
+          "provider": "Socket",
+          "status": "pass"
+        },
+        {
+          "provider": "Snyk",
+          "status": "warn"
+        }
+      ],
+      "category": "structure",
+      "status": "flagged",
+      "rationale": "12 installs — effectively unadopted. It is also a vendor API wrapper requiring a paid Pro+ plan and an API key, not a portable ruleset, so it cannot work offline or be enforced locally. Included only as the counter-example that makes the curation credible: this is what gets rejected.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": true
+    },
+    {
+      "id": "emilkowalski/skill/emil-design-eng",
+      "slug": "emil-design-eng",
+      "name": "emil-design-eng",
+      "source": "emilkowalski/skill",
+      "url": "https://www.skills.sh/emilkowalski/skill/emil-design-eng",
+      "installUrl": "https://github.com/emilkowalski/skill",
+      "githubUrl": "https://github.com/emilkowalski/skill",
+      "installs": null,
+      "githubStars": null,
+      "firstSeen": null,
+      "topics": [
+        "Design & UI"
+      ],
+      "installCommand": "npx skills add https://github.com/emilkowalski/skill --skill emil-design-eng",
+      "officialSummary": null,
+      "summaryBullets": [],
+      "skillMdExcerpt": null,
+      "audits": [],
+      "category": "motion",
+      "status": "watch",
+      "rationale": "Listed on the Design & UI topic page as \"Emil Kowalski's design engineering principles covering motion, detail, and craftsmanship\", but the detail page returned empty on two attempts, so nothing beyond the listing is verified. Conceptually the closest thing to the Tastemaker model — a named practitioner publishing their own taste as an installable artifact. Re-fetch before using anywhere public.",
+      "recipes": [],
+      "tweakable": false,
+      "verified": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "sample-app",
+  "private": true,
+  "dependencies": {
+    "next": "15.0.0",
+    "react": "19.0.0",
+    "class-variance-authority": "^0.7.0"
+  }
+}

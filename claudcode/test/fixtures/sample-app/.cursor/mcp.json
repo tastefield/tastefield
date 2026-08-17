@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tastefield": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@tastefield/mcp",
+        "serve"
+      ]
+    }
+  }
+}

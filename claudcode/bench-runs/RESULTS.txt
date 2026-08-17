@@ -1,0 +1,24 @@
+
+────────────────────────────────────────────────────────────────
+Tastefield benchmark — 8 tasks defined
+Rules applied: 5 enforceable
+────────────────────────────────────────────────────────────────
+
+                files   lines   errors   warns   density
+baseline            8     173       49       5     31.21
+governed            8     192        0       0         0
+
+────────────────────────────────────────────────────────────────
+Error reduction:     -100.0%
+Density reduction:   -100.0%
+────────────────────────────────────────────────────────────────
+
+Per-rule breakdown
+  no-arbitrary-color-utility         41 →    0  -100.0%
+  no-arbitrary-values                 6 →    0  -100.0%
+  no-marketing-filler                 5 →    0  -100.0%
+  no-raw-hex                          2 →    0  -100.0%
+
+Note: density is violations per 100 lines. Report this number, not "100% compliance" —
+models are stochastic and an absolute claim will not survive contact with a demo.
+

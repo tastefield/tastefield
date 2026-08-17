@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "rules": [
+    {
+      "id": "no-marketing-filler",
+      "category": "voice",
+      "severity": "warn",
+      "statement": "Never use hype words in UI copy: seamless, effortless, unlock, revolutionize, supercharge, delight, magic, game-changing.",
+      "pattern": "\\b(seamless(?:ly)?|effortless(?:ly)?|unlock|revolutioniz\\w*|supercharge\\w*|game[- ]changing|delightful)\\b",
+      "patternFlags": "gi",
+      "fix": "State plainly what the thing does."
+    },
+    {
+      "id": "empty-states-need-action",
+      "category": "voice",
+      "severity": "warn",
+      "statement": "Every empty state must end with a primary action the user can take. Never ship an empty state that only describes the absence of content."
+    }
+  ]
+}

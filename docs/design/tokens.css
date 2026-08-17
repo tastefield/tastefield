@@ -1,0 +1,33 @@
+/* Tastefield Studio — frozen design tokens (v0) */
+:root {
+  --tf-bg: #0f0f10;
+  --tf-bg-elevated: rgba(36, 36, 38, 0.72);
+  --tf-bg-canvas: #161618;
+  --tf-bg-pill: rgba(255, 255, 255, 0.06);
+  --tf-bg-pill-active: rgba(255, 255, 255, 0.14);
+  --tf-border: rgba(255, 255, 255, 0.08);
+  --tf-border-strong: rgba(255, 255, 255, 0.14);
+  --tf-text: #f5f5f7;
+  --tf-text-secondary: rgba(245, 245, 247, 0.62);
+  --tf-text-tertiary: rgba(245, 245, 247, 0.4);
+  --tf-accent: #0a84ff;
+  --tf-accent-soft: rgba(10, 132, 255, 0.18);
+  --tf-success: #30d158;
+  --tf-warning: #ffd60a;
+  --tf-danger: #ff453a;
+  --tf-mcp: #30d158;
+  --tf-radius-sm: 6px;
+  --tf-radius-md: 10px;
+  --tf-radius-pill: 999px;
+  --tf-space-1: 4px;
+  --tf-space-2: 8px;
+  --tf-space-3: 12px;
+  --tf-space-4: 16px;
+  --tf-space-5: 24px;
+  --tf-space-6: 32px;
+  --tf-nav-height: 52px;
+  --tf-inspector-width: 320px;
+  --tf-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  --tf-font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --tf-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}

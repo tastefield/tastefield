@@ -1,0 +1,6031 @@
+{
+  "version": "2026-08-13.1",
+  "takenAt": "2026-08-13T21:47:32.890Z",
+  "registryTotal": null,
+  "sweepDepth": 5000,
+  "contentHash": "4421c46c9d79d9ea089250f811c219358603a2857cabc846154e2e309cd715f7",
+  "entries": [
+    {
+      "id": "anthropics/knowledge-work-plugins/brand-voice-enforcement",
+      "slug": "brand-voice-enforcement",
+      "name": "brand-voice-enforcement",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/brand-voice-enforcement",
+      "installs": 2929,
+      "allTimeRank": 3734,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 66,
+        "verdict": "include",
+        "signals": [
+          "owner:anthropics",
+          "brand:36",
+          "copy:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "brand voice"
+            ]
+          },
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "voice"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/high-end-visual-design",
+      "slug": "high-end-visual-design",
+      "name": "high-end-visual-design",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/high-end-visual-design",
+      "installs": 269307,
+      "allTimeRank": 157,
+      "trendingRank": 145,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "visual"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/skills/brand-guidelines",
+      "slug": "brand-guidelines",
+      "name": "brand-guidelines",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/brand-guidelines",
+      "installs": 75263,
+      "allTimeRank": 352,
+      "trendingRank": 583,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:anthropics",
+          "brand:36"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "guidelines"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/paywall-upgrade-cro",
+      "slug": "paywall-upgrade-cro",
+      "name": "paywall-upgrade-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/paywall-upgrade-cro",
+      "installs": 51968,
+      "allTimeRank": 440,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:36"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 36,
+            "terms": [
+              "cro",
+              "paywall"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/shadcn-ui",
+      "slug": "shadcn-ui",
+      "name": "shadcn-ui",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/shadcn-ui",
+      "installs": 48608,
+      "allTimeRank": 458,
+      "trendingRank": 965,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "shadcn"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:ui-styling",
+      "slug": "ckm:ui-styling",
+      "name": "ckm:ui-styling",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ckm%3Aui-styling",
+      "installs": 32457,
+      "allTimeRank": 613,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "styling"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "flutter/agent-plugins/flutter-build-responsive-layout",
+      "slug": "flutter-build-responsive-layout",
+      "name": "flutter-build-responsive-layout",
+      "source": "flutter/agent-plugins",
+      "url": "https://www.skills.sh/flutter/agent-plugins/flutter-build-responsive-layout",
+      "installs": 28793,
+      "allTimeRank": 669,
+      "trendingRank": 714,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:flutter",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "layout",
+              "responsive"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ui-styling",
+      "slug": "ui-styling",
+      "name": "ui-styling",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-styling",
+      "installs": 17092,
+      "allTimeRank": 909,
+      "trendingRank": 581,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "styling"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-generate-design",
+      "slug": "figma-generate-design",
+      "name": "figma-generate-design",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-generate-design",
+      "installs": 4360,
+      "allTimeRank": 2570,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:figma",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-implement-design",
+      "slug": "figma-implement-design",
+      "name": "figma-implement-design",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-implement-design",
+      "installs": 4073,
+      "allTimeRank": 2729,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 61,
+        "verdict": "include",
+        "signals": [
+          "owner:figma",
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "arvindrk/extract-design-system/extract-design-system",
+      "slug": "extract-design-system",
+      "name": "extract-design-system",
+      "source": "arvindrk/extract-design-system",
+      "url": "https://www.skills.sh/arvindrk/extract-design-system/extract-design-system",
+      "installs": 127311,
+      "allTimeRank": 257,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 52,
+        "verdict": "review",
+        "signals": [
+          "owner:arvindrk",
+          "visual:18",
+          "architecture:18",
+          "process:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "extract"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "samber/cc-skills/copywriting-tone-of-voice-creator",
+      "slug": "copywriting-tone-of-voice-creator",
+      "name": "copywriting-tone-of-voice-creator",
+      "source": "samber/cc-skills",
+      "url": "https://www.skills.sh/samber/cc-skills/copywriting-tone-of-voice-creator",
+      "installs": 2208,
+      "allTimeRank": 4789,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 50,
+        "verdict": "review",
+        "signals": [
+          "copy:45",
+          "brand:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 45,
+            "terms": [
+              "copywriting",
+              "tone",
+              "voice"
+            ]
+          },
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "tone of voice"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/web-design-guidelines",
+      "slug": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines",
+      "installs": 539919,
+      "allTimeRank": 36,
+      "trendingRank": 115,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel-labs",
+          "visual:18",
+          "brand:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "guidelines"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/review-animations",
+      "slug": "review-animations",
+      "name": "review-animations",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/review-animations",
+      "installs": 97845,
+      "allTimeRank": 288,
+      "trendingRank": 161,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "motion:18",
+          "process:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animation"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/writing-guidelines",
+      "slug": "writing-guidelines",
+      "name": "writing-guidelines",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/writing-guidelines",
+      "installs": 43687,
+      "allTimeRank": 487,
+      "trendingRank": 386,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel-labs",
+          "brand:18",
+          "copy:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "guidelines"
+            ]
+          },
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "writing"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:design-system",
+      "slug": "ckm:design-system",
+      "name": "ckm:design-system",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ckm%3Adesign-system",
+      "installs": 32822,
+      "allTimeRank": 601,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/design-system",
+      "slug": "design-system",
+      "name": "design-system",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/design-system",
+      "installs": 17834,
+      "allTimeRank": 896,
+      "trendingRank": 564,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/system-design",
+      "slug": "system-design",
+      "name": "system-design",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/system-design",
+      "installs": 6446,
+      "allTimeRank": 1969,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::extract-design-md",
+      "slug": "stitch::extract-design-md",
+      "name": "stitch::extract-design-md",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Aextract-design-md",
+      "installs": 6303,
+      "allTimeRank": 2029,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18",
+          "process:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "extract"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::manage-design-system",
+      "slug": "stitch::manage-design-system",
+      "name": "stitch::manage-design-system",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Amanage-design-system",
+      "installs": 6121,
+      "allTimeRank": 2073,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/design-critique",
+      "slug": "design-critique",
+      "name": "design-critique",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/design-critique",
+      "installs": 3803,
+      "allTimeRank": 2983,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18",
+          "process:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "critique"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/design-system",
+      "slug": "design-system",
+      "name": "design-system",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/design-system",
+      "installs": 3127,
+      "allTimeRank": 3530,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/accessibility-review",
+      "slug": "accessibility-review",
+      "name": "accessibility-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/accessibility-review",
+      "installs": 3049,
+      "allTimeRank": 3613,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18",
+          "process:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "accessibility"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "github/awesome-copilot/gsap-framer-scroll-animation",
+      "slug": "gsap-framer-scroll-animation",
+      "name": "gsap-framer-scroll-animation",
+      "source": "github/awesome-copilot",
+      "url": "https://www.skills.sh/github/awesome-copilot/gsap-framer-scroll-animation",
+      "installs": 2976,
+      "allTimeRank": 3687,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "motion:48"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 48,
+            "terms": [
+              "animation",
+              "gsap",
+              "framer"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/brand-review",
+      "slug": "brand-review",
+      "name": "brand-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/brand-review",
+      "installs": 2489,
+      "allTimeRank": 4223,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "brand:18",
+          "process:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "brand"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-design-system",
+      "slug": "expo-design-system",
+      "name": "expo-design-system",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-design-system",
+      "installs": 0,
+      "allTimeRank": null,
+      "trendingRank": null,
+      "hotRank": 115,
+      "relevance": {
+        "score": 48,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-composition-patterns",
+      "slug": "vercel-composition-patterns",
+      "name": "vercel-composition-patterns",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-composition-patterns",
+      "installs": 287960,
+      "allTimeRank": 151,
+      "trendingRank": 262,
+      "hotRank": null,
+      "relevance": {
+        "score": 46,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel-labs",
+          "architecture:21"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 21,
+            "terms": [
+              "composition"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/signup-flow-cro",
+      "slug": "signup-flow-cro",
+      "name": "signup-flow-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/signup-flow-cro",
+      "installs": 52369,
+      "allTimeRank": 439,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 46,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:21"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 21,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/popup-cro",
+      "slug": "popup-cro",
+      "name": "popup-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/popup-cro",
+      "installs": 51634,
+      "allTimeRank": 445,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 46,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:21"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 21,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/react:components",
+      "slug": "react:components",
+      "name": "react:components",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/react%3Acomponents",
+      "installs": 50592,
+      "allTimeRank": 449,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 46,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "architecture:21"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 21,
+            "terms": [
+              "component"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::react-components",
+      "slug": "stitch::react-components",
+      "name": "stitch::react-components",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Areact-components",
+      "installs": 3334,
+      "allTimeRank": 3382,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 46,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "architecture:21"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 21,
+            "terms": [
+              "component"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/skills/frontend-design",
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/frontend-design",
+      "installs": 774310,
+      "allTimeRank": 3,
+      "trendingRank": 92,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/design-taste-frontend",
+      "slug": "design-taste-frontend",
+      "name": "design-taste-frontend",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend",
+      "installs": 356761,
+      "allTimeRank": 112,
+      "trendingRank": 94,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+      "slug": "ui-ux-pro-max",
+      "name": "ui-ux-pro-max",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+      "installs": 314207,
+      "allTimeRank": 142,
+      "trendingRank": 199,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/minimalist-ui",
+      "slug": "minimalist-ui",
+      "name": "minimalist-ui",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/minimalist-ui",
+      "installs": 246116,
+      "allTimeRank": 166,
+      "trendingRank": 149,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/industrial-brutalist-ui",
+      "slug": "industrial-brutalist-ui",
+      "name": "industrial-brutalist-ui",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/industrial-brutalist-ui",
+      "installs": 228445,
+      "allTimeRank": 179,
+      "trendingRank": 158,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/stitch-design-taste",
+      "slug": "stitch-design-taste",
+      "name": "stitch-design-taste",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/stitch-design-taste",
+      "installs": 227109,
+      "allTimeRank": 182,
+      "trendingRank": 157,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/brandkit",
+      "slug": "brandkit",
+      "name": "brandkit",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/brandkit",
+      "installs": 215196,
+      "allTimeRank": 191,
+      "trendingRank": 150,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "brand:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "brandkit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/emil-design-eng",
+      "slug": "emil-design-eng",
+      "name": "emil-design-eng",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/emil-design-eng",
+      "installs": 204720,
+      "allTimeRank": 204,
+      "trendingRank": 151,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/seo-audit",
+      "slug": "seo-audit",
+      "name": "seo-audit",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/seo-audit",
+      "installs": 185681,
+      "allTimeRank": 214,
+      "trendingRank": 339,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/copywriting",
+      "slug": "copywriting",
+      "name": "copywriting",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/copywriting",
+      "installs": 176560,
+      "allTimeRank": 220,
+      "trendingRank": 338,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "copywriting"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/design-taste-frontend-v1",
+      "slug": "design-taste-frontend-v1",
+      "name": "design-taste-frontend-v1",
+      "source": "leonxlnx/taste-skill",
+      "url": "https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend-v1",
+      "installs": 164454,
+      "allTimeRank": 233,
+      "trendingRank": 165,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:leonxlnx",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/content-strategy",
+      "slug": "content-strategy",
+      "name": "content-strategy",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/content-strategy",
+      "installs": 123012,
+      "allTimeRank": 265,
+      "trendingRank": 429,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "content strategy"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/copy-editing",
+      "slug": "copy-editing",
+      "name": "copy-editing",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/copy-editing",
+      "installs": 109355,
+      "allTimeRank": 270,
+      "trendingRank": 432,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "copy"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/skills/canvas-design",
+      "slug": "canvas-design",
+      "name": "canvas-design",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/canvas-design",
+      "installs": 97506,
+      "allTimeRank": 290,
+      "trendingRank": 474,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-react-view-transitions",
+      "slug": "vercel-react-view-transitions",
+      "name": "vercel-react-view-transitions",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-react-view-transitions",
+      "installs": 97487,
+      "allTimeRank": 291,
+      "trendingRank": 340,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel-labs",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "transition"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/site-architecture",
+      "slug": "site-architecture",
+      "name": "site-architecture",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/site-architecture",
+      "installs": 91530,
+      "allTimeRank": 303,
+      "trendingRank": 454,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "architecture"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/polish",
+      "slug": "polish",
+      "name": "polish",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/polish",
+      "installs": 86950,
+      "allTimeRank": 311,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "polish"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/animation-vocabulary",
+      "slug": "animation-vocabulary",
+      "name": "animation-vocabulary",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/animation-vocabulary",
+      "installs": 85386,
+      "allTimeRank": 315,
+      "trendingRank": 168,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animation"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/critique",
+      "slug": "critique",
+      "name": "critique",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/critique",
+      "installs": 84360,
+      "allTimeRank": 324,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "critique"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/audit",
+      "slug": "audit",
+      "name": "audit",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/audit",
+      "installs": 83575,
+      "allTimeRank": 325,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/animate",
+      "slug": "animate",
+      "name": "animate",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/animate",
+      "installs": 83429,
+      "allTimeRank": 326,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animate"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-cli-with-tokens",
+      "slug": "vercel-cli-with-tokens",
+      "name": "vercel-cli-with-tokens",
+      "source": "vercel-labs/agent-skills",
+      "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-cli-with-tokens",
+      "installs": 81385,
+      "allTimeRank": 334,
+      "trendingRank": 441,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel-labs",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "token"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/apple-design",
+      "slug": "apple-design",
+      "name": "apple-design",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/apple-design",
+      "installs": 77287,
+      "allTimeRank": 343,
+      "trendingRank": 159,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/skills/theme-factory",
+      "slug": "theme-factory",
+      "name": "theme-factory",
+      "source": "anthropics/skills",
+      "url": "https://www.skills.sh/anthropics/skills/theme-factory",
+      "installs": 76463,
+      "allTimeRank": 347,
+      "trendingRank": 601,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "theme"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/improve-animations",
+      "slug": "improve-animations",
+      "name": "improve-animations",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/improve-animations",
+      "installs": 70378,
+      "allTimeRank": 363,
+      "trendingRank": 163,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animation"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/find-animation-opportunities",
+      "slug": "find-animation-opportunities",
+      "name": "find-animation-opportunities",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/find-animation-opportunities",
+      "installs": 58947,
+      "allTimeRank": 391,
+      "trendingRank": 169,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animation"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/building-native-ui",
+      "slug": "building-native-ui",
+      "name": "building-native-ui",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/building-native-ui",
+      "installs": 58931,
+      "allTimeRank": 392,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/design-md",
+      "slug": "design-md",
+      "name": "design-md",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/design-md",
+      "installs": 58758,
+      "allTimeRank": 393,
+      "trendingRank": 855,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/page-cro",
+      "slug": "page-cro",
+      "name": "page-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/page-cro",
+      "installs": 58048,
+      "allTimeRank": 398,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/schema-markup",
+      "slug": "schema-markup",
+      "name": "schema-markup",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/schema-markup",
+      "installs": 56053,
+      "allTimeRank": 415,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "content:18"
+        ],
+        "primaryDomain": "content",
+        "domains": [
+          {
+            "domain": "content",
+            "score": 18,
+            "terms": [
+              "schema"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/claude-code/frontend-design",
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "source": "anthropics/claude-code",
+      "url": "https://www.skills.sh/anthropics/claude-code/frontend-design",
+      "installs": 54787,
+      "allTimeRank": 424,
+      "trendingRank": 908,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/extract",
+      "slug": "extract",
+      "name": "extract",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/extract",
+      "installs": 54516,
+      "allTimeRank": 428,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "extract"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/frontend-design",
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/frontend-design",
+      "installs": 54304,
+      "allTimeRank": 430,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/onboarding-cro",
+      "slug": "onboarding-cro",
+      "name": "onboarding-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/onboarding-cro",
+      "installs": 54191,
+      "allTimeRank": 432,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/form-cro",
+      "slug": "form-cro",
+      "name": "form-cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/form-cro",
+      "installs": 53117,
+      "allTimeRank": 434,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/ab-test-setup",
+      "slug": "ab-test-setup",
+      "name": "ab-test-setup",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/ab-test-setup",
+      "installs": 52641,
+      "allTimeRank": 438,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "ab test"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/cro",
+      "slug": "cro",
+      "name": "cro",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/cro",
+      "installs": 50862,
+      "allTimeRank": 448,
+      "trendingRank": 434,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "cro"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-tailwind-setup",
+      "slug": "expo-tailwind-setup",
+      "name": "expo-tailwind-setup",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-tailwind-setup",
+      "installs": 50177,
+      "allTimeRank": 451,
+      "trendingRank": 674,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "tailwind"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/schema",
+      "slug": "schema",
+      "name": "schema",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/schema",
+      "installs": 46271,
+      "allTimeRank": 471,
+      "trendingRank": 469,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "content:18"
+        ],
+        "primaryDomain": "content",
+        "domains": [
+          {
+            "domain": "content",
+            "score": 18,
+            "terms": [
+              "schema"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/pick-ui-library",
+      "slug": "pick-ui-library",
+      "name": "pick-ui-library",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/pick-ui-library",
+      "installs": 45009,
+      "allTimeRank": 476,
+      "trendingRank": 173,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/paywalls",
+      "slug": "paywalls",
+      "name": "paywalls",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/paywalls",
+      "installs": 43502,
+      "allTimeRank": 490,
+      "trendingRank": 515,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "paywall"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:design",
+      "slug": "ckm:design",
+      "name": "ckm:design",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ckm%3Adesign",
+      "installs": 32522,
+      "allTimeRank": 611,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:brand",
+      "slug": "ckm:brand",
+      "name": "ckm:brand",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ckm%3Abrand",
+      "installs": 32023,
+      "allTimeRank": 615,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "brand:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "brand"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:banner-design",
+      "slug": "ckm:banner-design",
+      "name": "ckm:banner-design",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ckm%3Abanner-design",
+      "installs": 31995,
+      "allTimeRank": 616,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "flutter/agent-plugins/flutter-apply-architecture-best-practices",
+      "slug": "flutter-apply-architecture-best-practices",
+      "name": "flutter-apply-architecture-best-practices",
+      "source": "flutter/agent-plugins",
+      "url": "https://www.skills.sh/flutter/agent-plugins/flutter-apply-architecture-best-practices",
+      "installs": 29682,
+      "allTimeRank": 658,
+      "trendingRank": 721,
+      "hotRank": 163,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:flutter",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "architecture"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "flutter/agent-plugins/flutter-fix-layout-issues",
+      "slug": "flutter-fix-layout-issues",
+      "name": "flutter-fix-layout-issues",
+      "source": "flutter/agent-plugins",
+      "url": "https://www.skills.sh/flutter/agent-plugins/flutter-fix-layout-issues",
+      "installs": 27550,
+      "allTimeRank": 687,
+      "trendingRank": 718,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:flutter",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "layout"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "pbakaus/impeccable/layout",
+      "slug": "layout",
+      "name": "layout",
+      "source": "pbakaus/impeccable",
+      "url": "https://www.skills.sh/pbakaus/impeccable/layout",
+      "installs": 26940,
+      "allTimeRank": 693,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:pbakaus",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "layout"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch-design",
+      "slug": "stitch-design",
+      "name": "stitch-design",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch-design",
+      "installs": 25434,
+      "allTimeRank": 752,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "coreyhaines31/marketingskills/aso-audit",
+      "slug": "aso-audit",
+      "name": "aso-audit",
+      "source": "coreyhaines31/marketingskills",
+      "url": "https://www.skills.sh/coreyhaines31/marketingskills/aso-audit",
+      "installs": 17983,
+      "allTimeRank": 895,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:coreyhaines31",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/design",
+      "slug": "design",
+      "name": "design",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/design",
+      "installs": 17259,
+      "allTimeRank": 904,
+      "trendingRank": 572,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "emilkowalski/skills/animate",
+      "slug": "animate",
+      "name": "animate",
+      "source": "emilkowalski/skills",
+      "url": "https://www.skills.sh/emilkowalski/skills/animate",
+      "installs": 17027,
+      "allTimeRank": 913,
+      "trendingRank": 166,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:emilkowalski",
+          "motion:18"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 18,
+            "terms": [
+              "animate"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/banner-design",
+      "slug": "banner-design",
+      "name": "banner-design",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/banner-design",
+      "installs": 16624,
+      "allTimeRank": 930,
+      "trendingRank": 602,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill/brand",
+      "slug": "brand",
+      "name": "brand",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://www.skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/brand",
+      "installs": 16609,
+      "allTimeRank": 931,
+      "trendingRank": 598,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nextlevelbuilder",
+          "brand:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "brand"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nuxt/ui/nuxt-ui",
+      "slug": "nuxt-ui",
+      "name": "nuxt-ui",
+      "source": "nuxt/ui",
+      "url": "https://www.skills.sh/site/nuxt.ui/nuxt-ui",
+      "installs": 16453,
+      "allTimeRank": 935,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:nuxt",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/taste-design",
+      "slug": "taste-design",
+      "name": "taste-design",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/taste-design",
+      "installs": 15704,
+      "allTimeRank": 948,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-ui",
+      "slug": "expo-ui",
+      "name": "expo-ui",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-ui",
+      "installs": 13175,
+      "allTimeRank": 1025,
+      "trendingRank": 626,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/claude-plugins-official/frontend-design",
+      "slug": "frontend-design",
+      "name": "frontend-design",
+      "source": "anthropics/claude-plugins-official",
+      "url": "https://www.skills.sh/anthropics/claude-plugins-official/frontend-design",
+      "installs": 12989,
+      "allTimeRank": 1042,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-ui-swiftui",
+      "slug": "expo-ui-swiftui",
+      "name": "expo ui swiftui",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-ui-swiftui",
+      "installs": 12959,
+      "allTimeRank": 1044,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-ui-jetpack-compose",
+      "slug": "expo-ui-jetpack-compose",
+      "name": "expo ui jetpack compose",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-ui-jetpack-compose",
+      "installs": 12945,
+      "allTimeRank": 1045,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/claude-code/writing-hookify-rules",
+      "slug": "writing-hookify-rules",
+      "name": "writing hookify rules",
+      "source": "anthropics/claude-code",
+      "url": "https://www.skills.sh/anthropics/claude-code/writing-hookify-rules",
+      "installs": 11121,
+      "allTimeRank": 1209,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "writing"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "flutter/agent-plugins/flutter-building-layouts",
+      "slug": "flutter-building-layouts",
+      "name": "flutter-building-layouts",
+      "source": "flutter/agent-plugins",
+      "url": "https://www.skills.sh/flutter/agent-plugins/flutter-building-layouts",
+      "installs": 10783,
+      "allTimeRank": 1230,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:flutter",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "layout"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "expo/skills/expo-native-ui",
+      "slug": "expo-native-ui",
+      "name": "expo-native-ui",
+      "source": "expo/skills",
+      "url": "https://www.skills.sh/expo/skills/expo-native-ui",
+      "installs": 9384,
+      "allTimeRank": 1379,
+      "trendingRank": 614,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:expo",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel/components.build/building-components",
+      "slug": "building-components",
+      "name": "building-components",
+      "source": "vercel/components.build",
+      "url": "https://www.skills.sh/vercel/components.build/building-components",
+      "installs": 9369,
+      "allTimeRank": 1384,
+      "trendingRank": null,
+      "hotRank": 84,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "component"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "flutter/agent-plugins/flutter-improving-accessibility",
+      "slug": "flutter-improving-accessibility",
+      "name": "flutter-improving-accessibility",
+      "source": "flutter/agent-plugins",
+      "url": "https://www.skills.sh/flutter/agent-plugins/flutter-improving-accessibility",
+      "installs": 8476,
+      "allTimeRank": 1623,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:flutter",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "accessibility"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/code-review",
+      "slug": "code-review",
+      "name": "code-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/code-review",
+      "installs": 8278,
+      "allTimeRank": 1657,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "vercel/next.js/next-cache-components-adoption",
+      "slug": "next-cache-components-adoption",
+      "name": "next-cache-components-adoption",
+      "source": "vercel/next.js",
+      "url": "https://www.skills.sh/vercel/next.js/next-cache-components-adoption",
+      "installs": 7551,
+      "allTimeRank": 1743,
+      "trendingRank": 784,
+      "hotRank": 81,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "component"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "vercel/next.js/next-cache-components-optimizer",
+      "slug": "next-cache-components-optimizer",
+      "name": "next-cache-components-optimizer",
+      "source": "vercel/next.js",
+      "url": "https://www.skills.sh/vercel/next.js/next-cache-components-optimizer",
+      "installs": 7521,
+      "allTimeRank": 1751,
+      "trendingRank": 866,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:vercel",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "component"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "shopify/shopify-ai-toolkit/shopify-polaris-checkout-extensions",
+      "slug": "shopify-polaris-checkout-extensions",
+      "name": "shopify-polaris-checkout-extensions",
+      "source": "shopify/shopify-ai-toolkit",
+      "url": "https://www.skills.sh/shopify/shopify-ai-toolkit/shopify-polaris-checkout-extensions",
+      "installs": 7314,
+      "allTimeRank": 1786,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:shopify",
+          "conversion:18"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 18,
+            "terms": [
+              "checkout"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "shopify/shopify-ai-toolkit/shopify-pos-ui",
+      "slug": "shopify-pos-ui",
+      "name": "shopify-pos-ui",
+      "source": "shopify/shopify-ai-toolkit",
+      "url": "https://www.skills.sh/shopify/shopify-ai-toolkit/shopify-pos-ui",
+      "installs": 6990,
+      "allTimeRank": 1843,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:shopify",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "shopify/shopify-ai-toolkit/shopify-app-store-review",
+      "slug": "shopify-app-store-review",
+      "name": "shopify-app-store-review",
+      "source": "shopify/shopify-ai-toolkit",
+      "url": "https://www.skills.sh/shopify/shopify-ai-toolkit/shopify-app-store-review",
+      "installs": 6807,
+      "allTimeRank": 1886,
+      "trendingRank": null,
+      "hotRank": 315,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:shopify",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::generate-design",
+      "slug": "stitch::generate-design",
+      "name": "stitch::generate-design",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Agenerate-design",
+      "installs": 6473,
+      "allTimeRank": 1960,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-use",
+      "slug": "figma-use",
+      "name": "figma-use",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-use",
+      "installs": 6169,
+      "allTimeRank": 2062,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:figma",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::code-to-design",
+      "slug": "stitch::code-to-design",
+      "name": "stitch::code-to-design",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Acode-to-design",
+      "installs": 6083,
+      "allTimeRank": 2079,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/implement-design",
+      "slug": "implement-design",
+      "name": "implement-design",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/implement-design",
+      "installs": 5985,
+      "allTimeRank": 2111,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:figma",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "google-labs-code/stitch-skills/stitch::extract-static-html",
+      "slug": "stitch::extract-static-html",
+      "name": "stitch::extract-static-html",
+      "source": "google-labs-code/stitch-skills",
+      "url": "https://www.skills.sh/google-labs-code/stitch-skills/stitch%3A%3Aextract-static-html",
+      "installs": 5920,
+      "allTimeRank": 2139,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:google-labs-code",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "extract"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/architecture",
+      "slug": "architecture",
+      "name": "architecture",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/architecture",
+      "installs": 5545,
+      "allTimeRank": 2237,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "architecture:18"
+        ],
+        "primaryDomain": "architecture",
+        "domains": [
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "architecture"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/claude-plugins-official/writing-hookify-rules",
+      "slug": "writing-hookify-rules",
+      "name": "writing-hookify-rules",
+      "source": "anthropics/claude-plugins-official",
+      "url": "https://www.skills.sh/anthropics/claude-plugins-official/writing-hookify-rules",
+      "installs": 5411,
+      "allTimeRank": 2261,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "writing"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/deploy-checklist",
+      "slug": "deploy-checklist",
+      "name": "deploy-checklist",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/deploy-checklist",
+      "installs": 4782,
+      "allTimeRank": 2421,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "checklist"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/slack-messaging",
+      "slug": "slack-messaging",
+      "name": "slack-messaging",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/slack-messaging",
+      "installs": 3371,
+      "allTimeRank": 3356,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "brand:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "messaging"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/ux-copy",
+      "slug": "ux-copy",
+      "name": "ux-copy",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/ux-copy",
+      "installs": 3321,
+      "allTimeRank": 3390,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "copy"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-generate-library",
+      "slug": "figma-generate-library",
+      "name": "figma-generate-library",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-generate-library",
+      "installs": 3025,
+      "allTimeRank": 3635,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:figma",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/review-contract",
+      "slug": "review-contract",
+      "name": "review-contract",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/review-contract",
+      "installs": 2917,
+      "allTimeRank": 3751,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/seo-audit",
+      "slug": "seo-audit",
+      "name": "seo-audit",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/seo-audit",
+      "installs": 2898,
+      "allTimeRank": 3771,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/design-handoff",
+      "slug": "design-handoff",
+      "name": "design-handoff",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/design-handoff",
+      "installs": 2670,
+      "allTimeRank": 4001,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "design"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/audit-support",
+      "slug": "audit-support",
+      "name": "audit-support",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/audit-support",
+      "installs": 2581,
+      "allTimeRank": 4088,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/performance-review",
+      "slug": "performance-review",
+      "name": "performance-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/performance-review",
+      "installs": 2574,
+      "allTimeRank": 4097,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-create-new-file",
+      "slug": "figma-create-new-file",
+      "name": "figma-create-new-file",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-create-new-file",
+      "installs": 2496,
+      "allTimeRank": 4209,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:figma",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "figma/mcp-server-guide/figma-code-connect",
+      "slug": "figma-code-connect",
+      "name": "figma-code-connect",
+      "source": "figma/mcp-server-guide",
+      "url": "https://www.skills.sh/figma/mcp-server-guide/figma-code-connect",
+      "installs": 2448,
+      "allTimeRank": 4311,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:figma",
+          "visual:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 18,
+            "terms": [
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/discover-brand",
+      "slug": "discover-brand",
+      "name": "discover-brand",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/discover-brand",
+      "installs": 2406,
+      "allTimeRank": 4419,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "brand:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 18,
+            "terms": [
+              "brand"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/metrics-review",
+      "slug": "metrics-review",
+      "name": "metrics-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/metrics-review",
+      "installs": 2337,
+      "allTimeRank": 4553,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "anthropics/knowledge-work-plugins/vendor-review",
+      "slug": "vendor-review",
+      "name": "vendor-review",
+      "source": "anthropics/knowledge-work-plugins",
+      "url": "https://www.skills.sh/anthropics/knowledge-work-plugins/vendor-review",
+      "installs": 2276,
+      "allTimeRank": 4654,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:anthropics",
+          "process:18"
+        ],
+        "primaryDomain": "process",
+        "domains": [
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "review"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "remotion-dev/remotion/writing-docs",
+      "slug": "writing-docs",
+      "name": "writing-docs",
+      "source": "remotion-dev/remotion",
+      "url": "https://www.skills.sh/remotion-dev/remotion/writing-docs",
+      "installs": 2151,
+      "allTimeRank": 4892,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 43,
+        "verdict": "review",
+        "signals": [
+          "owner:remotion-dev",
+          "copy:18"
+        ],
+        "primaryDomain": "copy",
+        "domains": [
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "writing"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "autonnel/autonnel-skills/landing-page-conversion-audit",
+      "slug": "landing-page-conversion-audit",
+      "name": "landing-page-conversion-audit",
+      "source": "autonnel/autonnel-skills",
+      "url": "https://www.skills.sh/autonnel/autonnel-skills/landing-page-conversion-audit",
+      "installs": 11351,
+      "allTimeRank": 1182,
+      "trendingRank": 251,
+      "hotRank": null,
+      "relevance": {
+        "score": 42,
+        "verdict": "review",
+        "signals": [
+          "conversion:36",
+          "process:18",
+          "visual:6"
+        ],
+        "primaryDomain": "conversion",
+        "domains": [
+          {
+            "domain": "conversion",
+            "score": 36,
+            "terms": [
+              "conversion",
+              "landing page"
+            ]
+          },
+          {
+            "domain": "process",
+            "score": 18,
+            "terms": [
+              "audit"
+            ]
+          },
+          {
+            "domain": "visual",
+            "score": 6,
+            "terms": []
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "wshobson/agents/tailwind-design-system",
+      "slug": "tailwind-design-system",
+      "name": "tailwind-design-system",
+      "source": "wshobson/agents",
+      "url": "https://www.skills.sh/wshobson/agents/tailwind-design-system",
+      "installs": 59223,
+      "allTimeRank": 390,
+      "trendingRank": 853,
+      "hotRank": 97,
+      "relevance": {
+        "score": 41,
+        "verdict": "review",
+        "signals": [
+          "visual:36",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "tailwind"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen",
+          "hot:below-noise-floor"
+        ]
+      }
+    },
+    {
+      "id": "affaan-m/ecc/brand-voice",
+      "slug": "brand-voice",
+      "name": "brand-voice",
+      "source": "affaan-m/ecc",
+      "url": "https://www.skills.sh/site/affaan-m.ecc/brand-voice",
+      "installs": 6577,
+      "allTimeRank": 1941,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 41,
+        "verdict": "review",
+        "signals": [
+          "brand:36",
+          "copy:18"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "brand voice"
+            ]
+          },
+          {
+            "domain": "copy",
+            "score": 18,
+            "terms": [
+              "voice"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "samhvw8/dot-claude/ui-design-system",
+      "slug": "ui-design-system",
+      "name": "ui-design-system",
+      "source": "samhvw8/dot-claude",
+      "url": "https://www.skills.sh/samhvw8/dot-claude/ui-design-system",
+      "installs": 3166,
+      "allTimeRank": 3494,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 41,
+        "verdict": "review",
+        "signals": [
+          "visual:36",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "ui"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "giuseppe-trisciuoglio/developer-kit/tailwind-design-system",
+      "slug": "tailwind-design-system",
+      "name": "tailwind-design-system",
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "url": "https://www.skills.sh/giuseppe-trisciuoglio/developer-kit/tailwind-design-system",
+      "installs": 2640,
+      "allTimeRank": 4037,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 41,
+        "verdict": "review",
+        "signals": [
+          "visual:36",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "tailwind"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "srinitude/skills/visual-design-system-extractor",
+      "slug": "visual-design-system-extractor",
+      "name": "visual-design-system-extractor",
+      "source": "srinitude/skills",
+      "url": "https://www.skills.sh/srinitude/skills/visual-design-system-extractor",
+      "installs": 0,
+      "allTimeRank": null,
+      "trendingRank": 699,
+      "hotRank": null,
+      "relevance": {
+        "score": 41,
+        "verdict": "review",
+        "signals": [
+          "visual:36",
+          "architecture:18"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "visual"
+            ]
+          },
+          {
+            "domain": "architecture",
+            "score": 18,
+            "terms": [
+              "design system"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "refoundai/lenny-skills/positioning-messaging",
+      "slug": "positioning-messaging",
+      "name": "positioning-messaging",
+      "source": "refoundai/lenny-skills",
+      "url": "https://www.skills.sh/refoundai/lenny-skills/positioning-messaging",
+      "installs": 2097,
+      "allTimeRank": 4972,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 39,
+        "verdict": "review",
+        "signals": [
+          "brand:39"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 39,
+            "terms": [
+              "positioning",
+              "messaging"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "giuseppe-trisciuoglio/developer-kit/shadcn-ui",
+      "slug": "shadcn-ui",
+      "name": "shadcn-ui",
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "url": "https://www.skills.sh/giuseppe-trisciuoglio/developer-kit/shadcn-ui",
+      "installs": 19958,
+      "allTimeRank": 863,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "shadcn"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "wshobson/agents/responsive-design",
+      "slug": "responsive-design",
+      "name": "responsive-design",
+      "source": "wshobson/agents",
+      "url": "https://www.skills.sh/wshobson/agents/responsive-design",
+      "installs": 16593,
+      "allTimeRank": 932,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "responsive"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "giuseppe-trisciuoglio/developer-kit/tailwind-css-patterns",
+      "slug": "tailwind-css-patterns",
+      "name": "tailwind-css-patterns",
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "url": "https://www.skills.sh/giuseppe-trisciuoglio/developer-kit/tailwind-css-patterns",
+      "installs": 14790,
+      "allTimeRank": 969,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "css",
+              "tailwind"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "wshobson/agents/visual-design-foundations",
+      "slug": "visual-design-foundations",
+      "name": "visual-design-foundations",
+      "source": "wshobson/agents",
+      "url": "https://www.skills.sh/wshobson/agents/visual-design-foundations",
+      "installs": 10748,
+      "allTimeRank": 1233,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "visual"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "patricio0312rev/skills/framer-motion-animator",
+      "slug": "framer-motion-animator",
+      "name": "framer-motion-animator",
+      "source": "patricio0312rev/skills",
+      "url": "https://www.skills.sh/patricio0312rev/skills/framer-motion-animator",
+      "installs": 8980,
+      "allTimeRank": 1456,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "motion:36"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 36,
+            "terms": [
+              "motion",
+              "framer"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "secondsky/claude-skills/tailwind-v4-shadcn",
+      "slug": "tailwind-v4-shadcn",
+      "name": "tailwind-v4-shadcn",
+      "source": "secondsky/claude-skills",
+      "url": "https://www.skills.sh/secondsky/claude-skills/tailwind-v4-shadcn",
+      "installs": 7121,
+      "allTimeRank": 1815,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "tailwind",
+              "shadcn"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "ceorkm/mobile-app-ui-design/mobile-app-ui-design",
+      "slug": "mobile-app-ui-design",
+      "name": "mobile-app-ui-design",
+      "source": "ceorkm/mobile-app-ui-design",
+      "url": "https://www.skills.sh/ceorkm/mobile-app-ui-design/mobile-app-ui-design",
+      "installs": 6541,
+      "allTimeRank": 1951,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "openai/skills/figma-implement-design",
+      "slug": "figma-implement-design",
+      "name": "figma-implement-design",
+      "source": "openai/skills",
+      "url": "https://www.skills.sh/openai/skills/figma-implement-design",
+      "installs": 5029,
+      "allTimeRank": 2342,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "figma"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "claude-office-skills/skills/brand-guidelines-generator",
+      "slug": "brand-guidelines-generator",
+      "name": "brand guidelines generator",
+      "source": "claude-office-skills/skills",
+      "url": "https://www.skills.sh/claude-office-skills/skills/brand-guidelines-generator",
+      "installs": 3770,
+      "allTimeRank": 3010,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "brand:36"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "guidelines"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "shajith003/awesome-claude-skills/ui-design",
+      "slug": "ui-design",
+      "name": "ui-design",
+      "source": "shajith003/awesome-claude-skills",
+      "url": "https://www.skills.sh/shajith003/awesome-claude-skills/ui-design",
+      "installs": 3538,
+      "allTimeRank": 3225,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "composiohq/awesome-claude-skills/brand-guidelines",
+      "slug": "brand-guidelines",
+      "name": "brand-guidelines",
+      "source": "composiohq/awesome-claude-skills",
+      "url": "https://www.skills.sh/composiohq/awesome-claude-skills/brand-guidelines",
+      "installs": 3402,
+      "allTimeRank": 3337,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "brand:36"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "guidelines"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "jezweb/claude-skills/shadcn-ui",
+      "slug": "shadcn-ui",
+      "name": "shadcn-ui",
+      "source": "jezweb/claude-skills",
+      "url": "https://www.skills.sh/jezweb/claude-skills/shadcn-ui",
+      "installs": 3348,
+      "allTimeRank": 3370,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "shadcn"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "freshtechbro/claudedesignskills/motion-framer",
+      "slug": "motion-framer",
+      "name": "motion-framer",
+      "source": "freshtechbro/claudedesignskills",
+      "url": "https://www.skills.sh/freshtechbro/claudedesignskills/motion-framer",
+      "installs": 3107,
+      "allTimeRank": 3550,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "motion:36"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 36,
+            "terms": [
+              "motion",
+              "framer"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "jezweb/claude-skills/tailwind-theme-builder",
+      "slug": "tailwind-theme-builder",
+      "name": "tailwind-theme-builder",
+      "source": "jezweb/claude-skills",
+      "url": "https://www.skills.sh/jezweb/claude-skills/tailwind-theme-builder",
+      "installs": 2941,
+      "allTimeRank": 3717,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "tailwind",
+              "theme"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "bencium/bencium-marketplace/ui-typography",
+      "slug": "ui-typography",
+      "name": "ui-typography",
+      "source": "bencium/bencium-marketplace",
+      "url": "https://www.skills.sh/bencium/bencium-marketplace/ui-typography",
+      "installs": 2825,
+      "allTimeRank": 3846,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "ui",
+              "typography"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "paulrberg/agent-skills/tailwind-css",
+      "slug": "tailwind-css",
+      "name": "tailwind-css",
+      "source": "paulrberg/agent-skills",
+      "url": "https://www.skills.sh/paulrberg/agent-skills/tailwind-css",
+      "installs": 2723,
+      "allTimeRank": 3952,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "css",
+              "tailwind"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "jezweb/claude-skills/tailwind-v4-shadcn",
+      "slug": "tailwind-v4-shadcn",
+      "name": "tailwind-v4-shadcn",
+      "source": "jezweb/claude-skills",
+      "url": "https://www.skills.sh/jezweb/claude-skills/tailwind-v4-shadcn",
+      "installs": 2709,
+      "allTimeRank": 3968,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "tailwind",
+              "shadcn"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "omer-metin/skills-for-antigravity/game-ui-design",
+      "slug": "game-ui-design",
+      "name": "game-ui-design",
+      "source": "omer-metin/skills-for-antigravity",
+      "url": "https://www.skills.sh/omer-metin/skills-for-antigravity/game-ui-design",
+      "installs": 2590,
+      "allTimeRank": 4080,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "mindrally/skills/accessibility-a11y",
+      "slug": "accessibility-a11y",
+      "name": "accessibility-a11y",
+      "source": "mindrally/skills",
+      "url": "https://www.skills.sh/mindrally/skills/accessibility-a11y",
+      "installs": 2512,
+      "allTimeRank": 4180,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "accessibility",
+              "a11y"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "mindrally/skills/framer-motion",
+      "slug": "framer-motion",
+      "name": "framer-motion",
+      "source": "mindrally/skills",
+      "url": "https://www.skills.sh/mindrally/skills/framer-motion",
+      "installs": 2400,
+      "allTimeRank": 4438,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "motion:36"
+        ],
+        "primaryDomain": "motion",
+        "domains": [
+          {
+            "domain": "motion",
+            "score": 36,
+            "terms": [
+              "motion",
+              "framer"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "benjaminsehl/liquid-skills/liquid-theme-a11y",
+      "slug": "liquid-theme-a11y",
+      "name": "liquid-theme-a11y",
+      "source": "benjaminsehl/liquid-skills",
+      "url": "https://www.skills.sh/benjaminsehl/liquid-skills/liquid-theme-a11y",
+      "installs": 2315,
+      "allTimeRank": 4592,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "theme",
+              "a11y"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "samuraigpt/generative-media-skills/muapi-ui-design",
+      "slug": "muapi-ui-design",
+      "name": "muapi-ui-design",
+      "source": "samuraigpt/generative-media-skills",
+      "url": "https://www.skills.sh/samuraigpt/generative-media-skills/muapi-ui-design",
+      "installs": 2105,
+      "allTimeRank": 4963,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "visual:36"
+        ],
+        "primaryDomain": "visual",
+        "domains": [
+          {
+            "domain": "visual",
+            "score": 36,
+            "terms": [
+              "design",
+              "ui"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    },
+    {
+      "id": "nexu-io/open-design/brand-guidelines",
+      "slug": "brand-guidelines",
+      "name": "brand-guidelines",
+      "source": "nexu-io/open-design",
+      "url": "https://www.skills.sh/nexu-io/open-design/brand-guidelines",
+      "installs": 2083,
+      "allTimeRank": 4998,
+      "trendingRank": null,
+      "hotRank": null,
+      "relevance": {
+        "score": 36,
+        "verdict": "review",
+        "signals": [
+          "brand:36"
+        ],
+        "primaryDomain": "brand",
+        "domains": [
+          {
+            "domain": "brand",
+            "score": 36,
+            "terms": [
+              "brand",
+              "guidelines"
+            ]
+          }
+        ]
+      },
+      "momentum": {
+        "state": "new",
+        "score": 70,
+        "delta": null,
+        "growthPct": null,
+        "signals": [
+          "first-seen"
+        ]
+      }
+    }
+  ]
+}

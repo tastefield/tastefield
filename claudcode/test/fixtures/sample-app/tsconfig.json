@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    // Trailing comma and comment below are intentional — real tsconfigs are JSONC
+    // and the alias reader has to cope with that.
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
