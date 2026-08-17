@@ -21,7 +21,7 @@ buried as a subheading lede on the existing page.
 The mismatch is deliberate. "Brand" states the scope of rules being compiled and covers
 the copy/voice/motion domains the taxonomy already names (line 48). The code-side verb
 ("as the AI types") keeps the claim out of Adobe Brand Intelligence's category, which
-line 311 identifies as content-side and explicitly a bad fight to pick. Widening both
+line 323 identifies as content-side and explicitly a bad fight to pick. Widening both
 halves walks into that fight.
 
 ---
@@ -32,10 +32,10 @@ halves walks into that fight.
 
 1. Line 92 states the beyond-code vision is "vision, not roadmap... Don't let this bleed
    into Phase 2/3 descriptions until it's actually decided." The marketing site is Phase 2.
-2. It implies Tastefield *supplies* taste. The architecture assumes the opposite — line 318
+2. It implies Tastefield *supplies* taste. The architecture assumes the opposite — line 330
    scopes the addressable market to "companies with a real, existing system, not companies
    that need one invented."
-3. It occupies the position line 316 identifies as the sharpest differentiator *against*:
+3. It occupies the position line 328 identifies as the sharpest differentiator *against*:
    buildwithtaste.com aggregates "what you personally like... not what your company
    actually, already is."
 4. Unfalsifiable, which collides with the spirit of non-negotiable #3.
@@ -45,7 +45,7 @@ v2.2 draft.
 
 **Rejected: "design system intelligence."** Same scope as "design system" (one of eight
 domains) with a vaguer claim. "Intelligence" describes Adobe's opaque brand brain
-accurately and a checkable regex badly — it sells the exact property line 320 says to
+accurately and a checkable regex badly — it sells the exact property line 332 says to
 avoid. Also a direct echo of a much larger company's product name.
 
 **Rejected: leading with skill-bundling / recipes.** Line 299 records that Vercel Packs
@@ -109,11 +109,11 @@ Two constraints from the blueprint govern this:
   127K installs on a 176-star repo — "Differentiation has to be enforcement *after*
   extraction, not extraction." A slider that only restyles is the commodity half.
 
-Violation callouts on the ungoverned state are required, per line 172.
+Violation callouts on the ungoverned state are required, per line 178.
 
 **Alternates**
 
-- Two agents, one prompt, diverging live. Most persuasive; line 179 scopes it as a
+- Two agents, one prompt, diverging live. Most persuasive; line 185 scopes it as a
   recorded video rather than hero real estate because it's slow and expensive live.
 - Terminal-first: a real `npx` run streaming compiled rules with a counter. Cheapest to
   build, strongest signal for a developer audience, no design risk.
@@ -214,7 +214,7 @@ answer right in red mono. Final line lands full-width, alone.
 - A clean PR diff that blooms with violation annotations after two seconds.
 - The generic-shadcn wall: nine outputs from nine prompts, visibly identical. Names the
   enemy the way tasteprofile.io names "shadcn-flavored."
-- A live violation counter. Requires the opt-in anonymized pool from line 127 — future.
+- A live violation counter. Requires the opt-in anonymized pool from line 133 — future.
 
 ---
 
@@ -287,8 +287,8 @@ That is the same information architecture as Trigger/Decision/Reason/Evidence/Tr
 rendered as working product UI rather than documentation. A restraint shown this way reads
 as a live system; the same restraint shown as a prose block reads as a spec.
 
-It also connects two things already decided: the compiled-draft review surface at line 234,
-and the correction-becomes-candidate-restraint mechanic at line 320. Blume is shipping that
+It also connects two things already decided: the compiled-draft review surface at line 246,
+and the correction-becomes-candidate-restraint mechanic at line 332. Blume is shipping that
 second mechanic now — mining conversations for repeated corrections and proposing a Rule or
 Skill from them, human approval intact — so the interaction pattern is validated, not
 speculative.
@@ -311,7 +311,7 @@ speculative.
 4. Keep every tool you already have. — *plain*
 5. Nothing gets replaced. Something finally gets enforced. — *turn*
 
-Read-only always, per line 193. Sources and their status from line 187.
+Read-only always, per line 199. Sources and their status from line 193.
 
 **Primary visual:** keep the existing source grid with honest `READ-ONLY` / `PLANNED`
 badges — one of the better things on the current page.
@@ -336,11 +336,11 @@ badges — one of the better things on the current page.
 4. Recipes for what you're building — and who's building it. — *two axes*
 5. A registry your agent can query mid-task. — *differentiating*
 
-Show both axes as separate sections, per line 261: recipes by product category and
+Show both axes as separate sections, per line 273: recipes by product category and
 recipes by role. Mixing them "recreates the exact 'seems random' failure the category-first
 taxonomy was originally designed to fix."
 
-**Primary visual:** two-column taxonomy browser with mood-caption variant cards (line 255),
+**Primary visual:** two-column taxonomy browser with mood-caption variant cards (line 267),
 placed inside the "On the horizon" tier established in section 2 rather than carrying its
 own ad-hoc `PLANNED` ribbon. One roadmap vocabulary across the whole page, not two.
 
@@ -352,7 +352,7 @@ own ad-hoc `PLANNED` ribbon. One roadmap vocabulary across the whole page, not t
 - A creative-skills table with a **Gen Agent Trust Hub audit column**. The most defensible
   registry surface: skills.sh shows install counts and no safety signal, and the sweep
   found `emil-design-eng` at 203.7K installs hidden behind a broken singular/plural link
-  (line 298). Consistent with non-negotiable #5 — displaying a flagged skill is fine,
+  (line 310). Consistent with non-negotiable #5 — displaying a flagged skill is fine,
   bundling it into a recipe is not.
 
 ---
@@ -372,7 +372,7 @@ baseline 173 lines / 49 errors / 5 warnings / density 31.21, governed 192 lines 
 density 0.
 
 Keep the existing amber caveat verbatim — it is the best-written thing on the current
-site, and line 331 requires it: both arms were hand-authored by the same author in one
+site, and line 344 requires it: both arms were hand-authored by the same author in one
 sitting, so this proves the harness works, not the claim under real prompt variance.
 
 Promote this section above Registry. Consider a `What we haven't proven` nav item —
@@ -406,7 +406,7 @@ kind.
 > line broke which rule.
 
 tasteprofile.io answers the same question and stops at "you're still the judge of the
-final work" (recorded at line 316). Tastefield has a checker. Copy their rhetorical
+final work" (recorded at line 328). Tastefield has a checker. Copy their rhetorical
 structure — admit the limit, then reframe — but not their answer. This is the single
 clearest paragraph available on the site, and it satisfies non-negotiable #3.
 
@@ -422,14 +422,14 @@ clearest paragraph available on the site, and it satisfies non-negotiable #3.
 
 ### 10. Founder letter
 
-Where the beyond-code vision goes, per line 92's instruction to keep it out of shipped
+Where the beyond-code vision goes, per line 98's instruction to keep it out of shipped
 product copy. Ambition reads as conviction in prose and as a claim in an H1.
 
 **Headlines**
 
 1. **Why this exists.** — *recommended*
 2. Brand judgment is the last thing AI can't do for you. — *thesis*
-3. The Swiss Army knife, not the table saw. — *line 77*
+3. The Swiss Army knife, not the table saw. — *line 79*
 4. A letter about slop. — *blunt*
 5. What I think happens next. — *forward*
 
@@ -461,7 +461,7 @@ The current page reduces this to a throwaway line.
 **Alternates**
 
 - An asciinema recording of a real install.
-- A "Try in Cursor" deep link — already in the backlog at line 147.
+- A "Try in Cursor" deep link — already in the backlog at line 153.
 - Three numbered steps with copyable commands.
 
 ---
@@ -469,8 +469,8 @@ The current page reduces this to a throwaway line.
 ## Art direction (decided 2026-08-17)
 
 **The constraint that sets everything else: painted pastoral is already taken, twice, by the
-two closest competitors.** tasteprofile.io (line 316) is rolling green hills under painted
-cumulus. Blume (line 329) is a flower field under painted cirrus. Both light, both
+two closest competitors.** tasteprofile.io (line 328) is rolling green hills under painted
+cumulus. Blume (line 342) is a flower field under painted cirrus. Both light, both
 soft-brush, both with a sharp product UI floating in front. A third instance doesn't read as
 a category convention — it reads as a lookalike of the two products this document spends its
 positioning section differentiating from. The name supplies the field. The rendering has to
@@ -485,12 +485,12 @@ Reference: Shopify Editions Winter '26.
 **Why editorial structure matters more than any illustration choice.** All four reference
 competitors are single-scroll landing pages. The content here is unusually detailed and
 unusually caveated — benchmark numbers that ship with their own caveats, a domain axis where
-only Visual genuinely ships (line 335), a registry that isn't built. A single scroll
+only Visual genuinely ships (line 348), a registry that isn't built. A single scroll
 compresses that into three feature cards and a CTA, and the honesty that is supposed to be
 the differentiator reads as thin instead. Numbered sections let the rigour breathe and make
 the page feel authored rather than assembled. It is also harder to copy than a sky.
 
-The vocabulary already agrees: the hero is called a **Specimen Wall** (line 162). "Specimen"
+The vocabulary already agrees: the hero is called a **Specimen Wall** (line 168). "Specimen"
 is the botanical word. That coherence is free.
 
 ### The dusk frontispiece
@@ -508,7 +508,7 @@ product artifact panels readable in near-black without a palette change.
 
 One botanical motif: the **dandelion**. Not decoration — it earns the slot four ways. A
 dandelion clock is a natural before/after object, which is the Specimen Wall wipe already
-specified at line 236. Seeds dispersing and taking root is a design system propagating into
+specified at line 248. Seeds dispersing and taking root is a design system propagating into
 agent output. It is humble rather than precious, which suits a product selling restraint.
 And the seed head is white-grey, so it won't fight the accent colours.
 
@@ -639,12 +639,12 @@ Observed on the four reference sites, applicable throughout.
   H1.
 - **Promote human-in-the-loop review to a headline benefit.** Blume's "See Every Change
   Before It Lands — review the evidence and exact diff, then apply, dismiss, or save."
-  Tastefield has this capability specified at lines 232–236 and it currently appears
+  Tastefield has this capability specified at lines 244–248 and it currently appears
   nowhere in the messaging.
 
 **Do not copy** their page shape. Clearly Digital, Inc. is a services business — discovery
 call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distribution is
-`npx`, no account, no call, and line 311 identifies that friction difference as a win.
+`npx`, no account, no call, and line 323 identifies that friction difference as a win.
 
 ---
 
@@ -662,7 +662,7 @@ call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distr
    What remains is *breadth* of copy coverage — banned phrases, tone, per-brand voice
    rules — not the first one. Downgrade from blocking to normal roadmap work.
 
-3. **Live-URL scanning is unresolved** (line 99). The hero's "paste a URL" interaction
+3. **Live-URL scanning is unresolved** (line 105). The hero's "paste a URL" interaction
    assumes `src/scan/` can extract from an arbitrary rendered site, which is a different
    pipeline from parsing a repo. Confirm or scope before building the hero around it.
 
