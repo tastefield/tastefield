@@ -466,6 +466,156 @@ The current page reduces this to a throwaway line.
 
 ---
 
+## Art direction (decided 2026-08-17)
+
+**The constraint that sets everything else: painted pastoral is already taken, twice, by the
+two closest competitors.** tasteprofile.io (line 316) is rolling green hills under painted
+cumulus. Blume (line 329) is a flower field under painted cirrus. Both light, both
+soft-brush, both with a sharp product UI floating in front. A third instance doesn't read as
+a category convention — it reads as a lookalike of the two products this document spends its
+positioning section differentiating from. The name supplies the field. The rendering has to
+come from somewhere else.
+
+### Direction: the Field Guide
+
+The site is an edition of a field guide — bone paper, a persistent left rail with
+Roman-numeral sections, display serif with italic section titles, engraved botanical plates.
+Reference: Shopify Editions Winter '26.
+
+**Why editorial structure matters more than any illustration choice.** All four reference
+competitors are single-scroll landing pages. The content here is unusually detailed and
+unusually caveated — benchmark numbers that ship with their own caveats, a domain axis where
+only Visual genuinely ships (line 335), a registry that isn't built. A single scroll
+compresses that into three feature cards and a CTA, and the honesty that is supposed to be
+the differentiator reads as thin instead. Numbered sections let the rigour breathe and make
+the page feel authored rather than assembled. It is also harder to copy than a sky.
+
+The vocabulary already agrees: the hero is called a **Specimen Wall** (line 162). "Specimen"
+is the botanical word. That coherence is free.
+
+### The dusk frontispiece
+
+The landscape appears once, full-bleed, framed as a colour plate sitting *on* the paper —
+not used as a page background. That framing is what lets a dark hero and a paper body
+coexist instead of fighting.
+
+Dusk, not noon. Reference: Indigo AI's HQ. Two reasons beyond avoiding the lookalike
+problem — the logo's blue-to-orange gradient *is* a dusk horizon, so the brand mark and the
+environment become the same object; and deep teal-green with a warm horizon band leaves the
+product artifact panels readable in near-black without a palette change.
+
+### Motif discipline
+
+One botanical motif: the **dandelion**. Not decoration — it earns the slot four ways. A
+dandelion clock is a natural before/after object, which is the Specimen Wall wipe already
+specified at line 236. Seeds dispersing and taking root is a design system propagating into
+agent output. It is humble rather than precious, which suits a product selling restraint.
+And the seed head is white-grey, so it won't fight the accent colours.
+
+Resist the meadow. Blume commits to exactly one flower, tied to their name, and that
+discipline is most of why it reads as sophisticated rather than busy.
+
+**A scoop and a hill are the same form at different scales.** The logo establishes the
+scoop; every rolling hill on the site then inherits the reading without a cone being drawn
+anywhere. Carry the dome across hills, card shoulders, and chart curves.
+
+### Where the dessert goes
+
+Four places, none of them literal, ranked by how well they survive the sophistication test.
+
+- **Form.** The dome, as above.
+- **Colour.** The logo gradient reads as sorbet and as a dusk sky simultaneously. Desaturate
+  toward gelateria, not sweet shop.
+- **Texture.** Halftone at close range looks like sugar. This is the entire dessert budget,
+  spent on surface instead of objects.
+- **One easter egg.** Replace the square `grid-faint` background with a faint waffle
+  lattice. Anyone who misses it sees texture.
+
+Plus exactly one literal cone: photographed or rendered, composited among floating product
+artifacts, played straight. This is Shopify's physical-object move (skateboard, wheel, among
+the UI cards). Once. Not illustrated, not repeated, not in the hero.
+
+### The character veil
+
+An ASCII layer dissolving the illustration into text. Reference: HQ. Revised 2026-08-17
+after a first pass specified real compiled output as the glyph source.
+
+**Alphabet, not strings.** Single glyphs drawn from the syntax of compiled output — hex
+digits `0-9a-f` plus `# - : { } / * $ < >`. **Rejected: real rule IDs.**
+`no-arbitrary-values` is nineteen characters; it streaks horizontally, breaks the uniform
+cell density that makes a monospace field read as dither rather than content, and creates a
+second reading order competing with the headline. Words get read, glyphs get seen. The
+character *distribution* carries the association; no legibility is required to get it.
+
+The one exception worth keeping is **hex values** — `#0a84ff` is seven characters, legible
+at a glance without demanding to be read, and self-evidently a colour. Sparse regions only.
+
+**Meaning lives in the composition, not the glyphs.** The veil runs directional: fully
+illustrated on one side, fully resolved to characters on the other, crossover tied to scroll
+position. That single image is scan → compile → serve, and it reads at a glance where glyph
+content only reads on inspection. Put the message where it will actually be received.
+
+Real compiled output therefore belongs one layer over, in the product artifact panel showing
+what the MCP server actually serves. **Veil is texture; artifact is truth.**
+
+**Motion.** Refresh a small random subset of cells at 4–8fps, not the whole grid. Opacity at
+or below 0.15. Hold completely still for seconds at a time, and freeze entirely behind body
+copy. Gusts and lulls, not a constant rate — the constant refresh is what makes HQ's version
+feel busy, more than the glyph count does.
+
+### φ construction marks
+
+Set the real section heights, column splits, and type scale to 1.618, then draw marks that
+reveal structure which genuinely exists. Reference: Shopify's faint concentric circles with
+crosshairs, placed on actual focal points at low contrast.
+
+**Reject the spiral overlay.** A φ spiral floating over a layout that doesn't use it is
+ornament imitating rigour, on a site whose entire thesis (line 42) is that only verifiable
+rules count. Draw-in via SVG `stroke-dashoffset` tied to scroll position rather than
+autoplay, so the page appears to construct its own scaffold and the content settles into it.
+
+### Type stack
+
+Replaces Geist Sans / Geist Mono, currently the most generic pairing in developer tools and
+a large part of why the existing page reads as undifferentiated.
+
+- **Display and section titles — Fraunces** (variable, OFL). The `opsz`, `WONK` and `SOFT`
+  axes give it genuine old-style character at poster sizes. Italic is reserved for section
+  titles; never body.
+- **Sans — ABC Diatype** (licensed). Files already owned, at
+  `machinekind/web/src/fonts/ABCDiatype-{Regular,Medium,Bold}.woff2` — 400/500/700, no
+  italic, which is correct because italics come from Fraunces. Load via `next/font/local`,
+  same pattern as `machinekind/web/src/app/layout.tsx`.
+- **Mono, code — Commit Mono** (OFL).
+- **Mono, veil — a bitmap face** such as Departure Mono. Deliberately different from the
+  code mono: the veil is texture and wants even pixel density, while code blocks want a
+  reading face.
+
+**The mechanic matters more than the faces.** Display at poster scale, sans at label scale
+(11–13px, letterspaced, frequently uppercase, as in Shopify's rail and eyebrows), and
+essentially nothing in between. The size jump is the effect; a 20px serif beside an 18px
+sans kills it regardless of which fonts are loaded.
+
+### Palette
+
+Move off the Apple system colours (`#0a84ff`, `#30d158`, `#ffd60a`, `#ff453a`). They are
+accurate for a macOS app and generic for a marketing site, and they are part of what makes
+the current page read as one more devtool. Dusk plate: deep teal-green field under a horizon
+band running the logo gradient. Body: bone paper. Product artifact panels: keep near-black.
+
+### Do not
+
+**No AI-generated hero art.** Both Blume's and HQ's fields read as authored by a person, and
+that is load-bearing for them. For a product whose thesis is that generative output is
+generic, shipping a generative hero is a self-inflicted wound in front of an audience
+selected for noticing. Commission, paint, or print something with a visible hand.
+
+No repeated cones as decoration, no anthropomorphised food, and no second dessert type. The
+product vocabulary already spends the food budget on "Recipes"; recipes plus ice cream plus
+a field is a cooking site.
+
+---
+
 ## Copy mechanics worth reusing
 
 Observed on the four reference sites, applicable throughout.
@@ -515,3 +665,15 @@ call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distr
 3. **Live-URL scanning is unresolved** (line 99). The hero's "paste a URL" interaction
    assumes `src/scan/` can extract from an arbitrary rendered site, which is a different
    pipeline from parsing a repo. Confirm or scope before building the hero around it.
+
+4. **ABC Diatype's licence needs checking before it ships.** The files are already owned and
+   in use on Machinekind, but Dinamo's webfont licences are typically scoped per domain and
+   per pageview tier — a second project on a second domain is plausibly a second licence,
+   not a free copy. Confirm coverage before launch. Fraunces, Commit Mono and Departure Mono
+   are all OFL and carry no equivalent risk, so only the sans is exposed. Fallback if the
+   licence doesn't extend: PP Neue Montreal, or Archivo at zero cost.
+
+5. **The dusk frontispiece and the botanical plates need an illustrator.** The art direction
+   rules out generative imagery for a reason it also has to live with — that work has to be
+   commissioned, and it is the long-lead item on the whole page. Scope it before the build
+   starts rather than discovering it as a blocker.
