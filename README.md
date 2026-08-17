@@ -20,14 +20,36 @@ A Field contains what you know, value, and notice. A Skill contains how to do so
 
 ## Install
 
+Requires Node.js 20+. The package builds itself on install, so no separate build step is needed.
+
+### Run without installing
+
 ```bash
-npm install -g .
-# or during development:
+git clone https://github.com/ashergodfrey11/tastefield.git
+cd tastefield
 npm install
 npm run tastefield -- --help
 ```
 
-Requires Node.js 20+.
+### Install the `tastefield` command
+
+```bash
+npm install -g /path/to/tastefield
+```
+
+If that fails with `EACCES`, your Node was installed into a root-owned prefix
+(common with the official Node installer, where the prefix is `/usr/local`).
+Point npm at a user-owned prefix instead of using `sudo`:
+
+```bash
+npm config set prefix ~/.npm-global
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+npm install -g /path/to/tastefield
+```
+
+Node installed via Homebrew, nvm, fnm, volta, or asdf already uses a user-owned
+prefix and needs none of this.
 
 ## Commands
 
