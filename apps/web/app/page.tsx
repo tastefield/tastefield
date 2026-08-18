@@ -1,35 +1,54 @@
+import { Fragment } from "react";
+
+import { Card, Footer, MaskLines, Nav, Reveal, Section } from "@/components/site";
+import { GlyphVeil, PhiMarks } from "@/components/plate";
 import { TasteSampler } from "@/components/TasteSampler";
 import { ViolationWipe } from "@/components/ViolationWipe";
-import { Card, Footer, Nav, Reveal, Section } from "@/components/site";
 
 const PIPELINE = [
   {
     step: "01",
     name: "Scan",
-    body: "Reads the design system already in your repo — CSS custom properties, Tailwind theme, cva variant contracts. Your config is parsed, never executed.",
+    body: "Reads the design system already in your repo: CSS custom properties, Tailwind theme, cva variant contracts. Your config is parsed, never executed.",
   },
   {
     step: "02",
     name: "Compile",
-    body: "Turns what it found into rules that cite your real tokens and your real components, each carrying a machine-checkable pattern wherever one can be expressed.",
+    body: "Turns what it found into rules that carry a checkable pattern, written to .tastefield/ where you can read and edit them.",
   },
   {
     step: "03",
     name: "Serve",
-    body: "A local MCP server hands the agent only the slice it asked for — this component's contract, these tokens — at the moment it writes code.",
+    body: "A local MCP server hands the agent only the slice it asked for, this component's contract or these tokens, at the moment it writes code.",
   },
   {
     step: "04",
     name: "Check",
-    body: "The same checker the rules were compiled from verifies the output. One implementation, so what you claim and what you measure cannot drift apart.",
+    body: "The same checker runs against generated code, so the rule that was served is the rule that gets enforced.",
   },
 ];
 
 const TOOLS = [
-  { name: "get_brand_standards", body: "Voice, restraints, and the things the product is not allowed to say." },
-  { name: "get_component_contract", body: "The real props and variants of one component, so the agent stops inventing them." },
-  { name: "get_design_tokens", body: "Your actual scale — color, spacing, radius, type — instead of a plausible guess." },
-  { name: "check_compliance", body: "Verifies generated code against the compiled rules before it reaches your diff." },
+  {
+    title: "Brand standards",
+    name: "get_brand_standards",
+    body: "Voice, restraints, and the things the product is not allowed to say.",
+  },
+  {
+    title: "Component contract",
+    name: "get_component_contract",
+    body: "The real props and variants of one component, so the agent stops inventing them.",
+  },
+  {
+    title: "Design tokens",
+    name: "get_design_tokens",
+    body: "Your actual scale for color, spacing, radius, and type, instead of a plausible guess.",
+  },
+  {
+    title: "Compliance check",
+    name: "check_compliance",
+    body: "Verifies generated code against the compiled rules before it reaches your diff.",
+  },
 ];
 
 const SOURCES = [
@@ -41,99 +60,93 @@ const SOURCES = [
   { name: "Supernova", note: "On the connect list", ready: false },
 ];
 
-const RECIPES = [
-  {
-    family: "fintech-trust-first",
-    variants: [
-      ["institutional", "Boardroom conservative"],
-      ["neobank", "Confident and modern"],
-      ["embedded", "Invisible and fast"],
-    ],
-  },
-  {
-    family: "devtool-dark-first",
-    variants: [
-      ["core", "Dark-first and quiet"],
-      ["terminal", "Dense and monospaced"],
-    ],
-  },
-  {
-    family: "consumer-checkout-safe",
-    variants: [
-      ["conversion", "Warm and reassuring"],
-      ["regulated", "Plain and unpushy"],
-    ],
-  },
-];
-
 export default function Home() {
   return (
     <>
       <Nav />
 
       <main id="top" className="flex-1">
-        {/* Hero */}
-        <section className="grid-faint relative overflow-hidden border-b border-line">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          <div className="mx-auto w-full max-w-6xl px-5 pt-16 pb-14 sm:pt-24 sm:pb-20">
-            <Reveal className="max-w-3xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-[11.5px] text-muted">
-                <span className="size-1.5 rounded-full bg-ok" />
-                Local MCP server · nothing leaves your machine
-              </div>
-              <h1 className="display text-[40px] font-semibold sm:text-[62px]">
-                Your design system,
-                <br />
-                enforced as the AI types.
-              </h1>
-              <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-muted sm:text-[17.5px]">
-                Cursor doesn&apos;t know your tokens, so it invents them. Tastefield compiles the
-                design system you already have into rules your agent has to follow — then checks
-                the output before it reaches your diff.
+        {/* Hero. Pulled up so the nav floats over the dusk plate rather than above it. */}
+        <section className="plate-dusk relative -mt-16 overflow-hidden">
+          <div className="horizon pointer-events-none absolute inset-0" />
+          <GlyphVeil />
+          <PhiMarks />
+
+          <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-5 pt-[calc(var(--s6)+4rem)] pb-[var(--s6)] sm:min-h-[92vh]">
+            <MaskLines
+              className="display display-sans display-1 max-w-[21ch]"
+              lines={[
+                <Fragment key="line-1">
+                  The brand and <em>taste</em>
+                </Fragment>,
+                <Fragment key="line-2">layer for agents.</Fragment>,
+              ]}
+            />
+
+            <Reveal delay={0.5} className="mt-[var(--s4)] max-w-xl">
+              <p className="lede text-muted">
+                The portable brand engine that travels with your agent and plugs into Claude
+                Code, Codex, and Cursor.
               </p>
             </Reveal>
 
-            <Reveal delay={0.08} className="mt-7 flex flex-wrap items-center gap-3">
-              <a
-                href="#install"
-                className="rounded-lg bg-ink px-4 py-2.5 text-[13.5px] font-semibold text-bg transition-opacity hover:opacity-90"
-              >
+            <Reveal
+              delay={0.62}
+              className="mt-[var(--s4)] flex flex-wrap items-center gap-[var(--s2)]"
+            >
+              <a href="#install" className="btn btn-primary">
                 Add to your editor
               </a>
-              <a
-                href="#how"
-                className="rounded-lg border border-line-strong px-4 py-2.5 text-[13.5px] font-medium text-ink transition-colors hover:bg-surface"
-              >
-                See how it works
+              <a href="#how" className="btn btn-ghost">
+                See what it catches
               </a>
-              <span className="text-[12.5px] text-faint">
-                Works alongside Figma, zeroheight and Storybook — it replaces none of them.
-              </span>
             </Reveal>
 
-            <Reveal delay={0.14} className="mt-12">
-              <div className="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h2 className="text-[14px] font-medium">Point it at a site. Watch a whole system land at once.</h2>
-                <p className="text-[12.5px] text-faint">
-                  Every primitive re-renders on the extracted tokens — that cascade is the proof it&apos;s systemic, not a theme switch.
-                </p>
-              </div>
-              <TasteSampler />
+            <Reveal
+              delay={0.74}
+              className="label mt-[var(--s5)] flex flex-wrap items-center gap-[var(--s2)] text-faint"
+            >
+              <span>Works with</span>
+              <span className="h-px w-8 bg-line-strong" />
+              <span className="text-muted">Claude Code</span>
+              <span className="text-muted">Codex</span>
+              <span className="text-muted">Cursor</span>
             </Reveal>
           </div>
         </section>
 
+        {/* Sampler */}
+        <section className="rhythm-section mx-auto w-full max-w-6xl px-5">
+          <Reveal className="mb-[var(--s3)] max-w-2xl">
+            <h2 className="display display-3">
+              Point it at a site. Watch a whole system land at once.
+            </h2>
+            <p className="lede mt-[var(--s2)] text-muted">
+              Every primitive re-renders on the extracted tokens. That cascade is the proof it
+              works across the system.
+            </p>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <TasteSampler />
+          </Reveal>
+        </section>
+
         {/* Problem */}
         <Section
+          index="I"
           eyebrow="The problem"
-          title="An agent with no constraints will always produce something plausible."
-          lede="Plausible is the problem. It compiles, it renders, it passes review at a glance — and it quietly carries a hardcoded hex, a prop that never existed, and a destructive action with no confirmation. Drag the handle."
+          title={
+            <>
+              Off-brand work can <em>still</em> pass review.
+            </>
+          }
+          lede="The agent fills the gap with generic-looking UI. AI coding tools do not continually sync with your design system, Figma file, or stylesheet. Drag the handle."
         >
           <Reveal>
             <ViolationWipe />
           </Reveal>
           <Reveal delay={0.06}>
-            <p className="mt-4 max-w-2xl text-[13.5px] leading-relaxed text-faint">
+            <p className="mt-[var(--s3)] max-w-2xl text-[0.875rem] leading-relaxed text-faint">
               These are the four failure modes Tastefield compiles rules against: values outside
               the token scale, props that don&apos;t exist on the real component, spacing off the
               scale, and missing safeguards on irreversible actions.
@@ -144,25 +157,26 @@ export default function Home() {
         {/* How it works */}
         <Section
           id="how"
+          index="II"
           eyebrow="How it works"
           title="Four stages, one checker."
-          lede="A rule an agent merely reads is advice. A rule that can be verified is enforcement — so every compiled rule carries the pattern that proves it."
+          lede="A rule an agent merely reads is advice. A rule that can be verified is enforcement, so every compiled rule carries the pattern that proves it."
         >
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-[var(--s2)] sm:grid-cols-2">
             {PIPELINE.map((s, i) => (
               <Reveal key={s.step} delay={i * 0.05}>
                 <Card className="h-full">
-                  <div className="mb-3 flex items-center gap-2.5">
-                    <span className="font-mono text-[11px] text-accent">{s.step}</span>
-                    <span className="text-[14px] font-semibold">{s.name}</span>
+                  <div className="mb-[var(--s2)] flex items-center gap-2.5">
+                    <span className="label text-accent">{s.step}</span>
+                    <span className="label text-ink">{s.name}</span>
                   </div>
-                  <p className="text-[13.5px] leading-relaxed text-muted">{s.body}</p>
+                  <p className="text-[0.9rem] leading-relaxed text-muted">{s.body}</p>
                 </Card>
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.2}>
-            <div className="mt-4 overflow-x-auto rounded-xl border border-line bg-bg-raised p-4">
+            <div className="mt-[var(--s2)] overflow-x-auto rounded-2xl border border-line bg-bg-raised p-[var(--s3)]">
               <code className="font-mono text-[12.5px] whitespace-nowrap text-muted">
                 scan(repo) <span className="text-faint">→</span> ScanResult{" "}
                 <span className="text-faint">→</span> compile(){" "}
@@ -177,23 +191,30 @@ export default function Home() {
 
         {/* Coexistence */}
         <Section
-          eyebrow="Coexistence, not replacement"
-          title="Your source of truth doesn't move."
-          lede="Figma, zeroheight, Storybook and Supernova stay where your team already decides things. Tastefield reads from them and never writes back — it's the layer that makes those decisions stick inside the editor."
+          index="III"
+          eyebrow="Coexistence"
+          title={
+            <>
+              Your source of truth stays <em>yours</em>.
+            </>
+          }
+          lede="Your team's design system process doesn't change, whether it's in Figma, zeroheight, or Storybook. Tastefield reads where those design decisions land and keeps your agent in the loop."
         >
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-[var(--s2)] sm:grid-cols-2 lg:grid-cols-3">
             {SOURCES.map((s, i) => (
               <Reveal key={s.name} delay={i * 0.04}>
                 <Card className="flex items-center gap-3">
                   <span
-                    className={`size-1.5 shrink-0 rounded-full ${s.ready ? "bg-ok" : "bg-white/25"}`}
+                    className={`size-1.5 shrink-0 rounded-full ${
+                      s.ready ? "bg-ok" : "bg-line-strong"
+                    }`}
                   />
                   <div className="min-w-0">
-                    <div className="text-[13.5px] font-medium">{s.name}</div>
-                    <div className="text-[11.5px] text-faint">{s.note}</div>
+                    <div className="text-[0.9rem] font-medium">{s.name}</div>
+                    <div className="text-[0.8rem] text-faint">{s.note}</div>
                   </div>
-                  <span className="ml-auto shrink-0 text-[10px] tracking-wide text-faint">
-                    {s.ready ? "READ-ONLY" : "PLANNED"}
+                  <span className="label ml-auto shrink-0 text-faint">
+                    {s.ready ? "Read-only" : "Planned"}
                   </span>
                 </Card>
               </Reveal>
@@ -204,23 +225,27 @@ export default function Home() {
         {/* For agents */}
         <Section
           id="agent"
+          index="IV"
           eyebrow="What the agent gets"
           title="Four narrow tools. Deliberately no fifth."
           lede="There is no get_everything. Dumping a whole design system into a context window is the exact failure this product exists to fix, so the agent asks for one thing at a time and gets one thing at a time."
         >
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-[var(--s2)] sm:grid-cols-2">
             {TOOLS.map((t, i) => (
               <Reveal key={t.name} delay={i * 0.05}>
                 <Card className="h-full">
-                  <code className="font-mono text-[12.5px] text-accent">{t.name}</code>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-muted">{t.body}</p>
+                  <div className="label text-ink">{t.title}</div>
+                  <code className="mt-2 block font-mono text-[11.5px] text-faint">{t.name}</code>
+                  <p className="mt-[var(--s2)] text-[0.9rem] leading-relaxed text-muted">
+                    {t.body}
+                  </p>
                 </Card>
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.2}>
-            <Card className="mt-3 border-dashed">
-              <p className="text-[13.5px] leading-relaxed text-muted">
+            <Card className="mt-[var(--s2)] border-dashed">
+              <p className="text-[0.9rem] leading-relaxed text-muted">
                 <span className="text-ink">Brand and voice outlast visual rules.</span> Base models
                 keep getting better at spacing and color on their own. They will never
                 independently know that your company can&apos;t say &ldquo;cheap,&rdquo; or
@@ -230,131 +255,47 @@ export default function Home() {
           </Reveal>
         </Section>
 
-        {/* Recipes */}
-        <Section
-          id="recipes"
-          eyebrow="Registry"
-          title="Start from a recipe, not a blank file."
-          lede="Recipes are browsed by the problem they solve, not by company name. Each family ships variants, and you pick by mood before you ever read a token table."
-        >
-          <div className="grid gap-3 lg:grid-cols-3">
-            {RECIPES.map((r, i) => (
-              <Reveal key={r.family} delay={i * 0.06}>
-                <Card className="h-full">
-                  <code className="font-mono text-[12.5px] text-ink">{r.family}</code>
-                  <div className="mt-4 flex flex-col gap-3">
-                    {r.variants.map(([v, mood]) => (
-                      <div key={v} className="border-l border-line pl-3">
-                        <div className="font-mono text-[11.5px] text-accent">{v}</div>
-                        <div className="text-[12.5px] text-muted">{mood}</div>
-                      </div>
-                    ))}
-                  </div>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </Section>
+        {/* Registry / recipes hidden until the public roadmap is less fuzzy. */}
 
-        {/* Proof */}
-        <Section
-          id="proof"
-          eyebrow="Proof"
-          title="The honest version of the numbers."
-          lede="A governance tool that overstates its own results has no business telling your agent to behave. So here is exactly what has been measured, and exactly what hasn't."
-        >
-          <div className="grid gap-3 sm:grid-cols-3">
-            {[
-              ["31.21", "Baseline violation density", "49 errors and 5 warnings across 173 lines"],
-              ["0", "Governed violation density", "Same 8 tasks, same checker"],
-              ["59", "Tests passing", "Core engine, run on every change"],
-            ].map(([v, label, note], i) => (
-              <Reveal key={label} delay={i * 0.05}>
-                <Card className="h-full">
-                  <div className="text-[34px] font-semibold tracking-tight tabular-nums">{v}</div>
-                  <div className="mt-1 text-[13px] font-medium">{label}</div>
-                  <div className="mt-1 text-[11.5px] leading-relaxed text-faint">{note}</div>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={0.18}>
-            <Card className="mt-3 border-warn/25 bg-warn/5">
-              <div className="mb-1.5 text-[12px] font-semibold text-warn">
-                What this does not yet prove
-              </div>
-              <p className="text-[13.5px] leading-relaxed text-muted">
-                That run was synthetic: both arms were authored by the same coding agent against a
-                fixture app, by an author who knew what each arm was meant to show. It demonstrates
-                the harness and the checker work end to end on realistic code. It does not yet
-                prove the result against real prompt variance — that needs two independent agent
-                sessions, one with the MCP server wired in and one without. We will publish that
-                run when it exists, and we will never claim clean output on the first pass; models
-                are stochastic and that claim would not survive a live demo.
-              </p>
-            </Card>
-          </Reveal>
-        </Section>
+        {/* Proof — hidden for now (2026-08-17). Synthetic bench numbers read as proof before independent agent sessions exist.
+        <Section index="V" eyebrow="Proof" title="The honest version of the numbers." />
+        */}
 
-        {/* Trust */}
-        <Section
-          eyebrow="Constraints we won't trade away"
-          title="Boring guarantees, in writing."
-        >
-          <div className="grid gap-3 sm:grid-cols-3">
-            {[
-              ["No telemetry", "Nothing is sent anywhere. Your git history is never read. There is no account and no key to paste on day one."],
-              ["Your config is never executed", "A scanned Tailwind config is detected and parsed, never run. Executing arbitrary code out of a repo you just cloned is not a feature."],
-              ["Unknown stays unknown", "A number we haven't measured renders as an em dash, never as a zero. There's a test that enforces it."],
-            ].map(([title, body], i) => (
-              <Reveal key={title} delay={i * 0.05}>
-                <Card className="h-full">
-                  <div className="mb-2 text-[13.5px] font-semibold">{title}</div>
-                  <p className="text-[13px] leading-relaxed text-muted">{body}</p>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </Section>
+        {/* Trust — hidden for now (2026-08-17).
+        <Section eyebrow="Constraints we won't trade away" title="Boring guarantees, in writing." />
+        */}
 
         {/* Install */}
-        <Section id="install" className="pb-24 sm:pb-32">
-          <Reveal>
-            <div className="rounded-2xl border border-line bg-bg-raised p-7 sm:p-12">
-              <h2 className="headline max-w-lg text-[28px] font-semibold sm:text-[36px]">
-                One command. No account.
-              </h2>
-              <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-muted">
+        <section id="install" className="plate-dusk relative isolate overflow-hidden">
+          <div className="lattice pointer-events-none absolute inset-0 opacity-60" />
+          <div className="horizon pointer-events-none absolute inset-0" />
+          <div className="rhythm-section relative mx-auto w-full max-w-6xl px-5">
+            <Reveal className="max-w-2xl">
+              <h2 className="display display-2">One command. No account.</h2>
+              <p className="lede mt-[var(--s3)] max-w-lg text-muted">
                 Point it at the repo you&apos;re already in. It scans, compiles, and starts serving
                 your design system to whatever agent is connected.
               </p>
-              <div className="mt-6 overflow-x-auto rounded-lg border border-line bg-bg p-4">
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="mt-[var(--s4)] max-w-lg overflow-x-auto rounded-xl border border-line bg-bg-raised p-[var(--s3)]">
                 <code className="font-mono text-[13px] whitespace-nowrap">
                   <span className="text-faint">$</span> npx{" "}
-                  <span className="text-ink">@tastefield/mcp</span>{" "}
-                  <span className="text-accent">--recipe=fintech-trust-first/neobank</span>
+                  <span className="text-ink">@tastefield/mcp</span>
                 </code>
               </div>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <a
-                  href="#top"
-                  className="rounded-lg bg-ink px-4 py-2.5 text-[13.5px] font-semibold text-bg transition-opacity hover:opacity-90"
-                >
-                  Try in Cursor
-                </a>
-                <a
-                  href="#recipes"
-                  className="rounded-lg border border-line-strong px-4 py-2.5 text-[13.5px] font-medium transition-colors hover:bg-surface"
-                >
-                  Browse recipes
-                </a>
-                <span className="text-[12px] text-faint">
-                  Cursor · Claude Code · Windsurf
-                </span>
-              </div>
-            </div>
-          </Reveal>
-        </Section>
+            </Reveal>
+            <Reveal
+              delay={0.14}
+              className="mt-[var(--s3)] flex flex-wrap items-center gap-[var(--s2)]"
+            >
+              <a href="#top" className="btn btn-primary">
+                Try in Cursor
+              </a>
+              <span className="label text-faint">Claude Code · Codex · Cursor</span>
+            </Reveal>
+          </div>
+        </section>
       </main>
 
       <Footer />

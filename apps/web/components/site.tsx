@@ -1,7 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
+import { motion, useReducedMotion, useScroll, useMotionValueEvent } from "motion/react";
+import { useState, type ReactNode } from "react";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function Reveal({
   children,
@@ -16,18 +18,48 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduced ? { opacity: 0 } : { opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, delay, ease: [0.32, 0.72, 0, 1] }}
+      initial={reduced ? { opacity: 0 } : { opacity: 0, y: 22, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-90px" }}
+      transition={{ duration: 0.72, delay, ease: EASE }}
     >
       {children}
     </motion.div>
   );
 }
 
+/** Display lines rise out of a mask, one after the other. */
+export function MaskLines({
+  lines,
+  className = "",
+  delay = 0,
+}: {
+  lines: ReactNode[];
+  className?: string;
+  delay?: number;
+}) {
+  const reduced = useReducedMotion();
+  return (
+    <h1 className={className}>
+      {lines.map((line, i) => (
+        <span key={i} className="block overflow-hidden pb-[0.06em]">
+          <motion.span
+            className="block"
+            initial={reduced ? { opacity: 0 } : { opacity: 0, y: "108%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            transition={{ duration: 1.05, delay: delay + i * 0.09, ease: EASE }}
+          >
+            {line}
+          </motion.span>
+        </span>
+      ))}
+    </h1>
+  );
+}
+
 export function Section({
   id,
+  index,
   eyebrow,
   title,
   lede,
@@ -35,6 +67,7 @@ export function Section({
   className = "",
 }: {
   id?: string;
+  index?: string;
   eyebrow?: string;
   title?: ReactNode;
   lede?: ReactNode;
@@ -42,12 +75,22 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`mx-auto w-full max-w-6xl px-5 py-20 sm:py-28 ${className}`}>
+    <section
+      id={id}
+      className={`rhythm-section mx-auto w-full max-w-6xl px-5 ${className}`}
+    >
       {(eyebrow || title || lede) && (
-        <Reveal className="mb-10 max-w-2xl sm:mb-14">
-          {eyebrow && <div className="eyebrow mb-3 text-[11px] text-accent">{eyebrow}</div>}
-          {title && <h2 className="headline text-[28px] font-semibold sm:text-[38px]">{title}</h2>}
-          {lede && <p className="mt-4 text-[15px] leading-relaxed text-muted sm:text-[16px]">{lede}</p>}
+        <Reveal className="mb-[var(--s5)] border-t border-line pt-[var(--s3)]">
+          <div className="grid gap-[var(--s3)] lg:grid-cols-[9rem_1fr]">
+            <div className="label flex items-baseline gap-3 pt-[0.55rem] text-faint lg:flex-col lg:gap-2">
+              {index && <span className="text-accent">{index}</span>}
+              {eyebrow && <span>{eyebrow}</span>}
+            </div>
+            <div className="max-w-2xl">
+              {title && <h2 className="display display-2">{title}</h2>}
+              {lede && <p className="lede mt-[var(--s3)] text-muted">{lede}</p>}
+            </div>
+          </div>
         </Reveal>
       )}
       {children}
@@ -63,30 +106,41 @@ export function Card({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-line bg-surface p-5 ${className}`}>{children}</div>
+    <div
+      className={`rounded-2xl border border-line bg-surface p-[var(--s3)] transition-colors duration-300 hover:border-line-strong ${className}`}
+    >
+      {children}
+    </div>
   );
 }
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (y) => {
+    setScrolled(y > 120);
+  });
+
   return (
-    <header className="chrome sticky top-0 z-50 border-b border-line">
-      <nav className="mx-auto flex h-14 w-full max-w-6xl items-center gap-6 px-5">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid size-6 place-items-center rounded-md bg-ink text-[11px] font-bold text-bg">
-            T
-          </span>
-          <span className="text-[14px] font-semibold tracking-tight">Tastefield</span>
+    <header
+      className={`tone-dusk sticky top-0 z-50 transition-colors duration-500 ${
+        scrolled ? "chrome border-b border-line" : "border-b border-transparent"
+      }`}
+    >
+      <nav className="mx-auto flex h-16 w-full max-w-6xl items-center gap-[var(--s4)] px-5">
+        <a href="#top" className="flex items-center" aria-label="Tastefield">
+          <img src="/tastefield-logo-white.png" alt="Tastefield" className="h-7 w-auto" />
         </a>
-        <div className="ml-auto hidden items-center gap-6 text-[13px] text-muted md:flex">
-          <a href="#how" className="transition-colors hover:text-ink">How it works</a>
-          <a href="#agent" className="transition-colors hover:text-ink">For agents</a>
-          <a href="#recipes" className="transition-colors hover:text-ink">Recipes</a>
-          <a href="#proof" className="transition-colors hover:text-ink">Proof</a>
+        <div className="label ml-auto hidden items-center gap-[var(--s4)] text-muted md:flex">
+          <a href="#how" className="transition-colors hover:text-ink">
+            How it works
+          </a>
+          <a href="#agent" className="transition-colors hover:text-ink">
+            For agents
+          </a>
         </div>
-        <a
-          href="#install"
-          className="rounded-lg border border-line-strong bg-surface-strong px-3.5 py-1.5 text-[12.5px] font-medium transition-colors hover:bg-white/12"
-        >
+        <a href="#install" className="btn btn-ghost !py-2.5">
           Install
         </a>
       </nav>
@@ -96,21 +150,21 @@ export function Nav() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-line">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center">
-        <div className="flex items-center gap-2">
-          <span className="grid size-6 place-items-center rounded-md bg-ink text-[11px] font-bold text-bg">
-            T
-          </span>
-          <span className="text-[13px] font-medium">Tastefield</span>
+    <footer className="plate-dusk">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-[var(--s3)] px-5 py-[var(--s5)] sm:flex-row sm:items-center">
+        <div className="flex items-center">
+          <img src="/tastefield-logo-white.png" alt="Tastefield" className="h-6 w-auto" />
         </div>
-        <p className="text-[12px] text-faint sm:ml-4">
+        <p className="label text-faint sm:ml-[var(--s3)]">
           Runs on your machine. Sends nothing anywhere.
         </p>
-        <div className="flex gap-5 text-[12.5px] text-muted sm:ml-auto">
-          <a href="#how" className="transition-colors hover:text-ink">Docs</a>
-          <a href="#recipes" className="transition-colors hover:text-ink">Registry</a>
-          <a href="#install" className="transition-colors hover:text-ink">Install</a>
+        <div className="label flex gap-[var(--s3)] text-muted sm:ml-auto">
+          <a href="#how" className="transition-colors hover:text-ink">
+            Docs
+          </a>
+          <a href="#install" className="transition-colors hover:text-ink">
+            Install
+          </a>
         </div>
       </div>
     </footer>
