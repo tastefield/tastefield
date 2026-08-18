@@ -8,6 +8,33 @@ Target: `apps/web` (Next.js 16, Tailwind v4, motion). Phase 2 work.
 
 ---
 
+## Reframe 2026-08-18 (read first)
+
+Research folded in: Type wedge positioning (narrow Stage 1), live zeroheight teardown
+([zeroheight.com](https://zeroheight.com/), [/ai](https://zeroheight.com/ai/),
+[/mcp](https://zeroheight.com/mcp/)), and the existing blueprint competitive split.
+
+**Working copy (source of truth for options):**
+`docs/marketing-copy/sections/*.md` — live/locked user lines preserved; new Option A–C
+added beside them.
+
+**Google Docs export (paste or upload):**
+- Markdown: `docs/marketing-copy/TASTEFIELD_SITE_COPY_GOOGLE_DOCS.md`
+- Word: `docs/marketing-copy/TASTEFIELD_SITE_COPY_GOOGLE_DOCS.docx`
+
+**Page order (updated):** Hero → Problem → Advisory vs verified → Compiled today →
+What the agent receives → Coexistence → Proof → Registry (`Next`) → FAQ → Founder
+letter → Install.
+
+**Stage 1 story:** compile + check for coding agents. Taste-layer vision and public
+registry stay off the H1. Complement zeroheight in FAQ/Sources; do not fight them as
+"source of truth" or "context layer" on the homepage.
+
+Section-by-section headlines below still hold as historical plan options. Prefer the
+marketing-copy section files + Google Docs export for the current pick set.
+
+---
+
 ## Organizing thesis
 
 > A rule an agent merely reads is advisory; a rule that can be verified is enforcement.
@@ -23,6 +50,17 @@ the copy/voice/motion domains the taxonomy already names (line 48). The code-sid
 ("as the AI types") keeps the claim out of Adobe Brand Intelligence's category, which
 line 323 identifies as content-side and explicitly a bad fight to pick. Widening both
 halves walks into that fight.
+
+**Update, 2026-08-17: top-line tagline widened to "The brand and taste layer for
+agents."** This is a deliberate, single-axis exception to the paragraph above. The noun
+widened (brand → brand and taste); the verb did not (layer still implies something
+served and checked, not something generated). "Taste" was reopened here specifically
+because it echoes the product name and reads plainly to non-developers, where "brand"
+alone can sound like colors and logos only. Section body copy still defaults to "brand"
+as established above; this tagline is the compact top-of-page exception, not a rewrite
+of every section. If a future draft widens the verb too (toward "creates," "generates,"
+"designs"), that re-opens the Adobe collision this section warns against and should be
+treated as a new decision, not an extension of this one.
 
 ---
 
@@ -80,9 +118,13 @@ is the exact trap "taste engine" fell into. Still recommend leading with the dec
 form — question headlines drift toward infomercial unless the pain is very specific — but
 it's the one shape the other options don't cover.
 
-**Add a "Works with" logo strip immediately below the hero.** Cursor, Claude Code,
-Windsurf. Blume places this directly under their fold; the current site buries it as a text
+**Add a "Works with" logo strip immediately below the hero.** Claude Code, Codex,
+Cursor. Blume places this directly under their fold; the current site buries it as a text
 line down in Install. Compatibility is a first-five-seconds question for this audience.
+
+**Trio updated 2026-08-17:** Windsurf swapped for Codex based on current usage. Codex is
+not yet tested end-to-end against the MCP server; see `.agents/product-marketing.md` for
+the caveat before this goes live.
 
 **Body**
 
@@ -454,7 +496,7 @@ product copy. Ambition reads as conviction in prose and as a claim in an H1.
 4. Add it to your editor in about a minute. — *time*
 5. `npx`, and you're governed. — *compressed*
 
-**Primary visual:** tabbed config blocks per client — Cursor, Claude Code, Windsurf — with
+**Primary visual:** tabbed config blocks per client — Claude Code, Codex, Cursor — with
 the literal JSON and copy buttons, the way tastelab.xyz lists exact file paths per tool.
 The current page reduces this to a throwaway line.
 
@@ -603,6 +645,25 @@ accurate for a macOS app and generic for a marketing site, and they are part of 
 the current page read as one more devtool. Dusk plate: deep teal-green field under a horizon
 band running the logo gradient. Body: bone paper. Product artifact panels: keep near-black.
 
+### Built 2026-08-17, and where it departs from the spec above
+
+The type stack, palette, rhythm and veil are now live in `apps/web`. Deviations, each
+deliberate:
+
+- **Mono is JetBrains Mono, not Commit Mono.** Commit Mono is not on Google Fonts and the
+  release archive did not resolve; JetBrains Mono is OFL and holds the same reading role.
+  Swap it when the Commit Mono files are downloaded by hand.
+- **No bitmap veil face.** The character veil uses the code mono at 10px rather than
+  Departure Mono. The distinction the spec draws is real and still worth making later.
+- **No frontispiece illustration.** The dusk plate is a colour field, a horizon glow and
+  the veil. The commissioned art is still the long-lead item; nothing generative shipped
+  in its place, per the rule below.
+- **φ marks are lines, not a spiral,** drawn on the 0.618 column split and baseline, tied
+  to scroll via `stroke-dashoffset`. The layout uses a Fibonacci spacing ladder
+  (`--s1`…`--s7`) so the marks sit on divisions that exist.
+- **ABC Diatype is loaded from the Machinekind files.** The licence question in open item
+  4 is unresolved and now blocks launch rather than build.
+
 ### Do not
 
 **No AI-generated hero art.** Both Blume's and HQ's fields read as authored by a person, and
@@ -645,6 +706,21 @@ Observed on the four reference sites, applicable throughout.
 **Do not copy** their page shape. Clearly Digital, Inc. is a services business — discovery
 call, four phases, $999 workshop add-on, every CTA a booking. Tastefield's distribution is
 `npx`, no account, no call, and line 323 identifies that friction difference as a win.
+
+---
+
+## Drafting loop (set up 2026-08-17)
+
+Copy is drafted **one section at a time**, not as a full-page rewrite.
+
+- Brand memory: `.agents/product-marketing.md`
+- Loop skill: `.cursor/skills/marketing-copy-loop/`
+- Working drafts: `docs/marketing-copy/` (`PROGRESS.md` + `sections/`)
+- Voice check: `node scripts/check-marketing-copy.mjs docs/marketing-copy/sections/NN-slug.md`
+- Companion skills (personal): `copywriting`, `copy-editing`, `writing-guidelines` under
+  `~/.cursor/skills/`, plus existing `deslop` / `grilling`
+
+Kickoff: `Draft section 01 (hero) using the marketing-copy-loop skill.`
 
 ---
 
