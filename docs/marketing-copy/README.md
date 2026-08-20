@@ -44,13 +44,20 @@ The agent should: load brand memory and FORBIDDEN.md, draft one section file, ru
 | `PROGRESS.md` | Status table |
 | `FORBIDDEN.md` | Patterns to avoid. Add new ones when you catch them. |
 | `_TEMPLATE.md` | Structure for each section draft |
-| `sections/*.md` | Working drafts (live/locked copy preserved; new options beside them) |
+| `sections/*.md` | Working drafts for pages II to X (live/locked copy preserved; new options beside them) |
+| `HOMEPAGE_COPY.md` | Homepage (page I), all modules in one file. Edit here for anything on `/`. |
+| `TASTEFIELD_HOMEPAGE_GOOGLE_DOCS.md` / `.docx` | Homepage export for Google Docs |
 | `TASTEFIELD_SITE_COPY_GOOGLE_DOCS.md` | Clean export for Google Docs (copy/paste) |
 | `TASTEFIELD_SITE_COPY_GOOGLE_DOCS.docx` | Same export as Word (File → Open in Google Docs) |
 
 Edit the section files. Do not treat chat paste as the source of truth.
 
+The homepage lives in one file rather than in section files, because the fold and the
+skill-or-playbook module have to agree on which unit the page is selling. You author skills,
+you publish a playbook, and `recipe` is what the code calls it.
+
 ### Pull into Google Docs
 
-1. Preferred: upload `TASTEFIELD_SITE_COPY_GOOGLE_DOCS.docx` to Drive, then Open with Google Docs.
-2. Or open `TASTEFIELD_SITE_COPY_GOOGLE_DOCS.md`, select all, paste into a blank Doc.
+1. Regenerate the Word versions after editing an export: `python3 scripts/md-to-docx.py`.
+2. Preferred: upload the `.docx` to Drive, then Open with Google Docs. Headings, bold labels, and tables survive.
+3. Or open the `.md`, select all, paste into a blank Doc. Tables may need a reformat.
