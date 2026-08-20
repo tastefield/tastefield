@@ -34,7 +34,8 @@ ${c.bold("Commands")}
 
 ${c.bold("Skills")}
   skills list [--category <c>] [--live]   List the curated set
-  skills recipes                          Show recipes and what they bundle
+  skills playbooks                        Show your playbooks and what they include
+  skills recipes                          Legacy alias for skills playbooks
   skills discover                         Harvest + rank new candidates for review
   skills import <id|slug> [--github]      Import a skill into ${CONTEXT_DIR}/skills/
   skills imported                         Show what's already imported
@@ -182,8 +183,9 @@ async function cmdSkills(repoRoot, positional, flags) {
             process.stdout.write(c.dim(`Install counts shown as "—" are unknown, not zero.\n`));
             return 0;
         }
+        case "playbooks":
         case "recipes": {
-            process.stdout.write(`\n${c.bold("Recipes")}\n\n`);
+            process.stdout.write(`\n${c.bold("Your playbooks")}\n\n`);
             for (const { name, skills } of recipes()) {
                 process.stdout.write(`${c.cyan(name)} ${c.dim(`— ${skills.length} skills`)}\n`);
                 for (const s of skills) {
@@ -246,7 +248,7 @@ async function cmdSkills(repoRoot, positional, flags) {
             if (result.errors.length) {
                 process.stdout.write(`\n${c.yellow("!")} ${result.errors.length} query/owner lookup(s) failed; partial results shown.\n`);
             }
-            process.stdout.write(`\n${c.dim("This is a shortlist, not a decision. Category, status, rationale and recipe")}\n` +
+            process.stdout.write(`\n${c.dim("This is a shortlist, not a decision. Category, status, rationale and playbook")}\n` +
                 `${c.dim("membership are assigned by hand — that judgement is the product.")}\n`);
             return 0;
         }

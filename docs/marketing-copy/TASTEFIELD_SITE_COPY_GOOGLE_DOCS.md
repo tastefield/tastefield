@@ -36,7 +36,7 @@ Paste this whole file into Google Docs (File → Open, or copy/paste). Bold labe
 
 ---
 
-## 01 — Hero
+## 01. Hero
 
 ### Live / locked
 
@@ -83,7 +83,7 @@ the brand infra layer for your editor · brand infra for coding agents · the lo
 
 ---
 
-## 02 — Problem
+## 02. Problem
 
 ### Live / locked
 
@@ -111,7 +111,7 @@ Body: Broken code is easy to reject. Generic UI that matches nothing in your sys
 
 ---
 
-## 03 — Advisory vs verified
+## 03. Advisory vs verified
 
 ### Live / locked
 
@@ -138,7 +138,7 @@ Body: Serving guidelines into the editor is useful. Verifying the result against
 
 ---
 
-## 04 — What’s compiled today
+## 04. What’s compiled today
 
 ### Live / locked (hidden from live site)
 
@@ -150,7 +150,7 @@ Body: Serving guidelines into the editor is useful. Verifying the result against
 
 **Soon.** Remaining Copy and Brand coverage. Motion as a documented Foundation. Figma and zeroheight as source connections.
 
-**Next.** A public registry. Role recipes. A dual-axis leaderboard. A marketplace.
+**Next.** A public registry. A playbook for each role. A dual-axis leaderboard. A marketplace.
 
 ### New options (headlines)
 
@@ -165,7 +165,7 @@ Body: Serving guidelines into the editor is useful. Verifying the result against
 
 ---
 
-## 05 — What the agent receives
+## 05. What the agent receives
 
 *(Was empty. New draft.)*
 
@@ -185,7 +185,7 @@ Body: Brand standards, component contracts, design tokens, and a compliance chec
 
 ---
 
-## 06 — Sources / coexistence
+## 06. Sources / coexistence
 
 ### Live / locked
 
@@ -217,7 +217,7 @@ Body: zeroheight, Figma, and Storybook remain where humans decide. Tastefield co
 
 ---
 
-## 07 — Proof
+## 07. Proof
 
 *(Was empty. New draft. Place before Registry.)*
 
@@ -237,7 +237,7 @@ Body: Density fell from 31.21 to 0 on the fixture suite. Read the caveat before 
 
 ---
 
-## 08 — Registry
+## 08. Registry
 
 *(Was empty. New draft. Badge `Next`. Do not lead the page.)*
 
@@ -245,19 +245,19 @@ Body: Density fell from 31.21 to 0 on the fixture suite. Read the caveat before 
 
 **Option A (rec)**  
 Headline: Browse by the problem, not the company.  
-Body: Recipes named for the job (`fintech-trust-first`, `saas-dense-dashboard`), with mood variants. A second shelf for role recipes when Stage 0 research lands.
+Body: A playbook named for each job (`fintech-trust-first`, `saas-dense-dashboard`), with mood variants. A second shelf organized by role when Stage 0 research lands.
 
 **Option B**  
-Headline: Start from a recipe, not a blank file.  
-Body: Category recipes for what you’re building. Role recipes for who’s judging the work. Install when the public registry ships.
+Headline: Start from a playbook, not a blank file.
+Body: Choose by what you’re building or who is judging the work. Install when the public registry ships.
 
 **Option C**  
 Headline: A registry your agent can query mid-task.  
-Body: Human-browsable specimens and agent-fetchable exports from the same recipe. The compiled engine stays the product; recipes are starting points.
+Body: Human-browsable specimens and agent-fetchable exports from the same playbook. The compiled engine stays the product; your playbook is the starting point.
 
 ---
 
-## 09 — FAQ
+## 09. FAQ
 
 *(Was empty. New draft.)*
 
@@ -285,7 +285,7 @@ No. Those stay where your team decides. Tastefield reads in and checks agent out
 
 ---
 
-## 10 — Founder letter
+## 10. Founder letter
 
 *(Was empty. New draft. Vision only; not a product claim.)*
 
@@ -303,7 +303,7 @@ Body: Coding agents first. Later, any MCP-compatible generator that can read the
 
 ---
 
-## 11 — Install
+## 11. Install
 
 *(Was empty. New draft.)*
 

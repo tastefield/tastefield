@@ -4,8 +4,9 @@
 - Plan heading: FAQ
 - Status: drafted
 - Headline pick: No, we can't guarantee a clean first pass. (Option A rec)
-- Skills used: copywriting (2026-08-18)
-- Filler check: PASS (manual)
+- Skills used: copywriting (2026-08-19 reframe) → copywriting (2026-08-18)
+- Filler check: PASS (manual). Re-run against the new Supernova answer before shipping.
+- Reframe note 2026-08-19: added a sixth answer covering Supernova, Figma Dev Mode MCP, and brandsystem-mcp (MARKETING_SITE_PLAN.md Section 9). Rewritten away from the blueprint's own antithesis-couplet shorthand; see Notes.
 
 ## User-facing copy
 

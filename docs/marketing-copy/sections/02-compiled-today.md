@@ -25,7 +25,7 @@ Shipped items and planned items share one list. A badge shows how far each item 
 
 **Soon.** Remaining Copy and Brand coverage. Motion as a documented Foundation. Figma and zeroheight as source connections.
 
-**Next.** A public registry. Role recipes. A dual-axis leaderboard. A marketplace.
+**Next.** A public registry. A playbook for each role. A dual-axis leaderboard. A marketplace.
 
 ### New headline options (2026-08-18)
 

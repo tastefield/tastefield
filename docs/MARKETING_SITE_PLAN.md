@@ -8,6 +8,70 @@ Target: `apps/web` (Next.js 16, Tailwind v4, motion). Phase 2 work.
 
 ---
 
+## Page-shape reframe 2026-08-20 (proposal, see `MARKETING_SITE_ARCHITECTURE.md`)
+
+Sections 1 through 11 below describe one long scroll. A proposal dated 2026-08-20 replaces
+that shape with ten pages, one job each, inside a persistent application shell, on the
+reasoning that a marketplace needs browsable functional pages that cannot live at the bottom
+of a sales scroll. Old sections map onto new pages there; nothing below is deleted.
+
+Everything in this file except the single-page ordering still holds: the organizing thesis,
+the positioning rejections, the art direction, the copy mechanics, and the open items. Read
+the architecture document first for page shape, then this file for section detail.
+
+Not decided. If the proposal is declined, this file stands unchanged.
+
+---
+
+## Reframe 2026-08-19 (read first, supersedes the reframe below where they conflict)
+
+Drafted with the `copywriting` skill against the blueprint's 2026-08-19 entries: the
+editor-first hero, the Skill Studio rename, the funding-order reprioritization, and three
+competitor updates (Supernova, Figma Dev Mode MCP, `brandsystem-mcp`). Section-by-section
+edits below are marked `[2026-08-19]`; everything else in this document still holds.
+
+**The hero stops being a demo and becomes the product's first screen.** The Specimen
+Wall does not disappear. It is demoted from "the thing you watch" to "the evidence panel
+of a run you caused" — a stronger job, because a before/after a stranger triggers argues
+harder than one that loops on its own. New shape, in order: **the run** (paste a source
+or start from a playbook, in a working editor above the fold) → **the verdict** (governed
+and ungoverned arms generate against a locked task set, violations pinned to the rule
+that fired) → **the edit** (change one restraint, run again, watch the number move, still
+anonymous) → **the gate** (save, fork, and Publish need a login; running the check never
+does) → **the export row** (pick a target, get the artifact) → **honesty tiers** (shipped
+unbadged, `Soon` inline, `Next` on the horizon). Full spec under Section 1 below.
+
+**Blocking prerequisite, stated so nobody ships around it.** The hero's central number
+still depends on a real two-arm benchmark that has not been run (see blueprint, What is
+NOT done). Until it exists, the hero ships the callouts and the density delta for the
+visitor's own run — a live measurement, not a headline figure. Do not backfill a number
+from the synthetic bench run to fill the space early.
+
+**Vocabulary correction, superseded 2026-08-20 for public copy:** you author a **skill**
+(a `SKILL.md`, its references, its scripts); Tastefield publishes a **playbook** (the skill
+plus tokens, restraints, checkable rules, and an ordered `runs:` chain where present).
+The first is the editing unit, the second is the public shipping unit. `recipe` remains
+the internal code and data-model term. Keep that distinction; do not use "skill",
+"playbook", and internal `recipe` as synonyms.
+
+**Competitive updates, three products.** Supernova is no longer pure coexistence. They
+sunsetted their AI generator and now sell scoped MCP context into the same three editors
+Tastefield ships to, which is the *serve* half of Tastefield's own mechanism. Figma Dev
+Mode MCP can now scan a codebase into a rules file, the *extraction* half. `brandsystem-mcp`
+already ships token extraction, an MCP server, and a pass/fail gate, the closest small-tool
+match found yet. None of the three checks agent output after generation the way
+`check_compliance` does; that stays the sentence that answers all three. FAQ gets one new
+answer (Section 9); do not open three separate fights.
+
+**What this does not decide.** The blueprint flags "is the primary audience design-system
+owners or creatives" as its largest open question, unresolved as of 2026-08-19. This pass
+keeps the current default (developers and design-system owners already on Claude Code,
+Codex, or Cursor) and does not widen it. See Open items for what would have to change if
+that question resolves the other way. Also unresolved and untouched here: Codex's
+end-to-end MCP proof, the ABC Diatype license, and live-URL scanning.
+
+---
+
 ## Reframe 2026-08-18 (read first)
 
 Research folded in: Type wedge positioning (narrow Stage 1), live zeroheight teardown
@@ -81,14 +145,21 @@ treated as a new decision, not an extension of this one.
 Note the current blueprint already dropped this tagline — it survives only in the older
 v2.2 draft.
 
+**`[2026-08-19]` Status change, not a new rejection: Supernova moves from "coexistence
+partner" to "named competitor" in Section 6 and the FAQ.** They sunsetted their AI
+prototyping product and now sell scoped MCP context into Claude Code, Codex, and Cursor,
+which is the serve half of Tastefield's own mechanism. Section 6's Sources grid can still
+read Supernova as a connection if a customer already lives there; that no longer implies
+they aren't competing on distribution. See Section 9 for the FAQ answer this produces.
+
 **Rejected: "design system intelligence."** Same scope as "design system" (one of eight
 domains) with a vaguer claim. "Intelligence" describes Adobe's opaque brand brain
 accurately and a checkable regex badly — it sells the exact property line 332 says to
 avoid. Also a direct echo of a much larger company's product name.
 
-**Rejected: leading with skill-bundling / recipes.** Line 299 records that Vercel Packs
-"is the recipe concept," already shipped. Line 309: registries "distribute files,
-Tastefield compiles and enforces them." Line 327: generic category recipes are "genuinely
+**Rejected: leading with skill-bundling or a playbook library.** Line 299 records that Vercel Packs
+already ships the bundle concept. Line 309: registries "distribute files,
+Tastefield compiles and enforces them." Line 327: a generic category playbook is "genuinely
 exposed" to @skills' 60,000+ free alternatives, while the compiled engine is "the
 defensible half." Leading with bundling markets the commoditized surface.
 
@@ -103,24 +174,60 @@ a primary visual, and three alternates.
 
 ### 1. Hero
 
+**`[2026-08-19]` The hero is now the product's first screen, not a demo of it.** Decided
+in the blueprint's "Editor-first hero" note. Six moves, one idea each, no section that
+exists only to have a section:
+
+1. **The run.** One input and a working editor above the fold, pre-filled with a real
+   playbook so nothing starts blank. Two entry paths into the same editor: start from a
+   first-party playbook, or paste a source (a GitHub repo URL, a pasted `SKILL.md`, pasted
+   code, or an article). Live-site URLs and video links wait; both are still open
+   questions elsewhere in the blueprint.
+2. **The verdict.** Press Run. Governed and ungoverned arms generate against a locked
+   task set. The Specimen Wall renders both, with a violation callout pinned to the
+   specific rule that fired: a hardcoded hex, a hallucinated prop, a missing confirmation
+   dialog. The number shown is measured violation density, never a compliance percentage
+   (non-negotiable #3).
+3. **The edit.** Change one restraint, run again, watch the number move. This is the
+   whole pitch in one gesture. No copy should try to explain it. Everything up to here is
+   anonymous: no account, nothing stored, nothing sent.
+4. **The gate, placed where it's earned.** Save, fork, version history, and Publish
+   require login. The account buys persistence and distribution. It never buys the
+   ability to see whether the thing works. Do not put a signup wall in front of the
+   verdict.
+5. **The export row.** The harness logos as something you click, not a trust badge. Pick
+   a target, get the artifact. See Section 11 for the full channel list; the MCP
+   connection is the one that keeps checking after export, so lead with it.
+6. **Honesty tiers**, not a roadmap section. Shipped features unbadged, `Soon` inline,
+   `Next` set apart. This tier is scoped to what this run just touched; Section 2 carries
+   the same tiers at the scope of the whole product.
+
+**Blocking prerequisite.** The verdict's density number depends on a real two-arm
+benchmark that has not been run yet (blueprint, What is NOT done: both arms of the only
+existing run were hand-authored by one person in one sitting). Until that benchmark
+exists, ship the hero anyway. The visitor's own run supplies a live number; nothing here
+requires a pre-baked headline figure.
+
 **Headlines**
 
-1. **Your brand, enforced as the AI types.** — *recommended, direct*
-2. Your agent has never read your brand guidelines. Now it can't ignore them. — *couplet*
+1. **Everyone else grades the skill. We grade what your agent shipped.** — *[2026-08-19]
+   new, recommended for the editor-first hero. Short enough to run as the H1. Defensible
+   only as long as the eval stays deterministic; do not pair with an LLM-judged score.*
+2. Your brand, enforced as the AI types. — *prior recommendation, still works as a
+   subhead under option 1, or as the H1 if option 1 tests as too inside-baseball*
 3. Every rule your agent can ignore is a rule you'll fix in review. — *adversarial*
 4. Compiled brand rules. Served to your agent. Checked before commit. — *technical*
 5. AI writes your components. You still own the brand. — *ownership*
-6. Tired of reviewing AI code for things a regex could catch? — *question, added
-   2026-08-17 from blume.codes ("Tired of steering your coding agents?")*
+6. Tired of reviewing AI code for things a checker could catch? — *question, from
+   blume.codes*
 
-On option 6: a question qualifies the audience and structurally cannot over-promise, which
-is the exact trap "taste engine" fell into. Still recommend leading with the declarative
-form — question headlines drift toward infomercial unless the pain is very specific — but
-it's the one shape the other options don't cover.
+On option 6: a question qualifies the audience and cannot over-promise, which is the trap
+"taste engine" fell into. Still lead with a declarative form; question headlines drift
+toward infomercial unless the pain is very specific.
 
-**Add a "Works with" logo strip immediately below the hero.** Claude Code, Codex,
-Cursor. Blume places this directly under their fold; the current site buries it as a text
-line down in Install. Compatibility is a first-five-seconds question for this audience.
+**Add a "Works with" logo strip immediately below the fold.** Claude Code, Codex,
+Cursor. Compatibility is a first-five-seconds question for this audience, and it now
+doubles as the export row's target list.
 
 **Trio updated 2026-08-17:** Windsurf swapped for Codex based on current usage. Codex is
 not yet tested end-to-end against the MCP server; see `.agents/product-marketing.md` for
@@ -129,42 +236,57 @@ the caveat before this goes live.
 **Body**
 
 > Cursor has never opened your design system, so it guesses. A hex that isn't in your
-> palette. A prop that doesn't exist. A tone your brand would never use. Tastefield
-> compiles the rules you already have and checks the output before it reaches your diff.
+> palette. A prop that doesn't exist. A tone your brand would never use. Paste your repo
+> or a real component below and watch it check the difference.
 
 Eyebrow: `● Local MCP server · nothing leaves your machine`
-CTAs: `Add to your editor` · `See what it catches`
-Trust line: Works alongside Figma, zeroheight and Storybook. Replaces none of them.
+CTAs: `Run it on your repo` · `Start from a playbook`
+Trust line: works alongside Figma, zeroheight, and Storybook.
 
-**Primary visual — drifting wall with a live receipt.**
+**Primary visual — the run, live.**
 
-Two rows of UI primitives drifting sideways, six or more always in frame, no discrete
-slides. A density/radius slider restyles all of them simultaneously while a rule panel
-compiles beside them and a `check_compliance` badge flips FAIL → PASS.
+The interactive editor described in "the run" above. Before a visitor presses Run, it
+idles as the drifting wall already specced: two rows of UI primitives, six or more always
+in frame, no discrete slides, a density/radius slider restyling all of them at once. That
+idle loop is the waiting room, not the pitch; the pitch is what happens after Run.
 
-Two constraints from the blueprint govern this:
+Two constraints from the blueprint still govern the idle state and the verdict alike:
 
-- **Not a carousel.** Line 170: a wall of unrelated primitives "has no structural reason
-  to look coordinated; watching all of them snap together at once is what proves
-  'systemic' in the first place." A carousel is sequential and spends that proof.
-- **Must show enforcement, not just extraction.** Line 302: `extract-design-system` has
-  127K installs on a 176-star repo — "Differentiation has to be enforcement *after*
-  extraction, not extraction." A slider that only restyles is the commodity half.
-
-Violation callouts on the ungoverned state are required, per line 178.
+- **Not a carousel.** A wall of unrelated primitives has no structural reason to look
+  coordinated; watching all of them snap together at once is what proves "systemic" in
+  the first place. A carousel is sequential and spends that proof.
+- **Must show enforcement, not just extraction.** `extract-design-system` has 127K
+  installs on a 176-star repo: differentiation has to be enforcement *after* extraction,
+  not extraction. A slider that only restyles is the commodity half; the violation
+  callout on the ungoverned arm is the half that isn't.
 
 **Alternates**
 
-- Two agents, one prompt, diverging live. Most persuasive; line 185 scopes it as a
-  recorded video rather than hero real estate because it's slow and expensive live.
+- Two agents, one prompt, diverging live. Most persuasive, but scoped as a recorded video
+  rather than hero real estate. It's slow and expensive live, and the editor-first hero
+  already gives the visitor their own live run instead.
 - Terminal-first: a real `npx` run streaming compiled rules with a counter. Cheapest to
-  build, strongest signal for a developer audience, no design risk.
+  build, strongest signal for a developer audience, no design risk. Reasonable fallback
+  if the interactive editor slips.
 - Single component with rules printing beside it like register tape. Focused, but
   forfeits the systemic proof.
 
 ---
 
 ### 2. What's compiled today — *and what's coming*
+
+**`[2026-08-19]` Scope, so this doesn't read as the hero's honesty tier repeated.** The
+hero's tier (Section 1, move 6) covers what fired in the visitor's own run. This section
+covers the whole product, domain by domain: Visual, Copy, Brand, Motion, Architecture,
+and the rest. Different job, same three-tier vocabulary, worth a one-line distinction on
+the page itself rather than trusting the visitor to infer it.
+
+**`[2026-08-20]` Vocabulary: you author a skill, Tastefield publishes a playbook.** Where
+this section lists what's compiled, say "playbook" for the public shipping unit (tokens,
+restraints, checkable rules, and any ordered chain) and "skill" only for the authoring
+unit inside Studio. `recipe` stays inside the code and data model. Do not use the three
+words interchangeably; the blueprint treats this distinction as load-bearing for the
+registry and the roadmap.
 
 **Revised 2026-08-17 after blume.codes.** The earlier version of this section was a flat
 honesty strip: a row of badges disclosing which domains don't work yet, positioned as debt
@@ -194,7 +316,7 @@ contracts (cva variants), and nine compiled rules.
 *`Soon`, same list.* The remaining Copy and Brand coverage, Motion as a documented
 Foundation, Figma and zeroheight source connections.
 
-*`Next`, separate "On the horizon" section.* The public registry, role recipes, the
+*`Next`, separate "On the horizon" section.* The public registry, a playbook for each role, the
 dual-axis leaderboard, the marketplace.
 
 **Correction, verified 2026-08-17 against `src/compile/rules.ts`.** Earlier drafts of this
@@ -293,6 +415,12 @@ beneath: `✗ line 42: #3B82F6 not in token scale`.
 
 ### 5. What the agent receives
 
+**`[2026-08-20]` What travels to the agent is your playbook, never a skill in progress.** A
+skill is the authoring unit inside Studio; a playbook is the compiled bundle of tokens,
+restraints, checkable rules, and any ordered chain that reaches the MCP server. `recipe`
+is the internal code term. Keep that distinction in this section's copy specifically,
+since it is the section most likely to blur the units by describing what the agent asks for.
+
 **Headlines**
 
 1. **Four narrow tools. Deliberately no fifth.** — *recommended*
@@ -370,16 +498,22 @@ badges — one of the better things on the current page.
 
 **Phase 1, not built. Must be labelled as visibly as the Sources grid labels Figma.**
 
+**`[2026-08-19]` A second install path, `Next` alongside `npx`.** The same playbook, published
+as a plugin marketplace Claude Code and Codex can add directly, with org-wide auto-update
+on Claude Enterprise. This is packaging on top of catalog content that already has to
+exist for `npx --playbook=` (`--recipe=` remains a legacy alias), not a new engine, so it belongs in this section's "on the
+horizon" tier and in Section 11's channel list, not as a standalone feature.
+
 **Headlines**
 
 1. **Browse by the problem, not the company.** — *recommended*
 2. `linear-vibe` has no story. `fintech-trust-first` does. — *concrete*
-3. Start from a recipe, not a blank file. — *benefit*
-4. Recipes for what you're building — and who's building it. — *two axes*
+3. Start from a playbook, not a blank file. — *benefit*
+4. Find your playbook by what you're building or who's judging it. — *two axes*
 5. A registry your agent can query mid-task. — *differentiating*
 
-Show both axes as separate sections, per line 273: recipes by product category and
-recipes by role. Mixing them "recreates the exact 'seems random' failure the category-first
+Show both axes as separate sections, per line 273: find your playbook by product category or
+role. Mixing them "recreates the exact 'seems random' failure the category-first
 taxonomy was originally designed to fix."
 
 **Primary visual:** two-column taxonomy browser with mood-caption variant cards (line 267),
@@ -395,7 +529,7 @@ own ad-hoc `PLANNED` ribbon. One roadmap vocabulary across the whole page, not t
   registry surface: skills.sh shows install counts and no safety signal, and the sweep
   found `emil-design-eng` at 203.7K installs hidden behind a broken singular/plural link
   (line 310). Consistent with non-negotiable #5 — displaying a flagged skill is fine,
-  bundling it into a recipe is not.
+  bundling it into your playbook is not.
 
 ---
 
@@ -432,6 +566,30 @@ kind.
 ---
 
 ### 9. FAQ
+
+**`[2026-08-19]` New answer: Supernova, Figma Dev Mode MCP, and `brandsystem-mcp`.**
+Supernova sunsetted its AI generator and now sells scoped MCP context into Claude Code,
+Codex, and Cursor, the exact three editors Tastefield ships to. Figma's MCP server can
+now scan a codebase into a rules file. `brandsystem-mcp` already ships a pass/fail gate
+on top of token extraction, the closest small-tool match found yet. One answer, not
+three fights:
+
+> Supernova serves your team's design system to an agent as context. Figma's MCP server
+> can scan a codebase and generate a rules file. Tastefield checks the agent's actual
+> output against your rules and flags the line that broke one.
+
+Drafted this way on purpose. The blueprint's own internal shorthand for this
+("Supernova controls what an agent can read. Tastefield verifies what it wrote.") is the
+same antithesis-couplet shape `FORBIDDEN.md` already caught and banned for Section 6
+("Figma is where your team decides. Tastefield is where the agent complies."). Keep the
+shorthand as internal reasoning; do not ship the couplet. The rewrite above states what
+each product does, in order, and lets the third sentence carry the difference instead of
+naming the other two as an opposite.
+
+Add this as a sixth answer, after the existing zeroheight one, not merged into it;
+zeroheight is a documentation partner Tastefield reads from, while these three are
+serve-or-scan tools Tastefield overlaps with, and collapsing both answers into one buries
+the distinction that actually matters (coexistence vs. competition).
 
 **Headlines**
 
@@ -487,6 +645,21 @@ product copy. Ambition reads as conviction in prose and as a claim in an H1.
 ---
 
 ### 11. Install
+
+**`[2026-08-19]` The live MCP connection is the channel, everything else is a copy of
+it.** Six other export paths exist or are planned (per-harness file export, `npx
+--playbook=` (with `--recipe=` retained as a legacy alias), an opaque share link, the shadcn-CLI registry format, the @skills protocol,
+and now a plugin marketplace for Claude Code / Codex). List them, but do not present them
+as six equal options. An exported file or an installed plugin is a snapshot that goes
+stale the moment your playbook changes; the MCP connection is the only channel where
+`check_compliance` runs after generation instead of just handing over rules beforehand.
+Say that plainly on the page: exporting distributes advice, the live connection
+distributes enforcement.
+
+**`[2026-08-19]` Plugin marketplace, `Soon`.** The same compiled playbook, installed with
+Claude Code's `/plugin` (Codex equivalent once confirmed), auto-update on. Aimed at
+teams already on Claude Enterprise who want a non-technical rollout path. Badge it `Soon`
+until it ships; it is packaging, not new build.
 
 **Headlines**
 
@@ -672,8 +845,8 @@ generic, shipping a generative hero is a self-inflicted wound in front of an aud
 selected for noticing. Commission, paint, or print something with a visible hand.
 
 No repeated cones as decoration, no anthropomorphised food, and no second dessert type. The
-product vocabulary already spends the food budget on "Recipes"; recipes plus ice cream plus
-a field is a cooking site.
+public `playbook` rename removes the food-vocabulary collision, but ice cream plus a field
+still needs restraint.
 
 ---
 
@@ -698,6 +871,12 @@ Observed on the four reference sites, applicable throughout.
   that the enforcement wedge sounds too modest next to the marketplace ambition: Blume
   carries a team-wide Central Domain Model on its roadmap and still says "sidecar" on the
   H1.
+- **Grade the output, not the skill.** — *[2026-08-19]* Skilltune's number judges a
+  `SKILL.md` against eval cases generated from the same author's description: coherent
+  with stated intent, not correctness against anything real. Tastefield's number is a
+  measured density from running your compiled playbook against a locked task set. Say what
+  gets graded, not just that grading happens: "we grade what your agent shipped," not
+  "we score your skill."
 - **Promote human-in-the-loop review to a headline benefit.** Blume's "See Every Change
   Before It Lands — review the evidence and exact diff, then apply, dismiss, or save."
   Tastefield has this capability specified at lines 244–248 and it currently appears
@@ -727,8 +906,8 @@ Kickoff: `Draft section 01 (hero) using the marketing-copy-loop skill.`
 ## Open items before build
 
 1. **The registry section describes unbuilt inventory,** including an install command with
-   a `--recipe=` flag that doesn't resolve. The Sources grid is scrupulous about this; the
-   recipes section is not. Same fix, same badges.
+   a `--playbook=` flag that doesn't resolve. The Sources grid is scrupulous about this; the
+   playbook section is not. Same fix, same badges.
 
 2. **Resolved 2026-08-17 — the copy restraint already exists.** This item previously read
    "one copy restraint would retire most of the honesty debt the brand headline takes on."
@@ -749,7 +928,23 @@ Kickoff: `Draft section 01 (hero) using the marketing-copy-loop skill.`
    are all OFL and carry no equivalent risk, so only the sans is exposed. Fallback if the
    licence doesn't extend: PP Neue Montreal, or Archivo at zero cost.
 
-5. **The dusk frontispiece and the botanical plates need an illustrator.** The art direction
+5. **`[2026-08-19]` The audience question is open and this pass does not resolve it.**
+   The blueprint names "is the primary audience design-system owners or creatives" as its
+   largest open question, unresolved as of 2026-08-19. This plan keeps the current
+   default (developers and design-system owners on Claude Code, Codex, or Cursor). If it
+   resolves toward creatives, the blueprint already lists what would have to change: the
+   "What this is" opening line, the domain build order (Copy and Brand ahead of
+   Visual/Motion), the source connections (paste-a-source becomes primary, not Local/
+   GitHub/Figma/zeroheight), the coexistence framing (PDFs and Notion, not Storybook),
+   and the Specimen Wall (needs a copy-domain twin). Do not make any of those five
+   changes as a side effect of a smaller copy edit; treat it as its own decision.
+6. **`[2026-08-19]` The hero's verdict number has no real benchmark behind it yet.** The
+   editor-first hero (Section 1) ships fine without one, since the visitor's own run
+   supplies a live number. But no headline density figure should appear anywhere on the
+   page (Proof section included) until the real two-arm benchmark described in the
+   blueprint's "What is NOT done" actually runs. The existing 31.21-to-0 number stays
+   scoped to Section 8's caveat card, never promoted to the hero.
+7. **The dusk frontispiece and the botanical plates need an illustrator.** The art direction
    rules out generative imagery for a reason it also has to live with — that work has to be
    commissioned, and it is the long-lead item on the whole page. Scope it before the build
    starts rather than discovering it as a blocker.

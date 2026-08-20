@@ -19,7 +19,7 @@ Browse by the problem, not the company.
 
 ### Subhead / body
 
-Recipes named for the job (`fintech-trust-first`, `saas-dense-dashboard`), with mood variants. A second shelf for role recipes when Stage 0 research lands.
+A playbook named for each job (`fintech-trust-first`, `saas-dense-dashboard`), with mood variants. A second shelf organized by role when Stage 0 research lands.
 
 ### CTAs
 
@@ -31,13 +31,13 @@ Recipes named for the job (`fintech-trust-first`, `saas-dense-dashboard`), with 
 
 ## Alternates
 
-**Option B.** Headline: Start from a recipe, not a blank file. Body: Category recipes for what you're building. Role recipes for who's judging the work. Install when the public registry ships.
+**Option B.** Headline: Start from a playbook, not a blank file. Body: Choose by what you're building or who is judging the work. Install when the public registry ships.
 
-**Option C.** Headline: A registry your agent can query mid-task. Body: Human-browsable specimens and agent-fetchable exports from the same recipe. The compiled engine stays the product; recipes are starting points.
+**Option C.** Headline: A registry your agent can query mid-task. Body: Human-browsable specimens and agent-fetchable exports from the same playbook. The compiled engine stays the product; your playbook is the starting point.
 
 ## Visual notes
 
-Two-column taxonomy browser: recipes by product category and recipes by role. Mood-caption variant cards. Do not sell Packs-style bundling as the moat.
+Two-column taxonomy browser: find your playbook by product category or role. Mood-caption variant cards. Do not sell Packs-style bundling as the moat.
 
 ## Review notes
 
@@ -47,7 +47,7 @@ Two-column taxonomy browser: recipes by product category and recipes by role. Mo
 
 ### Honesty auditor
 
-- Generic category recipes are the exposed half vs @skills. Engine + role-sourced content is the defensible half. Copy should not oversell the marketplace.
+- A generic category playbook is the exposed half vs @skills. Engine + role-sourced content is the defensible half. Copy should not oversell the marketplace.
 
 ### Rhythm
 

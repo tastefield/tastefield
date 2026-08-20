@@ -34,6 +34,13 @@ Install the local MCP server into the editor. No account. Nothing leaves the mac
 - Coexistence, not replacement: Figma / zeroheight / Storybook stay the human source of truth.
 - Defensible half is **compiled + checked**, not skill bundling or taste generation.
 - Local-only, no telemetry — lean into being narrow, not apologise for it.
+- **Judged-skill callout (2026-08-20):** on any skill that drafts and does not
+  check, use this line and no other:
+
+  > This skill is an LLM agent running with pre-configured instructions and context to steer the result. The output still depends on the prompting and context you give. It does not check.
+
+  Judged skills only. Do not put it on a recipe that runs a checker. Mixed
+  recipes use two labels, never a blended sentence.
 
 ## Shipped client trio (updated 2026-08-17)
 

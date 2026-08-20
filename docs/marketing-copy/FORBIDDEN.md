@@ -100,6 +100,43 @@ Repeat the noun. Do not point backward and hope the reader still holds the image
 
 ---
 
+## Documented exceptions
+
+An exception is a named line, not a licensed pattern. Each entry states where the line may
+appear and how many times. The pattern stays banned everywhere else, including in drafts
+that argue they are close enough to the exception to qualify.
+
+### The hero line (2026-08-20)
+
+Allowed: **"Everyone else grades the skill. We grade what your agent shipped."**
+
+Pattern it breaks: isocolon pair. Matched clauses, same rhythm, swapped noun.
+
+Why it survives the ban. The line states the one structural difference between Tastefield
+and every competitor found so far, and it is falsifiable. The check either runs on generated
+output or it does not. The banned examples fail for the opposite reason: they win a point by
+naming an opposite, and none of them can be tested. Precedent is the tagline exception in
+`MARKETING_SITE_PLAN.md`, which widened the noun and held the verb. This exception clears
+one line and holds the ban.
+
+Scope, which is the reason to write it down at all:
+
+- H1 on `/verified` only. One appearance on the whole site.
+- Never as a section header, a subhead, a meta description, or body copy.
+- Does not license a second isocolon anywhere. The advisory and enforcement thesis keeps its
+  own single-appearance rule as the pull quote on the same page.
+- The line is defensible only while the eval stays deterministic. If an LLM-judged score
+  ever becomes the headline metric, this exception expires with it.
+
+**Relocated the same day, 2026-08-20.** The scope first read "home page H1 only." The
+Composer reframe moved the home fold off verification and onto compiling a pasted source, so
+the line no longer describes what that page does. It moved to `/verified`, where
+verification is the argument. Recorded rather than silently rewritten, because the first
+scope was a deliberate decision and this is a second one. See
+`docs/MARKETING_SITE_ARCHITECTURE.md`, Part 5.
+
+---
+
 ## Also ban (add here when spotted)
 
 - Fake-specific counts used as atmosphere (`200 components`).

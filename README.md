@@ -35,7 +35,7 @@ Flags: `--dir <path>` to target another repo, `--no-register` to compile without
 
 ```bash
 tastefield skills list [--category boundary] [--live]
-tastefield skills recipes
+tastefield skills playbooks
 tastefield skills discover
 tastefield skills import polish [--github]
 tastefield skills imported
@@ -92,11 +92,11 @@ Two shortcuts that don't work on their own:
 
 Measured separation on known data — all 16 curated design skills score 40–100, while real infrastructure skills (Postgres migrations, Vault secrets, Stripe payments) score 0. Negative weighting is what makes that hold: `deploy-design-system` on AWS scores 0 despite "design system" in the name, because deployment terms outweigh an incidental mention.
 
-Discovery produces a **shortlist, not a decision**. Category, status, rationale and recipe membership are assigned by hand — that judgement is the product.
+Discovery produces a **shortlist, not a decision**. Category, status, rationale and playbook membership are assigned by hand — that judgement is the product.
 
 16 hand-picked design & UI skills, verified against [skills.sh/topic/design](https://www.skills.sh/topic/design). IDs, sources and URLs are real; `summary` and `rationale` are our own editorial copy.
 
-**Why curate rather than mirror.** skills.sh indexes 600k+ skills with Vercel's distribution behind it. Competing on catalogue size is unwinnable and beside the point. What isn't replicable is the editorial layer — a categorised, argued-for set that composes into recipes — plus what happens *after* import: bundling, and serving over MCP with progressive disclosure instead of dumping every installed skill into the context window at once.
+**Why curate rather than mirror.** skills.sh indexes 600k+ skills with Vercel's distribution behind it. Competing on catalogue size is unwinnable and beside the point. What isn't replicable is the editorial layer — a categorised, argued-for set that composes into your playbook — plus what happens *after* import: bundling, and serving over MCP with progressive disclosure instead of dumping every installed skill into the context window at once.
 
 **Install counts.** Seed entries carry `installs: null` wherever a figure wasn't verified. Null renders as `—`, never `0` — a fabricated install count in a pitch deck is a credibility problem, and a test enforces this. Real counts come from `--live`.
 
@@ -113,7 +113,7 @@ Imported skills land in `.tastefield/skills/<owner>__<repo>__<slug>/` and are **
 | `motion` | delight, emil-design-eng |
 | `process` | extract-design-system, critique, canvas-design |
 
-### Recipes
+### Your playbook
 
 `tastefield/frontend-baseline`, `tastefield/enterprise-saas`, `tastefield/editorial-minimal`, `tastefield/bold-marketing`, `tastefield/motion-craft`, `tastefield/review-pass`
 

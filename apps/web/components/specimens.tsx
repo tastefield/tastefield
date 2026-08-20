@@ -52,7 +52,7 @@ export function PricingCard({ t }: SpecimenProps) {
         <span style={{ fontSize: 12, color: t.inkMuted }}>/mo</span>
       </div>
       <div style={{ display: "grid", gap: sp(t, 7), margin: `${sp(t, 14)} 0` }}>
-        {["Unlimited recipes", "5 connected repos", "Priority review"].map((f) => (
+        {["Save every playbook", "5 connected repos", "Priority review"].map((f) => (
           <div key={f} style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 12, color: t.inkMuted }}>
             <span style={{ width: 5, height: 5, borderRadius: 999, background: t.accent, flexShrink: 0 }} />
             {f}
@@ -170,7 +170,7 @@ export function DataTable({ t }: SpecimenProps) {
 export function ConfirmModal({ t }: SpecimenProps) {
   return (
     <div style={surface(t)}>
-      <h3 style={heading(t, 14)}>Delete recipe?</h3>
+      <h3 style={heading(t, 14)}>Delete this playbook?</h3>
       <p style={{ fontSize: 12, color: t.inkMuted, lineHeight: 1.5, margin: `${sp(t, 8)} 0 ${sp(t, 14)}` }}>
         Its shared install link stops working immediately. This cannot be undone.
       </p>
